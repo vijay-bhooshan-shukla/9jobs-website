@@ -7,26 +7,10 @@ export async function POST(request) {
   try {
     const { firstName, lastName, email, phone, message } = await request.json();
 
-    let gmailPass = process.env.GMAIL_PASS;
-
-    // Manual fallback if environment variables haven't reloaded
-    if (!gmailPass) {
-      try {
-        const envPath = path.join(process.cwd(), '../.env');
-        if (fs.existsSync(envPath)) {
-          const envContent = fs.readFileSync(envPath, 'utf8');
-          const match = envContent.match(/^GMAIL_PASS=(.*)$/m);
-          if (match && match[1]) {
-            gmailPass = match[1].trim();
-          }
-        }
-      } catch (e) {
-        console.error('Error reading .env manually:', e);
-      }
-    }
+    const gmailPass = process.env.GMAIL_PASS;
 
     if (!gmailPass) {
-      throw new Error('GMAIL_PASS is not defined. Please restart your npm run dev command.');
+      throw new Error('GMAIL_PASS is not defined. Please set it in your environment variables.');
     }
 
     // Configure the transporter with explicit Gmail SMTP settings

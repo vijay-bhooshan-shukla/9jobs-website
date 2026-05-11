@@ -16,9 +16,17 @@ require("./middleware/googlePassport"); //
 const app = express();
 const PORT = process.env.BACKEND_PORT || 5000;
 
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
 //  middleware
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: [
+    "http://localhost:3000",
+    process.env.BASE_URL,
+    process.env.APP_BASE_URL,
+    "https://9jobs.co"
+  ].filter(Boolean),
   credentials: true
 }));
 app.use(express.json());
