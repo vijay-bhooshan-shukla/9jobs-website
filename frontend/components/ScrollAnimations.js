@@ -27,6 +27,7 @@ const cardSelector = [
   ".fj-activity-card",
   ".fj-role-card",
   ".fj-ai-card",
+  ".fj-faq-item",
   ".fj-contact-hours",
 ].join(", ");
 

@@ -26,10 +26,10 @@ const roleGroups = [
   ["Non-IT roles", "Practical guidance for operational, business, and frontline career paths.", Factory, ["Sales executive", "HR coordinator", "Finance associate", "Operations manager"]],
 ];
 
-const team = [
-  ["Aarohi Mehta", "Career Strategy Lead", "/framer/portrait-01.jpg"],
-  ["Kabir Sharma", "Talent Operations Lead", "/framer/portrait-02.jpg"],
-  ["Naomi Brooks", "IT Placement Specialist", "/framer/portrait-03.jpg"],
+const supportAreas = [
+  ["Australia-ready profile", "Resume, LinkedIn, and application content shaped for Australian hiring expectations.", BriefcaseBusiness],
+  ["Targeted job applying", "We focus applications around your skills, location, experience level, and role fit.", Target],
+  ["Follow-up support", "Messages, interview notes, and next steps stay organized so no opportunity gets lost.", ClipboardCheck],
 ];
 
 export const metadata = {
@@ -115,15 +115,15 @@ export default function About() {
       <section className="fj-section fj-section--muted">
         <div className="fj-container">
           <div className="fj-section-head">
-            <span className="fj-label">People behind the platform</span>
-            <h2>Powered by people who care about <span className="heading-mark">outcomes.</span></h2>
+            <span className="fj-label">Australia job support</span>
+            <h2>Professional support built around real <span className="heading-mark">outcomes.</span></h2>
           </div>
           <div className="fj-card-grid fj-card-grid--three">
-            {team.map(([name, role, src]) => (
-              <article className="fj-team-card" key={name}>
-                <Image src={src} alt={name} width={600} height={760} />
-                <h3>{name}</h3>
-                <p>{role}</p>
+            {supportAreas.map(([title, text, Icon]) => (
+              <article className="fj-team-card fj-support-card" key={title}>
+                <div className="fj-icon-chip"><Icon size={22} /></div>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </article>
             ))}
           </div>

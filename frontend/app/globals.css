@@ -3264,6 +3264,44 @@ section.hero.hero-split,
   padding-inline: 10px;
 }
 
+.fj-team-card.fj-support-card {
+  position: relative;
+  display: grid;
+  min-height: 320px;
+  align-content: space-between;
+  padding: 30px;
+  isolation: isolate;
+}
+
+.fj-support-card::after {
+  content: "";
+  position: absolute;
+  right: -34px;
+  bottom: -44px;
+  z-index: -1;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(224, 255, 130, 0.92), rgba(224, 255, 130, 0.08) 62%),
+    linear-gradient(135deg, rgba(3, 31, 42, 0.08), transparent);
+}
+
+.fj-support-card .fj-icon-chip {
+  width: 58px;
+  height: 58px;
+}
+
+.fj-support-card h3,
+.fj-support-card p {
+  padding-inline: 0;
+}
+
+.fj-support-card h3 {
+  max-width: 280px;
+  margin-top: 54px;
+}
+
 .fj-pricing-card {
   position: relative;
   display: flex;
@@ -3312,6 +3350,106 @@ section.hero.hero-split,
 .fj-final-cta > span {
   color: var(--fj-muted);
   font-weight: 800;
+}
+
+.fj-faq-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.86fr) minmax(0, 1.14fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.fj-faq-intro {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.fj-faq-intro h2 {
+  max-width: 640px;
+  margin: 0;
+  color: var(--fj-ink);
+  font-size: clamp(2.4rem, 4.7vw, 5rem);
+  font-weight: 800;
+  line-height: 0.98;
+}
+
+.fj-faq-intro p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--fj-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.fj-faq-intro .fj-button {
+  justify-self: start;
+  margin-top: 8px;
+}
+
+.fj-faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.fj-faq-item {
+  overflow: hidden;
+  border: 1px solid var(--fj-line);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(3, 31, 42, 0.03);
+  transition:
+    transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    background 240ms ease;
+}
+
+.fj-faq-item:hover {
+  transform: translateY(-3px);
+  border-color: #d3dddd;
+  box-shadow: var(--fj-soft-shadow);
+}
+
+.fj-faq-item summary {
+  display: flex;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px 26px;
+  color: var(--fj-ink);
+  font-size: clamp(1.02rem, 1.5vw, 1.22rem);
+  font-weight: 800;
+  line-height: 1.28;
+}
+
+.fj-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.fj-faq-item summary svg {
+  flex: 0 0 auto;
+  color: var(--fj-muted);
+  transition: transform 220ms ease, color 220ms ease;
+}
+
+.fj-faq-item[open] {
+  border-color: rgba(185, 217, 77, 0.62);
+  background: linear-gradient(180deg, #fff 0%, #fbfff1 100%);
+}
+
+.fj-faq-item[open] summary svg {
+  color: var(--fj-ink);
+  transform: rotate(180deg);
+}
+
+.fj-faq-item p {
+  margin: 0;
+  padding: 0 26px 24px;
+  color: var(--fj-muted);
+  line-height: 1.65;
 }
 
 .fj-contact-layout {
@@ -3386,10 +3524,10 @@ section.hero.hero-split,
   overflow: hidden;
   border-radius: 24px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(3, 31, 42, 0.06)),
-    url("/framer/dashboard.png");
+    linear-gradient(90deg, rgba(3, 31, 42, 0.18), rgba(3, 31, 42, 0.02) 62%),
+    url("/framer/story-ops.jpg");
   background-color: var(--fj-soft);
-  background-position: center;
+  background-position: center 48%;
   background-size: cover;
 }
 
@@ -3429,6 +3567,12 @@ section.hero.hero-split,
 
 .fj-clean-form .field {
   gap: 10px;
+}
+
+.fj-contact-form-slot .fj-clean-form .field,
+.fj-contact-form-slot .fj-clean-form > div:last-child {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .fj-clean-form .field span,
@@ -3699,6 +3843,7 @@ section.hero.hero-split,
   .fj-section-head--split,
   .fj-split,
   .fj-leader-card,
+  .fj-faq-grid,
   .fj-contact-layout {
     grid-template-columns: 1fr;
   }
@@ -3788,9 +3933,11 @@ section.hero.hero-split,
   .fj-plan-card,
   .fj-pricing-card,
   .fj-blog-card,
+  .fj-team-card.fj-support-card,
   .fj-activity-card,
   .fj-role-card,
   .fj-ai-card,
+  .fj-faq-item,
   .fj-contact-panel {
     min-width: 0;
     width: 100%;
@@ -3838,6 +3985,26 @@ section.hero.hero-split,
 
   .fj-page-hero {
     padding-top: 132px;
+  }
+
+  .fj-support-card h3 {
+    margin-top: 44px;
+  }
+
+  .fj-faq-intro h2 {
+    font-size: 2.12rem;
+  }
+
+  .fj-faq-intro p {
+    font-size: 1rem;
+  }
+
+  .fj-faq-item summary {
+    padding: 20px 18px;
+  }
+
+  .fj-faq-item p {
+    padding: 0 18px 20px;
   }
 
   .fj-contact-panel {

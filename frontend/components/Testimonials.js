@@ -1,26 +1,31 @@
 import { Quote } from "lucide-react";
-import Image from "next/image";
 
 const testimonials = [
   {
     name: "Danielle Rodrigues",
     role: "HR lead",
     quote: "9Jobs made the whole application process easier to understand and easier to manage.",
-    image: "/framer/portrait-01.jpg"
   },
   {
     name: "David Wilson",
     role: "Founder",
     quote: "The clean workflow keeps candidates focused on the next meaningful action.",
-    image: "/framer/portrait-02.jpg"
   },
   {
     name: "Dennis Howell",
     role: "Software candidate",
     quote: "My resume and LinkedIn profile felt sharper before the first application went out.",
-    image: "/framer/portrait-03.jpg"
   },
 ];
+
+function getInitials(name) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
 
 export default function Testimonials() {
   const duplicatedTestimonials = [...testimonials, ...testimonials];
@@ -47,7 +52,7 @@ export default function Testimonials() {
                 </div>
                 
                 <div style={{ marginTop: "auto", paddingTop: "24px", borderTop: "1px solid var(--fj-line)", display: "flex", alignItems: "center", gap: 14 }}>
-                  <Image src={testimonial.image} alt={testimonial.name} width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+                  <span className="fj-testimonial-avatar" aria-hidden="true">{getInitials(testimonial.name)}</span>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 2 }}>
                     <strong style={{ fontSize: "0.95rem", color: "var(--fj-ink)", fontWeight: 700 }}>{testimonial.name}</strong>
                     <span style={{ fontSize: "0.85rem", color: "var(--fj-muted)" }}>{testimonial.role}</span>
@@ -91,6 +96,20 @@ export default function Testimonials() {
           }
           .marquee-track:hover {
             animation-play-state: paused;
+          }
+          .fj-testimonial-avatar {
+            display: inline-flex;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--fj-line);
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f7faf9, #eaff82);
+            color: var(--fj-ink);
+            font-size: 0.86rem;
+            font-weight: 800;
           }
           @keyframes marquee {
             0% { transform: translateX(0); }

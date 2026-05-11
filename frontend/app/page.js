@@ -8,6 +8,7 @@ import {
   Briefcase,
   Check,
   CheckCircle2,
+  ChevronDown,
   ClipboardCheck,
   FileText,
   Gauge,
@@ -71,6 +72,29 @@ const plans = [
   ["Startups", "Learn about the Remote platform and services."],
   ["Mid-size", "See our standard pricing and get a customized quote."],
   ["Enterprise", "See our standard pricing and get a customized quote."],
+];
+
+const faqs = [
+  [
+    "Do you help candidates apply for jobs in Australia?",
+    "Yes. 9Jobs supports Australia-focused job searches with resume improvement, LinkedIn optimization, role targeting, applications, and follow-up organization.",
+  ],
+  [
+    "Which types of roles do you support?",
+    "We support IT and non-IT roles, including software, data, cloud, QA, sales, finance, admin, HR, operations, and customer-facing positions.",
+  ],
+  [
+    "Do you guarantee a job placement?",
+    "No service can honestly guarantee employer selection. We improve your profile quality, application consistency, and interview readiness so you can compete more professionally.",
+  ],
+  [
+    "Can you make my resume suitable for Australian employers?",
+    "Yes. We review structure, keywords, achievements, clarity, and ATS readability so your resume is easier for Australian recruiters to scan.",
+  ],
+  [
+    "How does the demo or contact request work?",
+    "Send your details through the contact form and tell us your goal. The team will reply with the next steps for resume support, LinkedIn help, applications, or a full platform demo.",
+  ],
 ];
 
 function DashboardPreview() {
@@ -334,6 +358,31 @@ export default function Home() {
       </section>
 
       <Testimonials />
+
+      <section className="fj-section fj-section--muted" id="faqs">
+        <div className="fj-container fj-faq-grid">
+          <div className="fj-faq-intro">
+            <span className="fj-label">FAQs</span>
+            <h2>Questions before you start with <span className="heading-mark">9Jobs.</span></h2>
+            <p>Clear answers for candidates who want a more organized, Australia-ready job search.</p>
+            <Link className="fj-button fj-button--dark" href="/contact?intent=demo">
+              Talk to us <ArrowRight size={17} />
+            </Link>
+          </div>
+
+          <div className="fj-faq-list">
+            {faqs.map(([question, answer], index) => (
+              <details className="fj-faq-item" key={question} open={index === 0}>
+                <summary>
+                  <span>{question}</span>
+                  <ChevronDown size={20} />
+                </summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">
