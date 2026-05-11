@@ -40,7 +40,7 @@ export default function FeaturePage() {
       <section className="fj-page-hero">
         <div className="fj-container">
           <span className="fj-announcement"><span>Feature</span> All the moving parts in one place</span>
-          <h1>A cleaner operating system for job applying.</h1>
+          <h1>A cleaner operating system for job <span className="heading-mark">applying.</span></h1>
           <p>9Jobs brings documents, profile work, job targeting, follow-ups, and reporting into a simple workflow that stays easy to scan.</p>
         </div>
       </section>
@@ -62,7 +62,7 @@ export default function FeaturePage() {
 
           <div className="fj-copy-block">
             <span className="fj-label">Built for repeated action</span>
-            <h2>Less scattered work. More forward motion.</h2>
+            <h2>Less scattered work. More forward <span className="heading-mark">motion.</span></h2>
             <p>The reference experience is intentionally calm: big readable sections, focused cards, and enough visual context to understand what is happening without digging.</p>
             <div className="fj-list-grid">
               {[
@@ -85,7 +85,7 @@ export default function FeaturePage() {
       <section className="fj-section fj-section--muted">
         <div className="fj-container">
           <div className="fj-section-head">
-            <h2>The tools candidates naturally expect.</h2>
+            <h2>The tools candidates naturally <span className="heading-mark">expect.</span></h2>
           </div>
           <div className="fj-card-grid fj-card-grid--three">
             {platformFeatures.map(([title, text, Icon]) => (
@@ -101,7 +101,7 @@ export default function FeaturePage() {
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">
-          <h2>Get a clean 9Jobs walkthrough.</h2>
+          <h2>Get a clean 9Jobs <span className="heading-mark">walkthrough.</span></h2>
           <Link className="fj-button fj-button--dark" href="/contact?intent=demo">
             Schedule a demo <ArrowRight size={17} />
           </Link>

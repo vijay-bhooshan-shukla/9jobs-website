@@ -18,7 +18,7 @@ export default function BlogPage() {
       <section className="fj-page-hero">
         <div className="fj-container">
           <span className="fj-announcement"><span>Blog</span> Career notes that stay practical</span>
-          <h1>Small improvements that make applications stronger.</h1>
+          <h1>Small improvements that make applications <span className="heading-mark">stronger.</span></h1>
           <p>Clean advice for resumes, LinkedIn, interviews, targeting, and the habits that keep a job search moving.</p>
         </div>
       </section>
@@ -40,7 +40,7 @@ export default function BlogPage() {
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">
           <BookOpen size={28} />
-          <h2>Want help applying the advice?</h2>
+          <h2>Want help applying the <span className="heading-mark">advice?</span></h2>
           <p>Send your goals to 9Jobs and we will help shape a practical next step.</p>
           <Link className="fj-button fj-button--dark" href="/contact">
             Contact us

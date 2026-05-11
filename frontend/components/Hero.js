@@ -20,8 +20,8 @@ export default function Hero() {
           and interview progress.
         </p>
         <div className="hero-actions">
-          <Link className="btn btn-light" href="/register">
-            Try for free
+          <Link className="btn btn-light" href="/pricing">
+            1 day trial
           </Link>
           <Link className="btn btn-dark" href="/contact?intent=demo">
             Schedule a demo

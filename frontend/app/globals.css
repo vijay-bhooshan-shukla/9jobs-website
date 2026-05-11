@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --background: #ffffff;
   --ink: #050505;
   --ink-soft: #2d2f33;
@@ -151,7 +151,7 @@ h6 {
   max-width: 1040px;
   margin: 0 auto;
   font-family: var(--font-heading);
-  font-size: 5.25rem;
+  font-size: 3.25rem;
   font-weight: 700;
   letter-spacing: 0;
   line-height: 0.98;
@@ -160,7 +160,7 @@ h6 {
 .section-title {
   max-width: 1120px;
   font-family: var(--font-heading);
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.02;
@@ -170,7 +170,7 @@ h6 {
   max-width: 1120px;
   margin: 0 auto;
   font-family: var(--font-heading);
-  font-size: 4.95rem;
+  font-size: 2.95rem;
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.02;
@@ -203,20 +203,20 @@ h6 {
 .heading-mark::after {
   content: "";
   position: absolute;
-  right: -0.08em;
-  bottom: 0.02em;
-  left: -0.02em;
-  height: 0.16em;
-  border-radius: 999px;
+  right: -0.1em;
+  bottom: 0.12em;
+  left: -0.05em;
+  height: 0.38em;
+  border-radius: 6px;
   background:
-    linear-gradient(90deg, transparent 0 3%, var(--lime) 3% 94%, transparent 94%),
+    linear-gradient(90deg, transparent 0 2%, var(--fj-lime) 2% 96%, transparent 96%),
     repeating-linear-gradient(
-      -8deg,
-      rgba(217, 255, 95, 0.92) 0 3px,
-      rgba(217, 255, 95, 0.38) 3px 5px,
-      transparent 5px 8px
+      -6deg,
+      rgba(224, 255, 130, 0.9) 0 4px,
+      rgba(224, 255, 130, 0.4) 4px 7px,
+      transparent 7px 10px
     );
-  transform: rotate(-0.6deg);
+  transform: rotate(-1deg);
   transform-origin: left center;
   z-index: -1;
 }
@@ -2308,11 +2308,16 @@ section.hero.hero-split,
 }
 
 .site-nav.fj-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
   padding: 14px 28px;
   border-bottom: 1px solid transparent;
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .site-nav.fj-nav.is-scrolled {
@@ -2471,7 +2476,7 @@ section.hero.hero-split,
 
 .fj-hero-inner {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   display: grid;
   justify-items: center;
   text-align: center;
@@ -2482,7 +2487,7 @@ section.hero.hero-split,
   max-width: 980px;
   margin: 58px auto 0;
   color: var(--fj-ink);
-  font-size: clamp(4rem, 8.3vw, 8.8rem);
+  font-size: clamp(2rem, 6.3vw, 6.8rem);
   font-weight: 800;
   line-height: 0.95;
 }
@@ -2532,13 +2537,37 @@ section.hero.hero-split,
 
 .fj-hero-doodle {
   position: absolute;
-  z-index: 1;
-  left: max(18px, calc((100vw - 1320px) / 2));
-  top: 44%;
-  width: min(23vw, 360px);
-  min-width: 180px;
-  transform: translateY(-20%);
+  z-index: 4;
+  left: max(18px, calc((100vw - 1280px) / 2 - 44px));
+  top: clamp(310px, 38vh, 380px);
+  width: clamp(180px, 16vw, 250px);
+  min-width: 0;
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
   pointer-events: none;
+}
+
+.fj-hero-doodle img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: 50% 100%;
+  animation: fj-character-slow-motion 8s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+  will-change: transform;
+}
+
+@keyframes fj-character-slow-motion {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-1deg);
+  }
+
+  35% {
+    transform: translate3d(16px, -10px, 0) rotate(1.2deg);
+  }
+
+  68% {
+    transform: translate3d(6px, 8px, 0) rotate(-0.4deg);
+  }
 }
 
 .fj-hero-dashboard {
@@ -2803,7 +2832,7 @@ section.hero.hero-split,
 .fj-quote-panel h2 {
   margin: 0;
   color: inherit;
-  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-size: clamp(1rem, 4vw, 4.5rem);
   font-weight: 800;
   line-height: 0.98;
 }
@@ -3591,9 +3620,10 @@ section.hero.hero-split,
   }
 
   .fj-hero-doodle {
-    top: 49%;
-    left: -38px;
-    opacity: 0.35;
+    top: 600px;
+    left: 8px;
+    width: clamp(140px, 34vw, 180px);
+    opacity: 0.28;
   }
 
   .fj-hero h1,

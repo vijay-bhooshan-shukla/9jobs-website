@@ -44,7 +44,7 @@ export default function About() {
       <section className="fj-page-hero">
         <div className="fj-container">
           <span className="fj-announcement"><span>About</span> Built for candidates and hiring teams</span>
-          <h1>9Jobs helps IT and non-IT talent find the right opportunities.</h1>
+          <h1>9Jobs helps IT and non-IT talent find the right <span className="heading-mark">opportunities.</span></h1>
           <p>We combine practical career support, professional content, and organized application workflows so candidates can move from search to interview with more clarity.</p>
         </div>
       </section>
@@ -53,7 +53,7 @@ export default function About() {
         <div className="fj-container fj-split">
           <div className="fj-copy-block">
             <span className="fj-label">Our story</span>
-            <h2>Connecting skilled people with companies that need them.</h2>
+            <h2>Connecting skilled people with companies that need <span className="heading-mark">them.</span></h2>
             <p>9Jobs was created for candidates who know they can contribute, but need a sharper way to present skills, choose the right roles, and stay consistent through applications.</p>
           </div>
           <div className="fj-image-card">
@@ -65,7 +65,7 @@ export default function About() {
       <section className="fj-section">
         <div className="fj-container fj-quote-panel">
           <HeartHandshake size={30} />
-          <h2>We remove the invisible barriers between talent and opportunity.</h2>
+          <h2>We remove the invisible barriers between talent and <span className="heading-mark">opportunity.</span></h2>
           <p>Our work is simple: help candidates show up clearly, apply with purpose, and stay ready when the right conversation begins.</p>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function About() {
         <div className="fj-container">
           <div className="fj-section-head">
             <span className="fj-label">Our process</span>
-            <h2>A clear path from profile to placement.</h2>
+            <h2>A clear path from profile to <span className="heading-mark">placement.</span></h2>
           </div>
           <div className="fj-card-grid fj-card-grid--four">
             {process.map(([title, text, Icon]) => (
@@ -92,7 +92,7 @@ export default function About() {
         <div className="fj-container fj-split">
           <div className="fj-copy-block">
             <span className="fj-label">Role coverage</span>
-            <h2>Built for technical and non-technical career paths.</h2>
+            <h2>Built for technical and non-technical career <span className="heading-mark">paths.</span></h2>
             <p>For IT professionals, we focus on technical clarity. For non-IT professionals, we translate experience into outcomes hiring teams can quickly understand.</p>
           </div>
           <div className="fj-card-grid fj-card-grid--two">
@@ -116,7 +116,7 @@ export default function About() {
         <div className="fj-container">
           <div className="fj-section-head">
             <span className="fj-label">People behind the platform</span>
-            <h2>Powered by people who care about outcomes.</h2>
+            <h2>Powered by people who care about <span className="heading-mark">outcomes.</span></h2>
           </div>
           <div className="fj-card-grid fj-card-grid--three">
             {team.map(([name, role, src]) => (
@@ -133,7 +133,7 @@ export default function About() {
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">
           <Sparkles size={28} />
-          <h2>Shape the future of job applying with 9Jobs.</h2>
+          <h2>Shape the future of job applying with <span className="heading-mark">9Jobs.</span></h2>
           <Link className="fj-button fj-button--dark" href="/contact?intent=demo">
             Get started <ArrowRight size={17} />
           </Link>

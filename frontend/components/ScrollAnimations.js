@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const revealRules = [
-  [".site-nav.fj-nav", "slide-from-top", 0],
   [".fj-hero .fj-announcement, .fj-page-hero .fj-announcement", "fade-down", 0],
   [".fj-hero h1, .fj-page-hero h1", "fade-up", 70],
   [".fj-hero p, .fj-page-hero p", "fade-up", 140],
@@ -125,8 +124,6 @@ export default function ScrollAnimations() {
           observer.observe(element);
         }
       });
-      toArray(".site-nav.fj-nav").forEach((element) => element.classList.add("is-visible"));
-
       let frame = 0;
       const parallaxElements = toArray("[data-fj-parallax]");
 

@@ -86,9 +86,13 @@ app.get("/terms-policy", (req, res) => res.render("partials/termspolicy"));
 
 
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`✅ Backend running on port ${PORT}`);
-});
+if (process.env.VERCEL !== "1") {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`✅ Backend running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
 
 
 

@@ -55,8 +55,8 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-actions fj-nav-actions">
-          <Link href="/register" className="fj-button fj-button--ghost">
-            Try for free
+          <Link href="/pricing" className="fj-button fj-button--ghost">
+            1 day trial
           </Link>
           <Link href="/contact?intent=demo" className="fj-button fj-button--dark">
             Get a demo <ArrowRight size={17} />
@@ -95,8 +95,8 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link className="fj-button fj-button--ghost" href="/register" onClick={() => setIsOpen(false)}>
-              Try for free
+            <Link className="fj-button fj-button--ghost" href="/pricing" onClick={() => setIsOpen(false)}>
+              1 day trial
             </Link>
             <Link className="fj-button fj-button--dark" href="/contact?intent=demo" onClick={() => setIsOpen(false)}>
               Get a demo <ArrowRight size={17} />

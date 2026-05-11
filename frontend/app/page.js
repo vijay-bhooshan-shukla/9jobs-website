@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Testimonials from "../components/Testimonials";
 import {
   ArrowRight,
   Bell,
@@ -146,10 +147,10 @@ export default function Home() {
             Announcing our Job Applying Automation Tool
             <ArrowRight size={24} />
           </Link>
-          <h1>Say hello to smarter applying</h1>
+          <h1>Say hello to smarter <span className="heading-mark">applying</span></h1>
           <p>A job applying platform that works the better than you do. For you!</p>
           <div className="fj-actions">
-            <Link className="fj-button fj-button--ghost" href="/register">Try for free</Link>
+            <Link className="fj-button fj-button--ghost" href="/pricing">1 day trial</Link>
             <Link className="fj-button fj-button--dark" href="/contact?intent=demo">Get a demo</Link>
           </div>
         </div>
@@ -171,7 +172,7 @@ export default function Home() {
       <section className="fj-section">
         <div className="fj-container">
           <div className="fj-section-head fj-section-head--split">
-            <h2>Everything you need, all in one place</h2>
+            <h2>Everything you need, all in one <span className="heading-mark">place</span></h2>
             <Link className="fj-button fj-button--dark" href="/contact?intent=demo">
               Get a demo <ArrowRight size={17} />
             </Link>
@@ -214,7 +215,7 @@ export default function Home() {
 
           <div className="fj-copy-block">
             <span className="fj-label">real-time updates</span>
-            <h2>Empowering your jobs pipeline</h2>
+            <h2>Empowering your jobs <span className="heading-mark">pipeline</span></h2>
             <div className="fj-list-grid">
               {pipelineItems.map(([title, text, Icon]) => (
                 <div className="fj-mini-item" key={title}>
@@ -232,7 +233,7 @@ export default function Home() {
         <div className="fj-container fj-split fj-split--reverse">
           <div className="fj-copy-block">
             <span className="fj-label">growth at every level</span>
-            <h2>Making yourself at home</h2>
+            <h2>Making yourself at <span className="heading-mark">home</span></h2>
             <div className="fj-list-grid">
               {growthItems.map(([title, text]) => (
                 <div className="fj-mini-item" key={title}>
@@ -264,7 +265,7 @@ export default function Home() {
       <section className="fj-section fj-section--dark">
         <div className="fj-container fj-split">
           <div className="fj-copy-block">
-            <h2>Less paperwork, more people work</h2>
+            <h2>Less paperwork, more people <span className="heading-mark">work</span></h2>
             <p>We integrate seamlessly with the tools you already use. Apply smarter with 9Jobs.</p>
             <Link className="fj-link-light" href="/feature">See all integrations <ArrowRight size={17} /></Link>
           </div>
@@ -295,7 +296,7 @@ export default function Home() {
             </div>
           </div>
           <div className="fj-copy-block">
-            <h2>Make actionable decisions simpler</h2>
+            <h2>Make actionable decisions <span className="heading-mark">simpler</span></h2>
             <p>Focus on what matters. Let us handle the busywork while you build better relationships.</p>
             <Link className="fj-button fj-button--dark" href="/contact?intent=demo">Get a demo</Link>
           </div>
@@ -305,7 +306,7 @@ export default function Home() {
       <section className="fj-section fj-section--muted">
         <div className="fj-container">
           <div className="fj-section-head">
-            <h2>A plan for anyone. Anytime.</h2>
+            <h2>A plan for anyone. <span className="heading-mark">Anytime.</span></h2>
             <p>We help you get your dream job.</p>
           </div>
           <div className="fj-card-grid fj-card-grid--three">
@@ -323,7 +324,7 @@ export default function Home() {
       <section className="fj-section">
         <div className="fj-container fj-leader-card">
           <div>
-            <h2>9Jobs is the global payroll platform leader</h2>
+            <h2>9Jobs is the global payroll platform <span className="heading-mark">leader</span></h2>
             <p>Automate even the most complex hiring processes and signatures.</p>
           </div>
           <div className="fj-leader-media">
@@ -332,12 +333,14 @@ export default function Home() {
         </div>
       </section>
 
+      <Testimonials />
+
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">
           <span>Automate with 9Jobs</span>
-          <h2>Start for free today.</h2>
+          <h2>Start for free <span className="heading-mark">today.</span></h2>
           <div className="fj-actions">
-            <Link className="fj-button fj-button--ghost" href="/register">Try 30 days</Link>
+            <Link className="fj-button fj-button--ghost" href="/pricing">1 day trial</Link>
             <Link className="fj-button fj-button--dark" href="/contact?intent=demo">Schedule a demo</Link>
           </div>
         </div>

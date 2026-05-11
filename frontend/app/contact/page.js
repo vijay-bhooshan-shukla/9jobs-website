@@ -16,7 +16,7 @@ export default async function ContactPage({ searchParams }) {
       <section className="fj-page-hero fj-contact-hero">
         <div className="fj-container">
           <span className="fj-announcement"><span>Contact</span> We are ready to help</span>
-          <h1>Get in touch with 9Jobs.</h1>
+          <h1>Get in touch with <span className="heading-mark">9Jobs.</span></h1>
           <p>Tell us what you want to improve: resume, LinkedIn, applications, interview flow, or a full demo of the platform.</p>
         </div>
       </section>
@@ -26,7 +26,7 @@ export default async function ContactPage({ searchParams }) {
           <aside className="fj-contact-panel">
             <div className="fj-icon-chip"><Sparkles size={22} /></div>
             <span className="fj-label">Contact information</span>
-            <h2>Fast answers, clear next steps.</h2>
+            <h2>Fast answers, clear next <span className="heading-mark">steps.</span></h2>
             <p>Share the outcome you want and the 9Jobs team will respond with the most useful path forward.</p>
 
             <div className="fj-contact-list">
