@@ -1,7 +1,11 @@
 {
-  "version": 2,
   "buildCommand": "npm run build",
-  "installCommand": "npm install",
+  "outputDirectory": "frontend/.next",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "server/views/**"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/create-checkout-session",
