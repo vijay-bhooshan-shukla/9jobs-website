@@ -11,21 +11,21 @@ const resumePlans = [
     name: "Resume Makeover",
     price: "$49",
     period: "one-time",
-    description: "Professional ATS-friendly resume redesign tailored to help job seekers stand out and increase interview callbacks. Includes optimized formatting, recruiter-friendly structure, and industry-focused improvements.",
+    description: "Professional resume redesign tailored for ATS systems to get you noticed.",
     items: [
-      "ATS-friendly resume redesign",
-      "Modern clean formatting",
+      "Resume redesign (ATS-friendly)",
+      "Optimized formatting & structure",
       "Grammar & wording improvements",
-      "Industry keyword optimization",
+      "Industry-specific keyword optimization",
       "Achievement-focused content",
-      "PDF delivery included"
+      "PDF delivery (ATS + Recruiter friendly)"
     ],
-    initial: { opacity: 0, x: -90, rotate: 1.5, skewY: -2.5 },
-    animate: { opacity: 1, x: 0, rotate: 1.5, skewY: -2.5 },
+    initial: { opacity: 0, x: -90, rotate: -2, skewY: -2.5 },
+    animate: { opacity: 1, x: 0, rotate: -2, skewY: -2.5 },
     hover: { 
       scale: 1.04, 
-      rotate: 0.5, 
-      y: -12, 
+      rotate: -0.5, 
+      y: -10, 
       skewY: -2.5,
       boxShadow: "0 25px 60px rgba(16, 185, 129, 0.28)",
       borderColor: "#84cc16"
@@ -34,29 +34,27 @@ const resumePlans = [
     dark: true
   },
   {
-    name: "Resume + LinkedIn + Seek Optimization",
+    name: "Resume + LinkedIn Optimisation",
     badge: "Most Popular",
     price: "$89",
     period: "one-time",
-    description: "Complete personal branding package designed to optimize your Resume, LinkedIn profile, and Seek profile for maximum visibility, recruiter engagement, and better job opportunities.",
+    description: "Complete professional branding to boost your visibility and career opportunities.",
     items: [
       "Everything in Resume Makeover",
       "LinkedIn profile optimization",
-      "Seek profile optimization",
-      "LinkedIn headline rewrite",
-      "About section enhancement",
-      "Experience & skills optimization",
-      "ATS + recruiter keyword targeting",
-      "Profile visibility improvements",
-      "Custom branding recommendations",
-      "Resume + LinkedIn + Seek delivery"
+      "LinkedIn headline & About section rewrite",
+      "Experience & skills enhancement",
+      "Keyword optimization for LinkedIn & ATS",
+      "Custom banner & profile improvements",
+      "Job-search tips & profile visibility guide",
+      "PDF resume + LinkedIn profile delivery"
     ],
-    initial: { opacity: 0, x: 90, rotate: 1.5, skewY: -2.5 },
-    animate: { opacity: 1, x: 0, rotate: 1.5, skewY: -2.5 },
+    initial: { opacity: 0, x: 90, rotate: 2, skewY: -2.5, scale: 1.05 },
+    animate: { opacity: 1, x: 0, rotate: 2, skewY: -2.5, scale: 1.05 },
     hover: { 
-      scale: 1.04, 
+      scale: 1.09, 
       rotate: 0.5, 
-      y: -12, 
+      y: -10, 
       skewY: -2.5,
       boxShadow: "0 25px 60px rgba(16, 185, 129, 0.32)",
       borderColor: "#10b981"
@@ -245,7 +243,7 @@ export default function ResumePricingSection() {
                   ))}
                 </div>
 
-                {/* Actions: High-contrast green primary and dark outline secondary */}
+                {/* Actions: Bright neon green primary buttons and transparent border secondary buttons */}
                 <div className="fj-pricing-actions" style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                   <PricingCheckoutButton
                     plan={plan}
