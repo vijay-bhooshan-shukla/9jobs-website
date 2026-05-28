@@ -4213,7 +4213,7 @@ section.hero.hero-split,
   background: linear-gradient(135deg, #090e0c 0%, #121e17 100%);
   border: 1px solid rgba(16, 185, 129, 0.35);
   color: rgba(255, 255, 255, 0.9);
-  padding: 48px 40px;
+  padding: 52px 44px;
 }
 
 .fj-resume-skew-card.is-premium-dark h2 {
@@ -4251,7 +4251,7 @@ section.hero.hero-split,
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   color: var(--fj-ink);
-  padding: 56px 44px; /* slightly taller padding */
+  padding: 52px 44px;
   box-shadow: 0 10px 40px rgba(16, 185, 129, 0.05);
 }
 
@@ -4259,7 +4259,7 @@ section.hero.hero-split,
   color: var(--fj-ink);
   display: block;
   margin: 28px 0;
-  font-size: 3.2rem;
+  font-size: 3rem;
   line-height: 1;
 }
 

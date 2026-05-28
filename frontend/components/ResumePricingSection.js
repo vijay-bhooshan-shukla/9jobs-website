@@ -11,19 +11,20 @@ const resumePlans = [
     name: "Resume Makeover",
     price: "$49",
     period: "one-time",
-    summary: "Professional resume redesign tailored for ATS systems to get you noticed.",
+    description: "Professional ATS-friendly resume redesign tailored to help job seekers stand out and increase interview callbacks. Includes optimized formatting, recruiter-friendly structure, and industry-focused improvements.",
     items: [
-      "Resume redesign",
-      "ATS-friendly formatting",
-      "Grammar & formatting fixes",
-      "Industry-specific improvements",
-      "PDF delivery"
+      "ATS-friendly resume redesign",
+      "Modern clean formatting",
+      "Grammar & wording improvements",
+      "Industry keyword optimization",
+      "Achievement-focused content",
+      "PDF delivery included"
     ],
-    initial: { opacity: 0, x: -90, rotate: -2, skewY: -2.5 },
-    animate: { opacity: 1, x: 0, rotate: -2, skewY: -2.5 },
+    initial: { opacity: 0, x: -90, rotate: 1.5, skewY: -2.5 },
+    animate: { opacity: 1, x: 0, rotate: 1.5, skewY: -2.5 },
     hover: { 
       scale: 1.04, 
-      rotate: -0.5, 
+      rotate: 0.5, 
       y: -12, 
       skewY: -2.5,
       boxShadow: "0 25px 60px rgba(16, 185, 129, 0.28)",
@@ -33,22 +34,27 @@ const resumePlans = [
     dark: true
   },
   {
-    name: "Resume + LinkedIn Optimisation",
+    name: "Resume + LinkedIn + Seek Optimization",
     badge: "Most Popular",
     price: "$89",
     period: "one-time",
-    summary: "Transform both your resume and your LinkedIn profile for double the impact.",
+    description: "Complete personal branding package designed to optimize your Resume, LinkedIn profile, and Seek profile for maximum visibility, recruiter engagement, and better job opportunities.",
     items: [
-      "Resume makeover",
-      "LinkedIn headline optimisation",
-      "About section rewrite",
-      "Experience enhancement",
-      "ATS keyword optimisation"
+      "Everything in Resume Makeover",
+      "LinkedIn profile optimization",
+      "Seek profile optimization",
+      "LinkedIn headline rewrite",
+      "About section enhancement",
+      "Experience & skills optimization",
+      "ATS + recruiter keyword targeting",
+      "Profile visibility improvements",
+      "Custom branding recommendations",
+      "Resume + LinkedIn + Seek delivery"
     ],
-    initial: { opacity: 0, x: 90, rotate: 2, skewY: -2.5, scale: 1.05 },
-    animate: { opacity: 1, x: 0, rotate: 2, skewY: -2.5, scale: 1.05 },
+    initial: { opacity: 0, x: 90, rotate: 1.5, skewY: -2.5 },
+    animate: { opacity: 1, x: 0, rotate: 1.5, skewY: -2.5 },
     hover: { 
-      scale: 1.09, 
+      scale: 1.04, 
       rotate: 0.5, 
       y: -12, 
       skewY: -2.5,
@@ -180,7 +186,7 @@ export default function ResumePricingSection() {
           </motion.p>
         </motion.div>
 
-        {/* 2 Slanted Rhombus Cards Grid */}
+        {/* 2 Slanted Symmetrical Rhombus Cards Grid */}
         <div className="fj-resume-cards-grid">
           {resumePlans.map((plan) => (
             <motion.article
@@ -210,12 +216,17 @@ export default function ResumePricingSection() {
                 )}
 
                 <h2>{plan.name}</h2>
-                <p>{plan.summary}</p>
-                <strong>{plan.price}</strong>
-                <span className="fj-price-period">{plan.period}</span>
+                <p style={{ marginTop: "8px", fontSize: "0.94rem", lineHeight: "1.5" }}>{plan.description}</p>
+                
+                <div style={{ display: "flex", alignItems: "baseline", gap: "8px", margin: "24px 0 8px" }}>
+                  <strong style={{ fontSize: "3rem", fontWeight: "900", lineHeight: "1" }}>{plan.price}</strong>
+                  <span style={{ fontSize: "1rem", color: plan.dark ? "rgba(255, 255, 255, 0.5)" : "var(--fj-muted)", fontWeight: "600" }}>
+                    / {plan.period}
+                  </span>
+                </div>
 
-                {/* Checklist Items: Sequential entry animations */}
-                <div className="fj-price-list" style={{ marginTop: "24px", marginBottom: "32px" }}>
+                {/* Checklist Items: flexGrow enforces equal height alignment */}
+                <div className="fj-price-list" style={{ marginTop: "16px", marginBottom: "36px", flexGrow: 1 }}>
                   {plan.items.map((item, idx) => (
                     <motion.span
                       key={item}
@@ -227,20 +238,24 @@ export default function ResumePricingSection() {
                         delay: plan.delay + 0.25 + idx * 0.08,
                         ease: "easeOut"
                       }}
-                      style={{ display: "flex", alignItems: "center", gap: "10px" }}
+                      style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "0.96rem" }}
                     >
                       <Check size={18} style={{ flexShrink: 0 }} /> {item}
                     </motion.span>
                   ))}
                 </div>
 
-                {/* Actions with high contrast & visibility */}
-                <div className="fj-pricing-actions" style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "auto" }}>
+                {/* Actions: High-contrast green primary and dark outline secondary */}
+                <div className="fj-pricing-actions" style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                   <PricingCheckoutButton
                     plan={plan}
-                    className={`fj-button is-green-glow ${plan.dark ? "fj-button--lime" : "fj-button--dark"}`}
+                    className="fj-button is-green-glow fj-button--lime"
+                    style={{ width: "100%" }}
                   />
-                  <CalendlyLink className={`fj-button is-green-glow ${plan.dark ? "is-dark-ghost" : "is-light-ghost"}`}>
+                  <CalendlyLink 
+                    className={`fj-button is-green-glow ${plan.dark ? "is-dark-ghost" : "is-light-ghost"}`}
+                    style={{ width: "100%" }}
+                  >
                     Get started <ArrowRight size={17} />
                   </CalendlyLink>
                 </div>

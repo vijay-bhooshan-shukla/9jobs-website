@@ -23,6 +23,10 @@ const checkoutPlans = {
     unitAmount: 8900,
     period: "one-time",
   },
+  "Resume + LinkedIn + Seek Optimization": {
+    unitAmount: 8900,
+    period: "one-time",
+  },
   "Job Search Essentials": {
     unitAmount: 12900,
     period: "one-time",
