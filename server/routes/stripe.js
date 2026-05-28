@@ -16,11 +16,11 @@ const checkoutPlans = {
     period: "/ week",
   },
   "Resume Makeover": {
-    unitAmount: 6900,
+    unitAmount: 4900,
     period: "one-time",
   },
   "Resume + LinkedIn Optimisation": {
-    unitAmount: 9900,
+    unitAmount: 8900,
     period: "one-time",
   },
   "Job Search Essentials": {

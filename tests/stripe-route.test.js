@@ -71,7 +71,7 @@ describe("Stripe checkout route", () => {
     expect(res.statusCode).toBe(200);
     const payload = createCheckoutSession.mock.calls[0][0];
     expect(payload.line_items[0].price_data).toMatchObject({
-      unit_amount: 6900,
+      unit_amount: 4900,
       product_data: {
         name: "9Jobs Resume Makeover Plan",
         description: "Resume Makeover plan - one-time",

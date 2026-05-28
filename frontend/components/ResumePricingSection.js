@@ -9,7 +9,7 @@ import PricingCheckoutButton from "./PricingCheckoutButton";
 const resumePlans = [
   {
     name: "Resume Makeover",
-    price: "$69",
+    price: "$49",
     period: "one-time",
     summary: "Professional resume redesign tailored for ATS systems to get you noticed.",
     items: [
@@ -19,15 +19,15 @@ const resumePlans = [
       "Industry-specific improvements",
       "PDF delivery"
     ],
-    initial: { opacity: 0, x: -90, skewY: -2.5 },
-    animate: { opacity: 1, x: 0, skewY: -2.5 },
+    initial: { opacity: 0, x: -90, rotate: -2, skewY: -2.5 },
+    animate: { opacity: 1, x: 0, rotate: -2, skewY: -2.5 },
     hover: { 
       scale: 1.04, 
-      rotate: -1.2, 
-      y: -8, 
+      rotate: -0.5, 
+      y: -12, 
       skewY: -2.5,
-      boxShadow: "0 22px 50px rgba(124, 58, 237, 0.25)",
-      borderColor: "#a78bfa"
+      boxShadow: "0 25px 60px rgba(16, 185, 129, 0.28)",
+      borderColor: "#84cc16"
     },
     delay: 0,
     dark: true
@@ -35,7 +35,7 @@ const resumePlans = [
   {
     name: "Resume + LinkedIn Optimisation",
     badge: "Most Popular",
-    price: "$99",
+    price: "$89",
     period: "one-time",
     summary: "Transform both your resume and your LinkedIn profile for double the impact.",
     items: [
@@ -45,15 +45,15 @@ const resumePlans = [
       "Experience enhancement",
       "ATS keyword optimisation"
     ],
-    initial: { opacity: 0, x: 90, skewY: -2.5, scale: 1.05 },
-    animate: { opacity: 1, x: 0, skewY: -2.5, scale: 1.05 },
+    initial: { opacity: 0, x: 90, rotate: 2, skewY: -2.5, scale: 1.05 },
+    animate: { opacity: 1, x: 0, rotate: 2, skewY: -2.5, scale: 1.05 },
     hover: { 
       scale: 1.09, 
-      rotate: 1.2, 
-      y: -8, 
+      rotate: 0.5, 
+      y: -12, 
       skewY: -2.5,
-      boxShadow: "0 22px 50px rgba(124, 58, 237, 0.3)",
-      borderColor: "#7c3aed"
+      boxShadow: "0 25px 60px rgba(16, 185, 129, 0.32)",
+      borderColor: "#10b981"
     },
     delay: 0.15,
     dark: false
@@ -93,7 +93,7 @@ export default function ResumePricingSection() {
           position: "absolute",
           width: "110px",
           height: "110px",
-          border: "1.5px solid rgba(124, 58, 237, 0.14)",
+          border: "1.5px solid rgba(16, 185, 129, 0.16)",
           borderRadius: "20px",
           top: "15%",
           left: "6%",
@@ -110,8 +110,8 @@ export default function ResumePricingSection() {
           position: "absolute",
           width: "80px",
           height: "80px",
-          background: "linear-gradient(135deg, rgba(167, 139, 250, 0.04) 0%, rgba(124, 58, 237, 0.08) 100%)",
-          border: "1px solid rgba(124, 58, 237, 0.16)",
+          background: "linear-gradient(135deg, rgba(132, 204, 22, 0.04) 0%, rgba(16, 185, 129, 0.08) 100%)",
+          border: "1px solid rgba(16, 185, 129, 0.18)",
           borderRadius: "16px",
           bottom: "22%",
           right: "8%",
@@ -128,7 +128,7 @@ export default function ResumePricingSection() {
           position: "absolute",
           width: "44px",
           height: "44px",
-          border: "1px solid rgba(167, 139, 250, 0.22)",
+          border: "1px solid rgba(132, 204, 22, 0.22)",
           borderRadius: "8px",
           top: "35%",
           right: "48%",
@@ -204,7 +204,7 @@ export default function ResumePricingSection() {
               <div className="fj-resume-skew-card-inner">
                 {/* Badge */}
                 {plan.badge && (
-                  <span className="fj-badge is-purple-gradient" style={{ alignSelf: "flex-start", marginBottom: "20px" }}>
+                  <span className="fj-badge is-green-gradient" style={{ alignSelf: "flex-start", marginBottom: "20px" }}>
                     {plan.badge}
                   </span>
                 )}
@@ -234,13 +234,13 @@ export default function ResumePricingSection() {
                   ))}
                 </div>
 
-                {/* Actions with lift + glow */}
+                {/* Actions with high contrast & visibility */}
                 <div className="fj-pricing-actions" style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "auto" }}>
                   <PricingCheckoutButton
                     plan={plan}
-                    className={`fj-button is-purple-glow ${plan.dark ? "fj-button" : "fj-button--dark"}`}
+                    className={`fj-button is-green-glow ${plan.dark ? "fj-button--lime" : "fj-button--dark"}`}
                   />
-                  <CalendlyLink className="fj-button fj-button--ghost">
+                  <CalendlyLink className={`fj-button is-green-glow ${plan.dark ? "is-dark-ghost" : "is-light-ghost"}`}>
                     Get started <ArrowRight size={17} />
                   </CalendlyLink>
                 </div>

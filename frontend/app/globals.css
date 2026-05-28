@@ -4097,6 +4097,7 @@ section.hero.hero-split,
 }
 
 
+
 /* ─── Resume & Profile Optimization Section ────────────────────────────────── */
 .fj-resume-section {
   position: relative;
@@ -4122,7 +4123,7 @@ section.hero.hero-split,
 }
 
 .fj-resume-bg-blob--1 {
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.22) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);
   width: 500px;
   height: 500px;
   top: -80px;
@@ -4130,7 +4131,7 @@ section.hero.hero-split,
 }
 
 .fj-resume-bg-blob--2 {
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(132, 204, 22, 0.18) 0%, transparent 70%);
   width: 600px;
   height: 600px;
   bottom: -150px;
@@ -4152,6 +4153,18 @@ section.hero.hero-split,
   color: var(--fj-ink);
   line-height: 1.02;
   margin-bottom: 20px;
+}
+
+/* Accent Line under Profile Optimization */
+.fj-resume-section .fj-section-head h2 .heading-mark::after {
+  background:
+    linear-gradient(90deg, transparent 0 2%, var(--fj-lime) 2% 96%, transparent 96%),
+    repeating-linear-gradient(
+      -6deg,
+      rgba(224, 255, 130, 0.9) 0 4px,
+      rgba(224, 255, 130, 0.4) 4px 7px,
+      transparent 7px 10px
+    );
 }
 
 .fj-resume-section .fj-section-head p {
@@ -4195,10 +4208,10 @@ section.hero.hero-split,
   flex: 1;
 }
 
-/* Card 1: Left Premium Dark ($69) */
+/* Card 1: Left Premium Dark ($49) - Charcoal/Green gradient */
 .fj-resume-skew-card.is-premium-dark {
-  background: #0f0f13;
-  border: 1px solid rgba(139, 92, 246, 0.25);
+  background: linear-gradient(135deg, #090e0c 0%, #121e17 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
   color: rgba(255, 255, 255, 0.9);
   padding: 48px 40px;
 }
@@ -4228,18 +4241,18 @@ section.hero.hero-split,
 }
 
 .fj-resume-skew-card.is-premium-dark .fj-price-list span svg {
-  color: #c08ffc; /* Neon purple check */
+  color: #84cc16; /* Bright lime green check */
 }
 
-/* Card 2: Right Glassmorphism ($99) - Highlighted + Slightly larger */
+/* Card 2: Right Glassmorphism ($89) - Highlighted + Slightly larger */
 .fj-resume-skew-card.is-premium-glass {
   background: rgba(255, 255, 255, 0.86);
-  border: 1px solid rgba(124, 58, 237, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.22);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   color: var(--fj-ink);
   padding: 56px 44px; /* slightly taller padding */
-  box-shadow: 0 10px 40px rgba(124, 58, 237, 0.05);
+  box-shadow: 0 10px 40px rgba(16, 185, 129, 0.05);
 }
 
 .fj-resume-skew-card.is-premium-glass > strong {
@@ -4251,7 +4264,7 @@ section.hero.hero-split,
 }
 
 .fj-resume-skew-card.is-premium-glass .fj-price-list span svg {
-  color: #7c3aed; /* Deep purple check */
+  color: #10b981; /* Neon green check */
 }
 
 /* Glow backdrops */
@@ -4262,58 +4275,85 @@ section.hero.hero-split,
   width: 140%;
   height: 140%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
   z-index: 1;
   pointer-events: none;
 }
 
 .fj-pricing-card.is-dark .fj-card-glow-bg {
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
 }
 
-/* Purple Gradient Badge */
-.fj-badge.is-purple-gradient {
-  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+/* Lime/Green Gradient Badge */
+.fj-badge.is-green-gradient {
+  background: linear-gradient(135deg, #10b981 0%, #84cc16 100%);
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
   font-size: 0.8rem;
   padding: 5px 12px;
 }
 
-/* Button override glow */
-.fj-button.is-purple-glow {
+/* Button overrides & glows */
+.fj-button.is-green-glow {
   transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease;
 }
 
-.fj-button.is-purple-glow:hover {
-  box-shadow: 0 0 25px rgba(124, 58, 237, 0.45) !important;
+.fj-button.is-green-glow:hover {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.55) !important;
 }
 
-/* Trust Strip under cards */
+/* White outline contrast button for dark cards */
+.fj-button.is-dark-ghost {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff !important;
+  background: transparent;
+}
+
+.fj-button.is-dark-ghost:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000 !important;
+}
+
+/* Light outline ghost button for white/glass cards */
+.fj-button.is-light-ghost {
+  border-color: var(--fj-line);
+  color: var(--fj-ink) !important;
+  background: transparent;
+}
+
+.fj-button.is-light-ghost:hover {
+  background: var(--fj-lime);
+  border-color: var(--fj-lime);
+  color: var(--fj-ink) !important;
+}
+
+/* Trust Strip under cards - Aligned Pill Shape */
 .fj-resume-trust-strip {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: clamp(16px, 4vw, 48px);
-  margin-top: 48px;
-  padding: 24px;
-  border-radius: var(--fj-radius);
+  gap: 24px;
+  max-width: 960px;
+  margin: 48px auto 0;
+  padding: 22px 48px;
+  border-radius: 999px; /* Pill Shape */
   background: var(--fj-soft);
-  border: 1px dashed rgba(124, 58, 237, 0.2);
+  border: 1px dashed rgba(16, 185, 129, 0.25);
 }
 
 .fj-resume-trust-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-weight: 700;
   color: var(--fj-muted);
-  font-size: 0.94rem;
+  font-size: 0.96rem;
 }
 
 .fj-resume-trust-item svg {
-  color: #7c3aed;
+  color: #10b981;
 }
 
 @media (max-width: 1024px) {
@@ -4339,6 +4379,8 @@ section.hero.hero-split,
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     justify-items: center;
+    border-radius: 28px; /* Standard card radius on mobile */
+    padding: 24px;
   }
 }
 
