@@ -68,13 +68,15 @@ app.use(passport.session());
 
 
 //  DB
-mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => console.log("✅ Database Connected Successfully"))
-  .catch((err) => {
-    console.error("❌ Database NOT connected");
-    console.error("Reason:", err.message);
-  });
+if (process.env.NODE_ENV !== "test") {
+  mongoose
+    .connect(process.env.MONGODB_URI)
+    .then(() => console.log("✅ Database Connected Successfully"))
+    .catch((err) => {
+      console.error("❌ Database NOT connected");
+      console.error("Reason:", err.message);
+    });
+}
 
 //  routes
 app.use("/", authRoutes);
@@ -96,7 +98,7 @@ app.get("/terms-policy", (req, res) => res.render("partials/termspolicy"));
 
 
 
-if (process.env.VERCEL !== "1") {
+if (process.env.VERCEL !== "1" && process.env.NODE_ENV !== "test") {
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`✅ Backend running on port ${PORT}`);
   });

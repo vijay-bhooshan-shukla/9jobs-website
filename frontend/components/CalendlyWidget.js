@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 
-const CALENDLY_URL = "https://calendly.com/mayanksodhi11";
+const CALENDLY_URL = "https://calendly.com/mayanksodhi11/30min?hide_event_type_details=1";
 
 export function openCalendlyPopup() {
   if (!window.Calendly) {

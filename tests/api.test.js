@@ -23,9 +23,10 @@ describe('API Health & Integration Tests', () => {
       });
     
     // It might return 500 if Stripe keys are invalid in test env, but we check if the route exists
-    // If keys are valid, it should return 200 and an id
+    // If keys are valid, it should return 200 and a Stripe Checkout URL
     if (res.statusCode === 200) {
-      expect(res.body).toHaveProperty('id');
+      expect(res.body).toHaveProperty('url');
+      expect(res.body.url).toContain('checkout.stripe.com');
     } else {
       console.warn('Stripe route returned status:', res.statusCode, res.body.error);
       expect(res.statusCode).toEqual(500); // Expected if keys are not configured for CI/test

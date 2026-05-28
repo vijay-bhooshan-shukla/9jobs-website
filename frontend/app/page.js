@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Testimonials from "../components/Testimonials";
+import FeedbackStats from "../components/FeedbackStats";
 import { CalendlyLink } from "../components/CalendlyWidget";
 import {
   ArrowRight,
@@ -20,6 +21,8 @@ import {
   Star,
   Target,
   UsersRound,
+  CalendarCheck,
+  ShieldCheck,
 } from "lucide-react";
 
 const trustedBrands = ["bluebird", "Galaxy", "berry", "Chameleon", "SHIP4450"];
@@ -357,6 +360,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FeedbackStats />
 
       <Testimonials />
 

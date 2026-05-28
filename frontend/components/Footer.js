@@ -27,7 +27,8 @@ const footerGroups = [
     links: [
       { href: "/blog", label: "Start here" },
       { href: "/blog", label: "Blog" },
-      { href: "/blog", label: "Article" },
+      { href: "/success-stories", label: "Success Stories" },
+      { href: "/admin/feedback", label: "Admin Feedback" },
     ],
   },
 ];

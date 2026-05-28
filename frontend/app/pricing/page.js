@@ -1,6 +1,7 @@
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../components/CalendlyWidget";
 import PricingCheckoutButton from "../../components/PricingCheckoutButton";
+import ResumePricingSection from "../../components/ResumePricingSection";
 
 const plans = [
   {
@@ -58,7 +59,7 @@ export default function PricingPage() {
                 ))}
               </div>
               
-              <div className="fj-pricing-actions" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '20px' }}>
+              <div className="fj-pricing-actions" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: 'auto' }}>
                 <PricingCheckoutButton 
                   plan={plan} 
                   className={plan.dark ? "fj-button fj-button--lime" : "fj-button"}
@@ -71,6 +72,8 @@ export default function PricingPage() {
           ))}
         </div>
       </section>
+
+      <ResumePricingSection />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

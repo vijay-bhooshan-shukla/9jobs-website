@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollAnimations from "../components/ScrollAnimations";
 import { CalendlyLoader } from "../components/CalendlyWidget";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 export const metadata = {
   title: "9Jobs | Smarter Job Applying",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <ScrollAnimations />
         <CalendlyLoader />
+        <WhatsAppButton />
       </body>
     </html>
   );
