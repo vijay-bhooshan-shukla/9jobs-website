@@ -81,16 +81,18 @@ export default function BlogPage() {
             <p>Target localized job markets across Australia's major hubs with tailored profiles, resumes, and networks.</p>
           </div>
           
-          <div className="fj-city-carousel">
-            {Object.values(cities).map((city) => (
-              <article className="fj-city-card" key={city.slug}>
-                <h3>{city.name} Jobs</h3>
-                <p>{city.description}</p>
-                <Link href={`/${city.slug}`} style={{ marginTop: "auto", display: "inline-flex", alignItems: "center", gap: "6px", fontWeight: 700 }}>
-                  See more <ArrowRight size={16} />
-                </Link>
-              </article>
-            ))}
+          <div className="cities-marquee-wrapper">
+            <div className="cities-marquee-track">
+              {[...Object.values(cities), ...Object.values(cities)].map((city, idx) => (
+                <article className="fj-city-card" key={`${city.slug}-${idx}`}>
+                  <h3>{city.name} Jobs</h3>
+                  <p>{city.description}</p>
+                  <Link href={`/${city.slug}`} style={{ marginTop: "auto", display: "inline-flex", alignItems: "center", gap: "6px", fontWeight: 700 }}>
+                    See more <ArrowRight size={16} />
+                  </Link>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>

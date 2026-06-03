@@ -378,16 +378,18 @@ export default function Home() {
             <p>Target localized markets across Australia's major cities and regional centers with tailored application strategies.</p>
           </div>
           
-          <div className="fj-city-carousel">
-            {Object.values(cities).map((city) => (
-              <article className="fj-city-card" key={city.slug}>
-                <h3>{city.name}</h3>
-                <p>{city.description}</p>
-                <Link href={`/${city.slug}`} className="fj-button fj-button--ghost">
-                  Explore {city.name} <ArrowRight size={16} />
-                </Link>
-              </article>
-            ))}
+          <div className="cities-marquee-wrapper">
+            <div className="cities-marquee-track">
+              {[...Object.values(cities), ...Object.values(cities)].map((city, idx) => (
+                <article className="fj-city-card" key={`${city.slug}-${idx}`}>
+                  <h3>{city.name}</h3>
+                  <p>{city.description}</p>
+                  <Link href={`/${city.slug}`} className="fj-button fj-button--ghost">
+                    Explore {city.name} <ArrowRight size={16} />
+                  </Link>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>

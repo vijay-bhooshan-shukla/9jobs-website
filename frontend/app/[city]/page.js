@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { city } = params;
+  const { city } = await params;
   const config = pagesConfig.find(p => p.city === city && p.slug === null);
   if (!config) return {};
 
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function CityPage({ params }) {
-  const { city } = params;
+export default async function CityPage({ params }) {
+  const { city } = await params;
   const pageData = getContentForPage(city, null);
   if (!pageData) {
     notFound();

@@ -4757,5 +4757,60 @@ section.hero.hero-split,
   margin-top: 8px;
 }
 
+/* Cities Marquee Scroller */
+.cities-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 16px 0 32px;
+}
+
+.cities-marquee-wrapper::before,
+.cities-marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cities-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.cities-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.cities-marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: citiesMarquee 45s linear infinite;
+}
+
+.cities-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.cities-marquee-track .fj-city-card {
+  flex: 0 0 320px;
+  scroll-snap-align: none;
+}
+
+@keyframes citiesMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
+
 
 
