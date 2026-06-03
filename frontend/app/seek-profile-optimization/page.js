@@ -1,0 +1,239 @@
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, ChevronDown, FileText, Search, UserCheck, ShieldCheck, Sparkles, Target, Star } from "lucide-react";
+import { CalendlyLink } from "../../components/CalendlyWidget";
+
+export const metadata = {
+  title: "SEEK Profile Optimization & Optimization Services | 9Jobs",
+  description: "Get more recruiter calls in Australia. Optimize your SEEK profile, set up alert preferences, and stand out in search results with 9Jobs expert help.",
+  alternates: {
+    canonical: "/seek-profile-optimization",
+  },
+};
+
+const services = [
+  ["SEEK Profile Rewrite", "Craft a compelling, localized personal summary and fill key experience areas using local keywords.", FileText],
+  ["Search Status Setup", "Configure your privacy and search status to 'Active' so recruiters find you instantly.", Target],
+  ["Keyword Integration", "Incorporate target industry, tool, and role keywords that recruiters use to filter SEEK candidates.", Search],
+  ["Alert & Preferences Tuning", "Set up correct alerts, salary targets, and location tags matching your career objectives.", UserCheck],
+];
+
+const checklist = [
+  ["SEEK Profile Summary", "We write a professional summary tailored to pass SEEK's internal matching algorithms."],
+  ["Active Sourcing Setup", "We guide you on setting up visibility settings so recruiters can contact you directly."],
+  ["Resume Alignment", "We ensure the resume uploaded to your SEEK profile matches your search filters and keywords."],
+  ["Alert Preferences", "Tuning notifications, salary expectations, and job alert filters to capture the best roles."],
+];
+
+const faqs = [
+  [
+    "Why is SEEK important for finding a job in Australia?",
+    "SEEK is the absolute leader in the Australian job market. Almost all companies, recruitment firms, and HR departments use SEEK to post jobs and search for candidates. Having an optimized SEEK profile is just as critical as having a good resume or LinkedIn profile because it allows recruiters to find you in their search queries."
+  ],
+  [
+    "What is the difference between a SEEK profile and a resume?",
+    "Your resume is a document you upload and send when applying. Your SEEK profile is a digital profile index that lives on the platform. Recruiter search tools scan your SEEK profile text and skills tags to filter candidates. If your profile is empty or lacks keywords, you will not show up in searches, even if your uploaded resume is perfect."
+  ],
+  [
+    "How does the SEEK optimization service work?",
+    "We review your current profile, uploaded resume, and target roles in Australia. We then provide a document containing optimized copy for your SEEK summary, experience, skills, and settings. We also guide you on setting up search preferences and alert parameters."
+  ],
+  [
+    "Should my SEEK profile be set to 'Standard' or 'Limited' privacy?",
+    "We recommend setting your profile to 'Standard' (fully visible to recruiters) when actively looking for work. This allows registered employers and recruitment agencies to search for you, read your summary, view your uploaded resume, and contact you directly. We help you configure these settings safely."
+  ],
+  [
+    "Can you help me set up SEEK job alerts?",
+    "Yes. We advise you on the best salary ranges, job classifications, and keywords to set up for your daily alerts to ensure you receive relevant, high-impact opportunities directly in your inbox."
+  ]
+];
+
+export default function SeekOptimizationPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(([q, a]) => ({
+      "@type": "Question",
+      "name": q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": a
+      }
+    }))
+  };
+
+  return (
+    <main className="site-main fj-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <section className="fj-page-hero">
+        <div className="fj-container">
+          <span className="fj-announcement"><span>Services</span> SEEK Profile Optimization</span>
+          <h1>Get Recruiter Inquiries with an Optimized <span className="heading-mark">SEEK Profile</span></h1>
+          <p>We optimize your SEEK profile summary, experience tags, and search settings to help you stand out to Australian employers and recruitment agencies.</p>
+          <div className="fj-actions">
+            <Link className="fj-button fj-button--ghost" href="/pricing">View plans</Link>
+            <CalendlyLink className="fj-button fj-button--dark">Book an audit</CalendlyLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section">
+        <div className="fj-container fj-split">
+          <div className="fj-copy-block">
+            <span className="fj-label">Optimize for Australia's Largest Job Site</span>
+            <h2>Why an optimized SEEK profile is essential for your job <span className="heading-mark">search</span></h2>
+            <p>
+              In Australia, SEEK handles the majority of online recruitment activity. When companies have open roles, their talent sourcing teams do not just wait for applications to roll in. They actively search the SEEK candidate database using search queries based on role title, location, salary parameters, and key skill terms.
+            </p>
+            <p>
+              If your SEEK profile lacks a structured summary, has missing experiences, or is set to incorrect privacy modes, you miss out on a massive stream of potential recruiter outreach. 9Jobs specializes in configuring SEEK profiles to pass filtering checks, rank high in searches, and clearly communicate your value to hiring teams.
+            </p>
+          </div>
+          <div className="fj-ai-card">
+            <div className="fj-ai-search">
+              <Search size={22} />
+              <span>SEEK Sourcing Scan Simulation</span>
+            </div>
+            <div className="fj-ai-note">
+              <span>Profile Completeness</span>
+              <strong>Summary, roles, and skills tags check</strong>
+              <p>Excellent. Fully optimized profile data structure matching database indexing requirements.</p>
+            </div>
+            <div className="fj-ai-note">
+              <span>Recruiter Visibility Status</span>
+              <strong>Privacy and alerts configuration</strong>
+              <p>Pass. Sourcing state configured to 'Visible' with appropriate relocation notes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section fj-section--muted">
+        <div className="fj-container">
+          <div className="fj-section-head">
+            <span className="fj-label">Service Deliverables</span>
+            <h2>Complete profile configuration for maximum <span className="heading-mark">reach</span></h2>
+          </div>
+          <div className="fj-card-grid fj-card-grid--four">
+            {services.map(([title, text, Icon]) => (
+              <article className="fj-feature-card" key={title}>
+                <div className="fj-icon-chip"><Icon size={22} /></div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section">
+        <div className="fj-container fj-split fj-split--reverse">
+          <div className="fj-copy-block">
+            <span className="fj-label">Our Process</span>
+            <h2>Our systematic approach to building a recruiter-ready SEEK <span className="heading-mark">presence</span></h2>
+            <div className="fj-list-grid">
+              {checklist.map(([title, text]) => (
+                <div className="fj-mini-item" key={title}>
+                  <CheckCircle2 size={22} />
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="fj-role-card">
+            <div style={{ padding: "24px", borderBottom: "1px solid var(--line)" }}>
+              <h3 style={{ fontSize: "1.1rem", fontWeight: 700, marginBottom: "8px" }}>SEEK Database Milestones</h3>
+              <p style={{ fontSize: "0.85rem", color: "var(--muted)" }}>Tracking profile health metrics</p>
+            </div>
+            {[
+              ["Profile Status", "Set to Active / Visible to recruiters"],
+              ["Summary Length", "Optimized 150-200 word bio containing local terms"],
+              ["Job History Match", "Experience entries aligned with target resume"],
+              ["Alert Preferences", "Daily notifications aligned with salary and location filters"]
+            ].map(([title, desc]) => (
+              <div className="fj-task-row" key={title}>
+                <CheckCircle2 size={18} />
+                <span><strong>{title}</strong>: {desc}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section fj-section--muted">
+        <div className="fj-container">
+          <div className="fj-section-head">
+            <span className="fj-label">Detailed Insights</span>
+            <h2>Best practices for optimization on SEEK <span className="heading-mark">revealed</span></h2>
+          </div>
+          <div style={{ maxWidth: "800px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "24px", lineHeight: "1.8", color: "var(--muted)" }}>
+            <p>
+              To get the most value out of SEEK, candidates must treat their profile as a dynamic landing page. The SEEK search algorithm index fields in a specific hierarchy: your current job title, your skills checklist, your profile summary, and your past roles. Leaving these fields blank or copying-pasting generic resumes limits your reach.
+            </p>
+            <p>
+              The profile summary is particularly critical. This is a 150 to 200 word summary that recruiters see first in search results. It must state your core expertise, key achievements, years of experience, and location availability. If you are relocating or holding a visa with working rights, this summary is the perfect place to communicate that information to preemptively bypass location-based filtering.
+            </p>
+            <p>
+              Another common mistake is setting incorrect location and salary preferences. Recruiters filter database searches strictly based on salary bounds. If your profile lists a target salary range that does not match local benchmarks or target role values, you will be excluded from recruiter dashboards. We review local salary indicators to configure these ranges correctly.
+            </p>
+            <p>
+              Finally, we ensure that your uploaded resume matches the text on your digital profile. SEEK provides automated matching scores to recruiters by scanning the difference between your profile fields and your uploaded document. A close match ensures a high compatibility score, boosting your visibility.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section">
+        <div className="fj-container fj-leader-card">
+          <div>
+            <h2>Gain complete coverage of the local market <span className="heading-mark">now</span></h2>
+            <p>Combine your optimized SEEK profile with a professional [Resume Review](/resume-writing-services-australia) and [LinkedIn Profile Optimization](/linkedin-optimization-australia) to maximize calls.</p>
+          </div>
+          <div className="fj-leader-media">
+            <Sparkles size={120} color="var(--lime)" style={{ margin: "auto" }} />
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section fj-section--muted" id="faqs">
+        <div className="fj-container fj-faq-grid">
+          <div className="fj-faq-intro">
+            <span className="fj-label">FAQs</span>
+            <h2>Questions about SEEK profile optimization in <span className="heading-mark">Australia</span></h2>
+            <p>Answers to help you get discovered on the leading job platform.</p>
+            <CalendlyLink className="fj-button fj-button--dark">
+              Talk to us <ArrowRight size={17} />
+            </CalendlyLink>
+          </div>
+
+          <div className="fj-faq-list">
+            {faqs.map(([question, answer], index) => (
+              <details className="fj-faq-item" key={question} open={index === 0}>
+                <summary>
+                  <span>{question}</span>
+                  <ChevronDown size={20} />
+                </summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section fj-section--tight">
+        <div className="fj-container fj-final-cta">
+          <span>Get Discovered</span>
+          <h2>Ready to optimize your SEEK presence?</h2>
+          <div className="fj-actions">
+            <Link className="fj-button fj-button--ghost" href="/pricing">Check pricing</Link>
+            <CalendlyLink className="fj-button fj-button--dark">Book a SEEK profile review</CalendlyLink>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
