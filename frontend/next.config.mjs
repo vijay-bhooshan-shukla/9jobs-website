@@ -10,6 +10,21 @@ const nextConfig = {
   turbopack: {
     root: rootDir,
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.9jobs.co",
+          },
+        ],
+        destination: "https://9jobs.co/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
