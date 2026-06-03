@@ -16,6 +16,16 @@ const footerGroups = [
     ],
   },
   {
+    title: "Services",
+    links: [
+      { href: "/resume-writing-services-australia", label: "Resume Writing" },
+      { href: "/linkedin-optimization-australia", label: "LinkedIn Optimization" },
+      { href: "/seek-profile-optimization", label: "SEEK Profile Optimization" },
+      { href: "/job-application-services-australia", label: "Job Application Services" },
+      { href: "/interview-support-australia", label: "Interview Support" },
+    ],
+  },
+  {
     title: "Company",
     links: [
       { href: "/about", label: "About" },
