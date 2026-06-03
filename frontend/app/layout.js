@@ -8,6 +8,9 @@ import WhatsAppButton from "../components/WhatsAppButton";
 export const metadata = {
   title: "9Jobs | Smarter Job Applying",
   description: "A clean job applying platform for resumes, LinkedIn, applications, and career support.",
+  verification: {
+    google: "S2M3LuBuz0NYvUAtbFqLd6ey52Ld9NgkvVAD04kfySY",
+  },
 };
 
 export default function RootLayout({ children }) {
