@@ -1,3 +1,5 @@
+import { pagesConfig } from "../data/australianJobsData";
+
 export default function sitemap() {
   const baseUrl = "https://9jobs.co";
 
@@ -37,5 +39,16 @@ export default function sitemap() {
     priority: 0.7,
   }));
 
-  return [...mainPages, ...servicePages, ...blogPages];
+  // Australian City Landing Pages
+  const cityPages = pagesConfig.map((p) => {
+    const path = p.slug ? `/${p.city}/${p.slug}` : `/${p.city}`;
+    return {
+      url: `${baseUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency: p.slug ? "weekly" : "daily",
+      priority: p.slug ? 0.8 : 0.9,
+    };
+  });
+
+  return [...mainPages, ...servicePages, ...blogPages, ...cityPages];
 }

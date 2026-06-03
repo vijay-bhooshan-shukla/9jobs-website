@@ -3,6 +3,7 @@ import Link from "next/link";
 import Testimonials from "../components/Testimonials";
 import FeedbackStats from "../components/FeedbackStats";
 import { CalendlyLink } from "../components/CalendlyWidget";
+import { cities } from "../data/australianJobsData";
 import {
   ArrowRight,
   Bell,
@@ -365,6 +366,28 @@ export default function Home() {
           </div>
           <div className="fj-leader-media">
             <Image src="/framer/story-ops.jpg" alt="9Jobs candidate workflow" width={900} height={600} />
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section">
+        <div className="fj-container">
+          <div className="fj-section-head">
+            <span className="fj-label">Australian Opportunities</span>
+            <h2>Explore Australian Job <span className="heading-mark">Opportunities</span></h2>
+            <p>Target localized markets across Australia's major cities and regional centers with tailored application strategies.</p>
+          </div>
+          
+          <div className="fj-city-carousel">
+            {Object.values(cities).map((city) => (
+              <article className="fj-city-card" key={city.slug}>
+                <h3>{city.name}</h3>
+                <p>{city.description}</p>
+                <Link href={`/${city.slug}`} className="fj-button fj-button--ghost">
+                  Explore {city.name} <ArrowRight size={16} />
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>

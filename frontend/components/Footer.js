@@ -42,6 +42,18 @@ const footerGroups = [
       { href: "/admin/feedback", label: "Admin Feedback" },
     ],
   },
+  {
+    title: "Local Jobs",
+    links: [
+      { href: "/melbourne", label: "Melbourne Jobs" },
+      { href: "/sydney", label: "Sydney Jobs" },
+      { href: "/brisbane", label: "Brisbane Jobs" },
+      { href: "/perth", label: "Perth Jobs" },
+      { href: "/adelaide", label: "Adelaide Jobs" },
+      { href: "/geelong", label: "Geelong Jobs" },
+      { href: "/vic", label: "Victoria Jobs" },
+    ],
+  },
 ];
 
 const footerRows = Math.max(...footerGroups.map((group) => group.links.length));
