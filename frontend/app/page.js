@@ -28,6 +28,8 @@ import {
 const trustedBrands = ["bluebird", "Galaxy", "berry", "Chameleon", "SHIP4450"];
 
 export const metadata = {
+  title: "Resume Writing & Job Application Services Australia | 9Jobs",
+  description: "Get hired faster in Australia with ATS-friendly resumes, LinkedIn optimization, SEEK profile optimization, job application support, and interview assistance from 9Jobs.",
   alternates: {
     canonical: "/",
   },
@@ -45,37 +47,37 @@ const candidates = [
 const featureCards = [
   {
     icon: Target,
-    eyebrow: "Goals",
-    title: "Goal management",
+    eyebrow: "Resume & Profiles",
+    title: "ATS-friendly optimization",
     badge: "New!",
-    text: "See all the steps you need to draft goals, gather input, and drive your job search forward.",
+    text: "Get a professionally written, ATS-friendly resume and optimized profiles on LinkedIn, SEEK, and Jora.",
   },
   {
     icon: UsersRound,
-    eyebrow: "Target",
-    title: "Real-time updates",
-    text: "Drive focus and progress with real-time status updates across every role.",
+    eyebrow: "Applications",
+    title: "Done-for-you applications",
+    text: "We identify matching roles in Australia and submit job applications on your behalf.",
   },
   {
     icon: ClipboardCheck,
-    eyebrow: "Pipeline",
-    title: "High-level customization",
-    text: "Choose from pre-built pipeline templates, or create custom interview steps.",
+    eyebrow: "Interviews",
+    title: "Interview notification & prep",
+    text: "Receive real-time notifications for interviews and target-specific prep support to secure offers.",
   },
 ];
 
 const pipelineItems = [
-  ["Career Transition Support", "Automate and manage jobs processing with real-time updates.", Briefcase],
+  ["SEEK & Jora Optimization", "Optimize your SEEK and Jora profiles to capture attention from Australian recruiters.", Briefcase],
   ["LinkedIn Optimization", "Optimized profiles present a strong and consistent professional brand.", SearchCheck],
-  ["Resume Review & Editing", "Track reviews, versions, and recruiter-ready edits with ease.", FileText],
-  ["Market Focus", "All content is aligned with Australian hiring practices recruiters expect.", Gauge],
+  ["Resume Review & Editing", "Get an ATS-friendly resume optimized with high-impact industry keywords.", FileText],
+  ["Australian Market Focus", "All content is aligned with Australian hiring practices and employer expectations.", Gauge],
 ];
 
 const growthItems = [
-  ["Team alignment", "Foster collaboration with transparent role-based objectives."],
-  ["Skills development", "Empower your team with tailored learning pathways."],
-  ["Progress tracking", "Monitor individual and team advancement effortlessly."],
-  ["Performance insights", "Gain actionable data to optimize team productivity."],
+  ["Profile optimization", "Enhance your LinkedIn, SEEK, and Jora profiles to stand out to recruiters."],
+  ["ATS-ready resumes", "Get custom, ATS-friendly resumes written specifically for Australian hiring systems."],
+  ["Automated applications", "We actively search and apply for matching roles on your behalf."],
+  ["Interview preparation", "Access targeted coaching and feedback to secure job offers."],
 ];
 
 const plans = [
@@ -181,8 +183,8 @@ export default function Home() {
             Announcing our Job Applying Automation Tool
             <ArrowRight size={24} />
           </Link>
-          <h1>Say hello to smarter <span className="heading-mark">applying</span></h1>
-          <p>A job applying platform that works the better than you do. For you!</p>
+          <h1>Get Hired Faster in <span className="heading-mark">Australia</span></h1>
+          <p>We optimize your resume, LinkedIn, SEEK and Jora profiles, apply for jobs on your behalf, and help you secure interviews and job offers.</p>
           <div className="fj-actions">
             <Link className="fj-button fj-button--ghost" href="/pricing">1 day trial</Link>
             <CalendlyLink className="fj-button fj-button--dark">Get a demo</CalendlyLink>
@@ -196,7 +198,7 @@ export default function Home() {
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-trust">
-          <p>16,000+ small and medium businesses trust 9Jobs in Australia</p>
+          <p>Trusted by job seekers and professionals across Australia</p>
           <div className="fj-logo-row">
             {trustedBrands.map((brand) => <span key={brand}>{brand}</span>)}
           </div>
@@ -235,10 +237,10 @@ export default function Home() {
               <CalendlyLink className="fj-button fj-button--dark">Generate report</CalendlyLink>
             </div>
             {[
-              ["Alex Marshall", "processed a payroll"],
-              ["Sophia R.", "signed a contract"],
-              ["Alex Marshall", "applied for you 9Jobs"],
-              ["Nadia Thompson", "paused Maddie D."],
+              ["Alex Marshall", "optimized their resume"],
+              ["Sophia R.", "updated LinkedIn & SEEK"],
+              ["Alex Marshall", "applied to 12 jobs"],
+              ["Nadia Thompson", "scheduled an interview"],
             ].map(([name, action]) => (
               <div className="fj-activity-row" key={`${name}-${action}`}>
                 <span className="fj-avatar">{name.slice(0, 2)}</span>
@@ -267,7 +269,7 @@ export default function Home() {
         <div className="fj-container fj-split fj-split--reverse">
           <div className="fj-copy-block">
             <span className="fj-label">growth at every level</span>
-            <h2>Making yourself at <span className="heading-mark">home</span></h2>
+            <h2>Optimized for the Australian Job <span className="heading-mark">Market</span></h2>
             <div className="fj-list-grid">
               {growthItems.map(([title, text]) => (
                 <div className="fj-mini-item" key={title}>
@@ -285,7 +287,7 @@ export default function Home() {
                 <strong>{index === 1 ? 8 : index === 2 ? 5 : 6}</strong>
               </div>
             ))}
-            {["Office Introduction", "Product Walkthrough Session", "Skill Development Courses", "Mentorship Program"].map((task, index) => (
+            {["ATS Resume Drafted", "LinkedIn & SEEK Optimized", "Daily Job Applications Sent", "Interview Scheduled"].map((task, index) => (
               <div className="fj-task-row" key={task}>
                 <CheckCircle2 size={18} />
                 <span>{task}</span>
@@ -299,7 +301,7 @@ export default function Home() {
       <section className="fj-section fj-section--dark">
         <div className="fj-container fj-split">
           <div className="fj-copy-block">
-            <h2>Less paperwork, more people <span className="heading-mark">work</span></h2>
+            <h2>Less stress, more interview <span className="heading-mark">calls</span></h2>
             <p>We integrate seamlessly with the tools you already use. Apply smarter with 9Jobs.</p>
             <Link className="fj-link-light" href="/feature">See all integrations <ArrowRight size={17} /></Link>
           </div>
@@ -358,8 +360,8 @@ export default function Home() {
       <section className="fj-section">
         <div className="fj-container fj-leader-card">
           <div>
-            <h2>9Jobs is the global payroll platform <span className="heading-mark">leader</span></h2>
-            <p>Automate even the most complex hiring processes and signatures.</p>
+            <h2>9Jobs is your job search partner in <span className="heading-mark">Australia</span></h2>
+            <p>We manage your job search end-to-end: resume optimization, profile updates, and active applications.</p>
           </div>
           <div className="fj-leader-media">
             <Image src="/framer/story-ops.jpg" alt="9Jobs candidate workflow" width={900} height={600} />
