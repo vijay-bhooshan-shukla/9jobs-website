@@ -1,10 +1,42 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, BookUser, Briefcase, FileText } from "lucide-react";
+import { ArrowRight, BookOpen, BookUser, Briefcase, FileText, Search } from "lucide-react";
 
 const posts = [
-  ["Resume tips that make your experience easier to scan", "A practical guide to structure, language, and the details that make a resume feel ready.", "Resume", FileText],
-  ["How to choose roles that match your actual direction", "Sharper targeting saves time and keeps applications aligned with the work you want.", "Job search", Briefcase],
-  ["LinkedIn profile improvements recruiters notice quickly", "Turn your headline, summary, and project details into a cleaner professional signal.", "LinkedIn", BookUser],
+  [
+    "How to Get a Job in Australia: The Definitive Guide",
+    "A comprehensive, step-by-step guide to navigating the recruitment process, profile setups, and landing job offers in Australia.",
+    "Job Search",
+    Briefcase,
+    "/blog/how-to-get-a-job-in-australia"
+  ],
+  [
+    "Best ATS Resume Format for Australian Recruiters",
+    "Learn how to format and optimize your resume to pass automated screens and align with local benchmarks.",
+    "Resume",
+    FileText,
+    "/blog/ats-resume-format-australia"
+  ],
+  [
+    "LinkedIn Optimization Guide for Job Seekers in Australia",
+    "Unlock the power of LinkedIn Recruiter searches in Australia. Headline formulas, summaries, and settings adjustments.",
+    "LinkedIn",
+    BookUser,
+    "/blog/linkedin-optimization-australia-guide"
+  ],
+  [
+    "SEEK Profile Optimization: Top Sourcing Tips for Australia",
+    "Make your SEEK profile stand out to recruiters. Settings, summaries, alerts, and formatting tips to maximize callbacks.",
+    "SEEK",
+    Search,
+    "/blog/seek-profile-optimization-tips"
+  ],
+  [
+    "Not Getting Job Interviews in Australia? Here is Why & How to Fix",
+    "Discover the most common reasons why your applications are getting rejected and learn actionable steps to fix them.",
+    "Job Search",
+    FileText,
+    "/blog/why-you-are-not-getting-job-interviews"
+  ]
 ];
 
 export const metadata = {
@@ -28,13 +60,13 @@ export default function BlogPage() {
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-card-grid fj-card-grid--three">
-          {posts.map(([title, text, tag, Icon]) => (
+          {posts.map(([title, text, tag, Icon, href]) => (
             <article className="fj-blog-card" key={title}>
               <div className="fj-icon-chip"><Icon size={22} /></div>
               <span className="fj-badge">{tag}</span>
               <h2>{title}</h2>
               <p>{text}</p>
-              <Link href="/contact">Read with 9Jobs <ArrowRight size={16} /></Link>
+              <Link href={href}>Read Article <ArrowRight size={16} /></Link>
             </article>
           ))}
         </div>
