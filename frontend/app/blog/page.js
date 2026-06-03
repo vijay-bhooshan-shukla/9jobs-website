@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, BookUser, Briefcase, FileText, Search } from "lucide-react";
+import { cities } from "../../data/australianJobsData";
 
 const posts = [
   [
@@ -69,6 +70,28 @@ export default function BlogPage() {
               <Link href={href}>Read Article <ArrowRight size={16} /></Link>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="fj-section">
+        <div className="fj-container">
+          <div className="fj-section-head">
+            <span className="fj-label">Australian Cities Sourcing Guides</span>
+            <h2>Local Sourcing Opportunities</h2>
+            <p>Target localized job markets across Australia's major hubs with tailored profiles, resumes, and networks.</p>
+          </div>
+          
+          <div className="fj-city-carousel">
+            {Object.values(cities).map((city) => (
+              <article className="fj-city-card" key={city.slug}>
+                <h3>{city.name} Jobs</h3>
+                <p>{city.description}</p>
+                <Link href={`/${city.slug}`} style={{ marginTop: "auto", display: "inline-flex", alignItems: "center", gap: "6px", fontWeight: 700 }}>
+                  See more <ArrowRight size={16} />
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
