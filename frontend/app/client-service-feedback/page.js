@@ -250,6 +250,38 @@ export default function ClientServiceFeedback() {
                     Leave Review
                   </a>
                 </div>
+
+                {/* Social Media Links Section */}
+                <div style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "16px", marginTop: "12px", textAlign: "center" }}>
+                  <p style={{ fontSize: "0.85rem", color: "var(--fj-muted)", fontWeight: 700, margin: "0 0 12px" }}>
+                    Follow 9Jobs for latest career updates:
+                  </p>
+                  <div style={{ display: "flex", gap: "12px", justifyContent: "center", alignItems: "center" }}>
+                    {socialLinks.map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={link.text}
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          width: "36px",
+                          height: "36px",
+                          borderRadius: "50%",
+                          border: "1px solid var(--fj-line)",
+                          background: "#ffffff",
+                          color: "var(--fj-ink)",
+                        }}
+                        className={`social-icon-btn ${link.className}`}
+                      >
+                        <SocialIcon type={link.icon} />
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
@@ -494,6 +526,25 @@ export default function ClientServiceFeedback() {
         .social-card.is-facebook:hover .social-card-icon-wrapper {
           background: #1877f2;
           color: #ffffff;
+        }
+        .social-icon-btn {
+          transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .social-icon-btn:hover {
+          transform: translateY(-2px);
+          color: #ffffff !important;
+        }
+        .social-icon-btn.is-instagram:hover {
+          border-color: #cd486b;
+          background: linear-gradient(45deg, #fccc63, #fbad50, #cd486b, #4c68d7);
+        }
+        .social-icon-btn.is-linkedin:hover {
+          border-color: #0077b5;
+          background: #0077b5;
+        }
+        .social-icon-btn.is-facebook:hover {
+          border-color: #1877f2;
+          background: #1877f2;
         }
       `}</style>
     </main>
