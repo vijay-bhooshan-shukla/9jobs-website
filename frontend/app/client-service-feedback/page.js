@@ -147,14 +147,17 @@ export default function ClientServiceFeedback() {
             style={submitted ? { 
               display: "flex", 
               flexDirection: "column", 
-              gap: "24px", 
+              gap: "20px", 
               background: "linear-gradient(180deg, #ffffff 0%, #fbfdfc 100%)", 
-              padding: "var(--form-padding, 40px)", 
+              padding: "30px 24px", 
               borderRadius: "var(--fj-radius-lg)", 
               border: "1px solid rgba(224, 255, 130, 0.7)", 
               boxShadow: "0 30px 70px rgba(3, 31, 42, 0.08), 0 0 50px rgba(224, 255, 130, 0.15)",
               position: "relative",
-              overflow: "hidden"
+              overflow: "hidden",
+              maxWidth: "480px",
+              margin: "0 auto",
+              width: "100%"
             } : { 
               display: "flex", 
               flexDirection: "column", 
@@ -178,7 +181,7 @@ export default function ClientServiceFeedback() {
               }} />
             )}
             {submitted ? (
-              <div className="feedback-success-shell" style={{ display: "flex", flexDirection: "column", gap: "28px", textAlign: "center", animation: "floatUp 600ms cubic-bezier(0.16, 1, 0.3, 1) both" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "20px", textAlign: "center", animation: "floatUp 600ms cubic-bezier(0.16, 1, 0.3, 1) both" }}>
                 {/* Custom Pulsing Glow Success Badge */}
                 <div className="success-icon-wrapper">
                   <div className="success-pulse-ring ring-1"></div>
@@ -188,11 +191,11 @@ export default function ClientServiceFeedback() {
                   </div>
                 </div>
 
-                <div className="feedback-success-hero" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
-                  <h1 className="page-title" style={{ fontSize: "2.2rem", fontWeight: "900", color: "var(--fj-ink-deep)", margin: 0, letterSpacing: "-0.5px" }}>
+                <div className="feedback-success-hero" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+                  <h1 className="page-title" style={{ fontSize: "1.6rem", fontWeight: "900", color: "var(--fj-ink-deep)", margin: 0, letterSpacing: "-0.5px" }}>
                     Thank You for Your Feedback!
                   </h1>
-                  <p className="lead" style={{ color: "var(--fj-muted)", fontSize: "1.08rem", lineHeight: "1.65", margin: 0, maxWidth: "580px" }}>
+                  <p className="lead" style={{ color: "var(--fj-muted)", fontSize: "0.92rem", lineHeight: "1.55", margin: 0, maxWidth: "100%" }}>
                     {successDescription}
                   </p>
                 </div>
@@ -200,64 +203,64 @@ export default function ClientServiceFeedback() {
                 {/* Refined Approval Notices */}
                 {showAsTestimonial ? (
                   <div style={{
-                    padding: "16px 24px",
+                    padding: "12px 16px",
                     background: "linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(224, 255, 130, 0.15))",
                     border: "1px solid rgba(74, 222, 128, 0.3)",
-                    borderRadius: "18px",
+                    borderRadius: "14px",
                     color: "#15803d",
                     fontWeight: "600",
-                    fontSize: "0.95rem",
+                    fontSize: "0.85rem",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: "10px",
+                    gap: "8px",
                     boxShadow: "0 4px 12px rgba(74, 222, 128, 0.05)"
                   }}>
-                    <CheckCircle2 size={18} style={{ color: "#15803d" }} />
-                    <span>Your feedback is live! It has been approved to appear on our home page.</span>
+                    <CheckCircle2 size={16} style={{ color: "#15803d" }} />
+                    <span>Approved! Your feedback is live on our home page.</span>
                   </div>
                 ) : (
                   <div style={{
-                    padding: "16px 24px",
+                    padding: "12px 16px",
                     background: "linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(251, 191, 36, 0.12))",
                     border: "1px solid rgba(245, 158, 11, 0.25)",
-                    borderRadius: "18px",
+                    borderRadius: "14px",
                     color: "#9a3412",
                     fontWeight: "600",
-                    fontSize: "0.95rem",
+                    fontSize: "0.85rem",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: "10px",
+                    gap: "8px",
                     boxShadow: "0 4px 12px rgba(245, 158, 11, 0.05)"
                   }}>
-                    <AlertCircle size={18} style={{ color: "#b45309" }} />
-                    <span>Your review was submitted successfully and is pending a quick team approval.</span>
+                    <AlertCircle size={16} style={{ color: "#b45309" }} />
+                    <span>Your review is pending a quick team approval.</span>
                   </div>
                 )}
 
                 {/* Actions Grid */}
-                <div className="feedback-success-actions" style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap", marginTop: "12px" }}>
-                  <a href="https://9jobs.co" className="success-btn-primary" style={{ minWidth: "220px" }}>
-                    <Home size={18} aria-hidden="true" />
+                <div style={{ display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap", marginTop: "8px" }}>
+                  <a href="https://9jobs.co" className="success-btn-primary" style={{ flex: 1, minWidth: "140px", padding: "12px 16px", fontSize: "0.88rem", borderRadius: "12px" }}>
+                    <Home size={16} aria-hidden="true" />
                     Back to Home
                   </a>
-                  <a href="https://9jobs.co/client-service-feedback" className="success-btn-secondary" style={{ minWidth: "220px" }}>
-                    <Star size={18} aria-hidden="true" />
-                    Leave Another Review
+                  <a href="https://9jobs.co/client-service-feedback" className="success-btn-secondary" style={{ flex: 1, minWidth: "140px", padding: "12px 16px", fontSize: "0.88rem", borderRadius: "12px" }}>
+                    <Star size={16} aria-hidden="true" />
+                    Leave Review
                   </a>
                 </div>
 
                 {/* Stay Connected Premium Grid */}
-                <div className="feedback-success-block" style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "32px", marginTop: "16px", textAlign: "left" }}>
-                  <h2 style={{ fontSize: "1.5rem", fontWeight: "800", color: "var(--fj-ink-deep)", margin: "0 0 10px" }}>
+                <div style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "20px", marginTop: "10px", textAlign: "left" }}>
+                  <h2 style={{ fontSize: "1.15rem", fontWeight: "800", color: "var(--fj-ink-deep)", margin: "0 0 6px" }}>
                     Stay Connected with 9Jobs
                   </h2>
-                  <p style={{ color: "var(--fj-muted)", fontSize: "0.96rem", lineHeight: "1.6", margin: "0 0 24px" }}>
+                  <p style={{ color: "var(--fj-muted)", fontSize: "0.85rem", lineHeight: "1.5", margin: "0 0 16px" }}>
                     {socialDescription}
                   </p>
                   
-                  <div className="feedback-social-grid">
+                  <div className="feedback-social-grid" style={{ marginTop: "12px", gap: "10px" }}>
                     {socialLinks.map((link) => (
                       <a
                         key={link.name}
@@ -265,31 +268,34 @@ export default function ClientServiceFeedback() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`feedback-social-link ${link.className}`}
+                        style={{ minHeight: "56px", padding: "10px 12px", borderRadius: "12px" }}
                       >
-                        <span className="social-card-icon-wrapper">
+                        <span className="social-card-icon-wrapper" style={{ width: "32px", height: "32px", borderRadius: "8px" }}>
                           <SocialIcon type={link.icon} />
                         </span>
-                        <span style={{ fontWeight: "700", fontSize: "0.92rem", color: "var(--fj-ink)" }}>
+                        <span style={{ fontWeight: "700", fontSize: "0.85rem", color: "var(--fj-ink)" }}>
                           {link.name}
                         </span>
-                        <ExternalLink size={14} style={{ opacity: 0.4 }} />
+                        <ExternalLink size={12} style={{ opacity: 0.4 }} />
                       </a>
                     ))}
                   </div>
                 </div>
 
                 {/* Website Promotion Section */}
-                <div className="feedback-website-promo" style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "32px", marginTop: "16px", textAlign: "left" }}>
-                  <div className="feedback-success-copy">
-                    <h2 style={{ fontSize: "1.5rem", fontWeight: "800", color: "var(--fj-ink-deep)", margin: "0 0 10px" }}>
-                      Explore More with 9Jobs
-                    </h2>
-                    <p style={{ color: "var(--fj-muted)", fontSize: "0.96rem", lineHeight: "1.6", margin: "0 0 24px" }}>
-                      {websitePromoText}
-                    </p>
-                    <a href="https://9jobs.co" className="success-btn-secondary" style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                      Visit 9Jobs Website
-                    </a>
+                <div style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "20px", marginTop: "10px", textAlign: "left" }}>
+                  <div className="feedback-website-promo" style={{ display: "flex", flexDirection: "column", gap: "12px", padding: "16px", borderRadius: "12px", background: "#111510", color: "#ffffff", border: "none" }}>
+                    <div style={{ margin: 0, textAlign: "left", width: "100%" }}>
+                      <h2 style={{ fontSize: "1.15rem", fontWeight: "800", color: "#ffffff", margin: "0 0 6px" }}>
+                        Explore More with 9Jobs
+                      </h2>
+                      <p style={{ color: "rgba(255, 255, 255, 0.8)", fontSize: "0.85rem", lineHeight: "1.5", margin: "0 0 16px" }}>
+                        {websitePromoText}
+                      </p>
+                      <a href="https://9jobs.co" className="success-btn-secondary" style={{ width: "100%", display: "flex", justifyContent: "center", padding: "10px 16px", fontSize: "0.88rem", borderRadius: "10px" }}>
+                        Visit 9Jobs Website
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

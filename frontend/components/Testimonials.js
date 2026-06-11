@@ -34,11 +34,7 @@ export default function Testimonials() {
         if (res.ok) {
           const result = await res.json();
           if (result.success && Array.isArray(result.data)) {
-            // Only keep testimonials from Nafisa Eqbali
-            const filteredData = result.data.filter(item =>
-              item.full_name && /Nafisa|Nafisha/i.test(item.full_name)
-            );
-            const mapped = filteredData.map(item => ({
+            const mapped = result.data.map(item => ({
               name: item.full_name,
               role: "Verified Client",
               quote: item.experience_message,
