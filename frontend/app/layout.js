@@ -6,8 +6,8 @@ import { CalendlyLoader } from "../components/CalendlyWidget";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const homepageTitle = "9Jobs Australia | Resume Writing & Job Application Help";
-const homepageDescription = "Get more interviews with 9Jobs Australia: ATS resume writing, LinkedIn and SEEK profile optimization, job application support, and interview coaching.";
+const homepageTitle = "9Jobs Australia | Resume Writing, LinkedIn & Job Application Services";
+const homepageDescription = "Professional resume writing, LinkedIn optimization, interview coaching and job application services across Australia.";
 const siteUrl = "https://9jobs.co/";
 const socialImage = {
   url: "/dashboard.png",

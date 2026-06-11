@@ -14,6 +14,7 @@ const links = [
   { href: "/success-stories", label: "Success Stories" },
   {
     label: "Australian Jobs",
+    href: "/jobs",
     isDropdown: true,
     dropdownLinks: [
       { href: "/jobs/melbourne", label: "Melbourne" },
@@ -27,6 +28,7 @@ const links = [
   },
   {
     label: "Services",
+    href: "/services",
     isDropdown: true,
     dropdownLinks: [
       { href: "/services/resume-writing", label: "Resume Writing" },
@@ -73,7 +75,7 @@ export default function Navbar() {
         <nav className="nav-links fj-nav-links" aria-label="Primary navigation">
           {links.map((link) => {
             if (link.isDropdown) {
-              const isSubActive = link.dropdownLinks.some((sub) => pathname === sub.href);
+              const isSubActive = link.dropdownLinks.some((sub) => pathname === sub.href) || pathname === link.href;
               const isDropdownOpen = activeDesktopDropdown === link.label;
               return (
                 <div
@@ -82,30 +84,29 @@ export default function Navbar() {
                   onMouseEnter={() => setActiveDesktopDropdown(link.label)}
                   onMouseLeave={() => setActiveDesktopDropdown(null)}
                 >
-                  <span className={`nav-dropdown-trigger${isSubActive ? " is-active" : ""}`}>
+                  <Link href={link.href} className={`nav-dropdown-trigger${isSubActive ? " is-active" : ""}`}>
                     {link.label} <ChevronDown size={14} />
-                  </span>
-                  <AnimatePresence>
-                    {isDropdownOpen && (
-                      <motion.div
-                        className="nav-dropdown-menu"
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 8 }}
-                        transition={{ duration: 0.18 }}
+                  </Link>
+                  <div
+                    className="nav-dropdown-menu"
+                    style={{
+                      opacity: isDropdownOpen ? 1 : 0,
+                      visibility: isDropdownOpen ? "visible" : "hidden",
+                      pointerEvents: isDropdownOpen ? "auto" : "none",
+                      marginTop: isDropdownOpen ? "12px" : "20px",
+                      transition: "opacity 180ms ease, margin-top 180ms ease, visibility 180ms ease"
+                    }}
+                  >
+                    {link.dropdownLinks.map((subLink) => (
+                      <Link
+                        key={subLink.href}
+                        className={`dropdown-link-item${pathname === subLink.href ? " is-active" : ""}`}
+                        href={subLink.href}
                       >
-                        {link.dropdownLinks.map((subLink) => (
-                          <Link
-                            key={subLink.href}
-                            className={`dropdown-link-item${pathname === subLink.href ? " is-active" : ""}`}
-                            href={subLink.href}
-                          >
-                            {subLink.label}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                        {subLink.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               );
             }

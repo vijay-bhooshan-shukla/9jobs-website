@@ -204,6 +204,14 @@ export default async function CityPage({ params }) {
               </Link>
             </article>
           </div>
+          <div style={{ display: "flex", gap: "16px", justifyContent: "center", marginTop: "40px", flexWrap: "wrap" }}>
+            <Link href="/services" className="fj-button fj-button--ghost">
+              Explore Services Hub <ArrowRight size={16} />
+            </Link>
+            <Link href="/" className="fj-button fj-button--ghost">
+              Back to Homepage <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 

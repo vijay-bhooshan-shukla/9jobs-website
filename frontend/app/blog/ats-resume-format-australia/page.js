@@ -65,8 +65,37 @@ export default function AtsResumeFormatPage() {
     "description": "A comprehensive guide on formatting resumes to pass Applicant Tracking Systems used by Australian employers."
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://9jobs.co/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://9jobs.co/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Best ATS Resume Format for Australian Recruiters",
+        "item": "https://9jobs.co/blog/ats-resume-format-australia"
+      }
+    ]
+  };
+
   return (
     <main className="site-main fj-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}

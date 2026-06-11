@@ -28,8 +28,8 @@ import {
 } from "lucide-react";
 
 const trustedBrands = ["bluebird", "Galaxy", "berry", "Chameleon", "SHIP4450"];
-const homepageTitle = "9Jobs Australia | Resume Writing & Job Application Help";
-const homepageDescription = "Get more interviews with 9Jobs Australia: ATS resume writing, LinkedIn and SEEK profile optimization, job application support, and interview coaching.";
+const homepageTitle = "9Jobs Australia | Resume Writing, LinkedIn & Job Application Services";
+const homepageDescription = "Professional resume writing, LinkedIn optimization, interview coaching and job application services across Australia.";
 const homepageUrl = "https://9jobs.co/";
 
 export const metadata = {
@@ -313,6 +313,14 @@ export default function Home() {
               <Link href="/services/interview-coaching">Interview coaching <ArrowRight size={16} /></Link>
             </article>
           </div>
+          <div style={{ display: "flex", gap: "16px", justifyContent: "center", marginTop: "40px", flexWrap: "wrap" }}>
+            <Link href="/services" className="fj-button fj-button--ghost">
+              Explore Services Hub <ArrowRight size={16} />
+            </Link>
+            <Link href="/jobs" className="fj-button fj-button--ghost">
+              Search Jobs in Australia <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -564,6 +572,8 @@ export default function Home() {
           <div className="fj-actions">
             <Link className="fj-button fj-button--ghost" href="/pricing">1 day trial</Link>
             <CalendlyLink className="fj-button fj-button--dark">Schedule a demo</CalendlyLink>
+            <Link className="fj-button fj-button--ghost" href="/blog">Read our Blog</Link>
+            <Link className="fj-button fj-button--ghost" href="/contact">Contact Us</Link>
           </div>
         </div>
       </section>

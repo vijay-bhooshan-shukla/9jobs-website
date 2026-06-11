@@ -20,9 +20,9 @@ function readFiles(dir) {
 const expectedTitle = '9Jobs – Job Search, Resume Writing & Career Support Australia';
 const expectedDescription =
   '9Jobs helps Australian job seekers with Resume Writing, LinkedIn Optimization, SEEK Profile Optimization, Interview Coaching, and Job Application Support. Start your career journey today.';
-const expectedCtrTitle = '9Jobs Australia | Resume Writing & Job Application Help';
+const expectedCtrTitle = '9Jobs Australia | Resume Writing, LinkedIn & Job Application Services';
 const expectedCtrDescription =
-  'Get more interviews with 9Jobs Australia: ATS resume writing, LinkedIn and SEEK profile optimization, job application support, and interview coaching.';
+  'Professional resume writing, LinkedIn optimization, interview coaching and job application services across Australia.';
 
 describe('homepage technical SEO contract', () => {
   test('uses the brand-search metadata everywhere the homepage can inherit it', () => {

@@ -65,8 +65,37 @@ export default function WhyNoInterviewsPage() {
     "description": "An analysis of the common reasons for job application rejections in Australia and actionable solutions to secure interviews."
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://9jobs.co/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://9jobs.co/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Not Getting Job Interviews in Australia? Here is Why & How to Fix",
+        "item": "https://9jobs.co/blog/why-you-are-not-getting-job-interviews"
+      }
+    ]
+  };
+
   return (
     <main className="site-main fj-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}

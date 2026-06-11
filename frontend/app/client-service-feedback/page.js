@@ -178,7 +178,7 @@ export default function ClientServiceFeedback() {
               }} />
             )}
             {submitted ? (
-              <div style={{ display: "flex", flexDirection: "column", gap: "28px", textAlign: "center", animation: "floatUp 600ms cubic-bezier(0.16, 1, 0.3, 1) both" }}>
+              <div className="feedback-success-shell" style={{ display: "flex", flexDirection: "column", gap: "28px", textAlign: "center", animation: "floatUp 600ms cubic-bezier(0.16, 1, 0.3, 1) both" }}>
                 {/* Custom Pulsing Glow Success Badge */}
                 <div className="success-icon-wrapper">
                   <div className="success-pulse-ring ring-1"></div>
@@ -188,7 +188,7 @@ export default function ClientServiceFeedback() {
                   </div>
                 </div>
 
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
+                <div className="feedback-success-hero" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
                   <h1 className="page-title" style={{ fontSize: "2.2rem", fontWeight: "900", color: "var(--fj-ink-deep)", margin: 0, letterSpacing: "-0.5px" }}>
                     Thank You for Your Feedback!
                   </h1>
@@ -249,7 +249,7 @@ export default function ClientServiceFeedback() {
                 </div>
 
                 {/* Stay Connected Premium Grid */}
-                <div style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "32px", marginTop: "16px", textAlign: "left" }}>
+                <div className="feedback-success-block" style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "32px", marginTop: "16px", textAlign: "left" }}>
                   <h2 style={{ fontSize: "1.5rem", fontWeight: "800", color: "var(--fj-ink-deep)", margin: "0 0 10px" }}>
                     Stay Connected with 9Jobs
                   </h2>
@@ -257,14 +257,14 @@ export default function ClientServiceFeedback() {
                     {socialDescription}
                   </p>
                   
-                  <div className="social-grid">
+                  <div className="feedback-social-grid">
                     {socialLinks.map((link) => (
                       <a
                         key={link.name}
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`social-card ${link.className}`}
+                        className={`feedback-social-link ${link.className}`}
                       >
                         <span className="social-card-icon-wrapper">
                           <SocialIcon type={link.icon} />
@@ -272,9 +272,24 @@ export default function ClientServiceFeedback() {
                         <span style={{ fontWeight: "700", fontSize: "0.92rem", color: "var(--fj-ink)" }}>
                           {link.name}
                         </span>
-                        <ExternalLink size={14} style={{ position: "absolute", top: "14px", right: "14px", opacity: 0.4 }} />
+                        <ExternalLink size={14} style={{ opacity: 0.4 }} />
                       </a>
                     ))}
+                  </div>
+                </div>
+
+                {/* Website Promotion Section */}
+                <div className="feedback-website-promo" style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "32px", marginTop: "16px", textAlign: "left" }}>
+                  <div className="feedback-success-copy">
+                    <h2 style={{ fontSize: "1.5rem", fontWeight: "800", color: "var(--fj-ink-deep)", margin: "0 0 10px" }}>
+                      Explore More with 9Jobs
+                    </h2>
+                    <p style={{ color: "var(--fj-muted)", fontSize: "0.96rem", lineHeight: "1.6", margin: "0 0 24px" }}>
+                      {websitePromoText}
+                    </p>
+                    <a href="https://9jobs.co" className="success-btn-secondary" style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+                      Visit 9Jobs Website
+                    </a>
                   </div>
                 </div>
               </div>

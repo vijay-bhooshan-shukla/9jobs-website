@@ -2,7 +2,7 @@ export default function sitemap() {
   const baseUrl = "https://9jobs.co";
 
   // Main Pages (Consolidated features to /features)
-  const mainPages = ["/", "/about", "/pricing", "/contact", "/services", "/blog", "/features", "/success-stories", "/privacy-policy"].map((path) => ({
+  const mainPages = ["/", "/about", "/pricing", "/contact", "/services", "/blog", "/features", "/success-stories", "/privacy-policy", "/jobs"].map((path) => ({
     url: path === "/" ? `${baseUrl}/` : `${baseUrl}${path}`,
     lastModified: new Date(),
     changeFrequency: path === "/" ? "daily" : (path === "/pricing" || path === "/blog" || path === "/services") ? "weekly" : "monthly",

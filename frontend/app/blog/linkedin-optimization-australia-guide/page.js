@@ -65,8 +65,37 @@ export default function LinkedInGuidePage() {
     "description": "An expert guide detailing headlines, summaries, and settings to optimize LinkedIn profiles for the Australian job market."
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://9jobs.co/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://9jobs.co/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "LinkedIn Optimization Guide for Job Seekers in Australia",
+        "item": "https://9jobs.co/blog/linkedin-optimization-australia-guide"
+      }
+    ]
+  };
+
   return (
     <main className="site-main fj-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}

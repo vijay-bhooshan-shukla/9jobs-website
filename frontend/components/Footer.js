@@ -6,52 +6,55 @@ import { ArrowRight } from "lucide-react";
 
 const footerGroups = [
   {
-    title: "Product",
-    links: [
-      { href: "/", label: "Homepage" },
-      { href: "/features", label: "Solutions" },
-      { href: "/features", label: "Features" },
-      { href: "/pricing", label: "Pricing" },
-      { href: "/blog", label: "Newsletter" },
-    ],
-  },
-  {
     title: "Services",
+    href: "/services",
     links: [
-      { href: "/services/resume-writing", label: "Resume Writing" },
-      { href: "/services/linkedin-optimization", label: "LinkedIn Optimization" },
+      { href: "/services/resume-writing", label: "Resume Writing Services" },
+      { href: "/services/linkedin-optimization", label: "LinkedIn Profile Optimization" },
       { href: "/services/seek-profile-optimization", label: "SEEK Profile Optimization" },
       { href: "/services/job-application-automation", label: "Job Sourcing & Applications" },
-      { href: "/services/interview-coaching", label: "Interview Coaching" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { href: "/about", label: "About" },
-      { href: "/contact", label: "Contact us" },
-      { href: "/privacy-policy", label: "Privacy Policy" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { href: "/blog", label: "Start here" },
-      { href: "/blog", label: "Blog" },
-      { href: "/success-stories", label: "Success Stories" },
-      { href: "/admin/feedback", label: "Admin Feedback" },
+      { href: "/services/interview-coaching", label: "Interview Coaching Services" },
     ],
   },
   {
     title: "Popular Locations",
+    href: "/jobs",
     links: [
       { href: "/jobs/melbourne", label: "Jobs in Melbourne" },
       { href: "/jobs/sydney", label: "Jobs in Sydney" },
       { href: "/jobs/brisbane", label: "Jobs in Brisbane" },
       { href: "/jobs/perth", label: "Jobs in Perth" },
       { href: "/jobs/adelaide", label: "Jobs in Adelaide" },
+    ],
+  },
+  {
+    title: "Regional & Niche",
+    href: "/jobs",
+    links: [
       { href: "/jobs/geelong", label: "Jobs in Geelong" },
       { href: "/jobs/vic", label: "Jobs in Victoria" },
+      { href: "/jobs/melbourne/traffic-controller", label: "Traffic Controller Jobs" },
+      { href: "/jobs/melbourne/warehouse", label: "Warehouse Jobs Melbourne" },
+    ],
+  },
+  {
+    title: "Resources",
+    href: "/blog",
+    links: [
+      { href: "/blog", label: "Blog & Sourcing Guides" },
+      { href: "/success-stories", label: "Client Success Stories" },
+      { href: "/features", label: "Solutions & Features" },
+      { href: "/pricing", label: "Pricing & Plans" },
+    ],
+  },
+  {
+    title: "Company",
+    href: "/about",
+    links: [
+      { href: "/about", label: "About Us" },
+      { href: "/contact", label: "Contact Us" },
+      { href: "/privacy-policy", label: "Privacy Policy" },
+      { href: "/client-service-feedback", label: "Client Feedback" },
     ],
   },
 ];
@@ -141,7 +144,15 @@ export default function Footer() {
 
           {footerGroups.map((group) => (
             <div className="fj-footer-column" key={group.title}>
-              <h3>{group.title}</h3>
+              {group.href ? (
+                <h3>
+                  <Link href={group.href} style={{ color: "inherit", textDecoration: "none" }}>
+                    {group.title}
+                  </Link>
+                </h3>
+              ) : (
+                <h3>{group.title}</h3>
+              )}
               <div className="fj-footer-links">
                 {group.links.map((link) => (
                   <Link href={link.href} key={`${group.title}-${link.label}`}>

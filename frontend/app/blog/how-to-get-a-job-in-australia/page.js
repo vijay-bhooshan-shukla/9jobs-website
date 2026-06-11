@@ -65,8 +65,37 @@ export default function HowToGetJobPage() {
     "description": "A comprehensive, step-by-step guide to navigating the recruitment process, optimizing profiles, and landing job offers in Australia."
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://9jobs.co/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://9jobs.co/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Get a Job in Australia: The Definitive Guide",
+        "item": "https://9jobs.co/blog/how-to-get-a-job-in-australia"
+      }
+    ]
+  };
+
   return (
     <main className="site-main fj-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
