@@ -250,54 +250,6 @@ export default function ClientServiceFeedback() {
                     Leave Review
                   </a>
                 </div>
-
-                {/* Stay Connected Premium Grid */}
-                <div style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "20px", marginTop: "10px", textAlign: "left" }}>
-                  <h2 style={{ fontSize: "1.15rem", fontWeight: "800", color: "var(--fj-ink-deep)", margin: "0 0 6px" }}>
-                    Stay Connected with 9Jobs
-                  </h2>
-                  <p style={{ color: "var(--fj-muted)", fontSize: "0.85rem", lineHeight: "1.5", margin: "0 0 16px" }}>
-                    {socialDescription}
-                  </p>
-                  
-                  <div className="feedback-social-grid" style={{ marginTop: "12px", gap: "10px" }}>
-                    {socialLinks.map((link) => (
-                      <a
-                        key={link.name}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`feedback-social-link ${link.className}`}
-                        style={{ minHeight: "56px", padding: "10px 12px", borderRadius: "12px" }}
-                      >
-                        <span className="social-card-icon-wrapper" style={{ width: "32px", height: "32px", borderRadius: "8px" }}>
-                          <SocialIcon type={link.icon} />
-                        </span>
-                        <span style={{ fontWeight: "700", fontSize: "0.85rem", color: "var(--fj-ink)" }}>
-                          {link.name}
-                        </span>
-                        <ExternalLink size={12} style={{ opacity: 0.4 }} />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Website Promotion Section */}
-                <div style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "20px", marginTop: "10px", textAlign: "left" }}>
-                  <div className="feedback-website-promo" style={{ display: "flex", flexDirection: "column", gap: "12px", padding: "16px", borderRadius: "12px", background: "#111510", color: "#ffffff", border: "none" }}>
-                    <div style={{ margin: 0, textAlign: "left", width: "100%" }}>
-                      <h2 style={{ fontSize: "1.15rem", fontWeight: "800", color: "#ffffff", margin: "0 0 6px" }}>
-                        Explore More with 9Jobs
-                      </h2>
-                      <p style={{ color: "rgba(255, 255, 255, 0.8)", fontSize: "0.85rem", lineHeight: "1.5", margin: "0 0 16px" }}>
-                        {websitePromoText}
-                      </p>
-                      <a href="https://9jobs.co" className="success-btn-secondary" style={{ width: "100%", display: "flex", justifyContent: "center", padding: "10px 16px", fontSize: "0.88rem", borderRadius: "10px" }}>
-                        Visit 9Jobs Website
-                      </a>
-                    </div>
-                  </div>
-                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "24px" }}>

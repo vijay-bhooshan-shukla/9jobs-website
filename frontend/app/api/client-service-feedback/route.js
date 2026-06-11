@@ -33,9 +33,8 @@ export async function POST(request) {
     const rating = Number(overall_satisfaction);
     const cleanMessage = experience_message.trim();
 
-    // Automatically approve all feedback to show in testimonials directly
-    const sentiment = 'positive';
-    const show_as_testimonial = true;
+    // 2. Sentiment and Testimonial Classification using utility
+    const { sentiment, show_as_testimonial } = analyzeSentiment(rating, cleanMessage);
 
     await connectDB();
 
