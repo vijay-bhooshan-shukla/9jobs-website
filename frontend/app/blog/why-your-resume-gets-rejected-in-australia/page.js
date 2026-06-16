@@ -1,9 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
+
+const routeSeo = getRouteSeo("/blog/why-your-resume-gets-rejected-in-australia");
+
+export const metadata = createSeoMetadata(routeSeo);
+
 
 export default function BlogDetailPage() {
   const faqSchema = {
@@ -130,11 +135,11 @@ export default function BlogDetailPage() {
 
           
           <h2>1. Formatting Blocks: Multi-Column Layouts and Graphics</h2>
-          <p>The most common reason for automatic resume rejection is formatting. Many job seekers use modern, creative templates with multiple columns, text boxes, tables, icons, and progress bars. While these layouts look attractive to the human eye, they parse poorly in Applicant Tracking Systems (ATS). ATS software strips formatting to read text in a linear order. When it encounters columns or tables, it scrambles the text, rendering your profile incomplete or unreadable. To pass these screens, use a clean, single-column chronological layout with standard fonts and headings. For professional drafting that complies with these standards, check out our [Resume Writing Services Australia](/services/resume-writing) team.</p>
+          <p>The most common reason for automatic resume rejection is formatting. Many job seekers use modern, creative templates with multiple columns, text boxes, tables, icons, and progress bars. While these layouts look attractive to the human eye, they parse poorly in Applicant Tracking Systems (ATS). ATS software strips formatting to read text in a linear order. When it encounters columns or tables, it scrambles the text, rendering your profile incomplete or unreadable. To pass these screens, use a clean, single-column chronological layout with standard fonts and headings. For professional drafting that complies with these standards, check out our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> team.</p>
   
 
           <h2>2. The 'Lack of Local Context' Red Flag</h2>
-          <p>Australian recruiters are risk-averse and prefer candidates who can demonstrate immediate work eligibility and local market understanding. If your resume lacks local contact details, fails to specify your visa status, or uses international terminology, recruiters may assume you are an offshore applicant requiring sponsorship, leading to rejection. Ensure your resume contains your target location (e.g. Sydney NSW) and explicitly states your work eligibility (e.g. Permanent Resident or subclass 485 visa) in your professional summary. You can align this location details across platforms using our [LinkedIn Optimization Australia](/services/linkedin-optimization) and [SEEK Profile Optimization](/services/seek-profile-optimization) programs.</p>
+          <p>Australian recruiters are risk-averse and prefer candidates who can demonstrate immediate work eligibility and local market understanding. If your resume lacks local contact details, fails to specify your visa status, or uses international terminology, recruiters may assume you are an offshore applicant requiring sponsorship, leading to rejection. Ensure your resume contains your target location (e.g. Sydney NSW) and explicitly states your work eligibility (e.g. Permanent Resident or subclass 485 visa) in your professional summary. You can align this location details across platforms using our <Link href="/services/linkedin-optimization">LinkedIn Optimization Australia</Link> and <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> programs.</p>
   
 
           <h2>3. Duty-Based Lists Instead of Accomplishments</h2>
@@ -146,7 +151,7 @@ export default function BlogDetailPage() {
   
 
           <h2>5. Maintaining Sourcing and Application Momentum</h2>
-          <p>Even with an optimized resume, maintaining a consistent application volume is critical to job search success. Recruitment cycles move fast, and applying early gives you a significant advantage. 9Jobs offers a professional [Job Application Service Australia](/services/job-application-automation) where our team monitors local job boards daily, tailors your applications, and submits them on your behalf, ensuring you never miss a sourcing window.</p>
+          <p>Even with an optimized resume, maintaining a consistent application volume is critical to job search success. Recruitment cycles move fast, and applying early gives you a significant advantage. 9Jobs offers a professional <Link href="/services/job-application-automation">Job Application Service Australia</Link> where our team monitors local job boards daily, tailors your applications, and submits them on your behalf, ensuring you never miss a sourcing window.</p>
   
         </div>
       </section>
@@ -211,6 +216,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

@@ -2,6 +2,7 @@ import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../components/CalendlyWidget";
 import PricingCheckoutButton from "../../components/PricingCheckoutButton";
 import ResumePricingSection from "../../components/ResumePricingSection";
+import { JsonLd, createBreadcrumbSchema, createSeoMetadata, getRouteSeo } from "../../data/seo";
 
 const plans = [
   {
@@ -29,17 +30,19 @@ const plans = [
   },
 ];
 
-export const metadata = {
-  title: "Plans & Pricing | Resume Writing & Job Application Packages | 9Jobs",
-  description: "Explore 9Jobs pricing plans tailored for IT and non-IT job seekers in Australia. Packages include resume reviews, LinkedIn optimization, and daily role submissions.",
-  alternates: {
-    canonical: "/pricing",
-  },
-};
+const routeSeo = getRouteSeo("/pricing");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 export default function PricingPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Pricing", path: "/pricing" },
+  ]);
+
   return (
     <main className="site-main fj-page">
+      <JsonLd schema={breadcrumbSchema} />
       <section className="fj-page-hero">
         <div className="fj-container">
           <span className="fj-announcement"><span>Plans</span> Clear support for every stage</span>

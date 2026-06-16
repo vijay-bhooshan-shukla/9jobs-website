@@ -2,14 +2,12 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
-export const metadata = {
-  title: "How to Get a Job in Australia: The Definitive Guide | 9Jobs",
-  description: "Learn the step-by-step process of securing a job in Australia. Discover local hiring channels, visa tips, resume expectations, and networking strategies.",
-  alternates: {
-    canonical: "/blog/how-to-get-a-job-in-australia",
-  },
-};
+const routeSeo = getRouteSeo("/blog/how-to-get-a-job-in-australia");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const faqs = [
   [
@@ -139,7 +137,7 @@ export default function HowToGetJobPage() {
             Applicant Tracking Systems (ATS) are widely used by mid-to-large companies in Australia to screen resumes. These tools scan files for specific keywords, education history, and job titles. If your resume contains complex elements like columns, text boxes, tables, icons, or headers, the parsing software will scramble the text, automatically classifying your profile as incomplete or unqualified.
           </p>
           <p>
-            To pass these filters, your resume must follow clean formatting rules: a single-column layout, standard fonts, and reverse-chronological order. It must also avoid personal details like photos, dates of birth, or marital status due to anti-discrimination laws. For a complete guide on writing an optimized, localized resume, check our [Resume Writing Services Australia](/services/resume-writing) guide.
+            To pass these filters, your resume must follow clean formatting rules: a single-column layout, standard fonts, and reverse-chronological order. It must also avoid personal details like photos, dates of birth, or marital status due to anti-discrimination laws. For a complete guide on writing an optimized, localized resume, check our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> guide.
           </p>
 
           <div style={{ background: "var(--surface)", border: "1px solid var(--line)", padding: "24px", borderRadius: "8px", margin: "24px 0" }}>
@@ -155,7 +153,7 @@ export default function HowToGetJobPage() {
             In Australia, SEEK is the dominant job board. Recruiters use it to post ads and search the database for talent. If you do not have an optimized SEEK profile, you are missing out on a massive portion of the job market.
           </p>
           <p>
-            Ensure your SEEK profile summary is complete, lists your target role titles, specifies your location, and targets appropriate salary ranges. Set your profile visibility to 'Standard' so local recruiters can discover your profile when sourcing candidates. Read our [SEEK Profile Optimization](/services/seek-profile-optimization) tips to learn how to configure your settings to attract search inquiries.
+            Ensure your SEEK profile summary is complete, lists your target role titles, specifies your location, and targets appropriate salary ranges. Set your profile visibility to 'Standard' so local recruiters can discover your profile when sourcing candidates. Read our <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> tips to learn how to configure your settings to attract search inquiries.
           </p>
 
           <h2>Step 4: Align Your LinkedIn Profile with Local Sourcing Keywords</h2>
@@ -163,7 +161,7 @@ export default function HowToGetJobPage() {
             Recruiters use LinkedIn Recruiter to source candidates before posting job advertisements. If your LinkedIn headline only lists your current title rather than your core skills and target role titles, you will remain invisible in search queries.
           </p>
           <p>
-            Your headline must incorporate target terms (e.g. &quot;Full Stack Developer | React, Node.js | Sydney&quot;). Your 'About' section should serve as a compelling introduction that details your expertise and location status. Read our [LinkedIn Profile Optimization](/services/linkedin-optimization) guide to learn how to stand out to local talent acquisition teams.
+            Your headline must incorporate target terms (e.g. &quot;Full Stack Developer | React, Node.js | Sydney&quot;). Your 'About' section should serve as a compelling introduction that details your expertise and location status. Read our <Link href="/services/linkedin-optimization">LinkedIn Profile Optimization</Link> guide to learn how to stand out to local talent acquisition teams.
           </p>
 
           <h2>Step 5: Maintain Daily Application Consistency</h2>
@@ -171,7 +169,7 @@ export default function HowToGetJobPage() {
             Securing a job requires active, consistent application workflows. Many vacancies are filled quickly, often within a week of listing. Checking job boards once a week means you apply after recruiters have already compiled their interview shortlists.
           </p>
           <p>
-            Checking job search platforms daily, reviewing requirements, tailoring applications, and submitting covers letters takes hours of daily work. 9Jobs offers a professional [Job Application Service](/services/job-application-automation) where our team actively researches and submits applications on your behalf daily, ensuring you never miss an opportunity.
+            Checking job search platforms daily, reviewing requirements, tailoring applications, and submitting covers letters takes hours of daily work. 9Jobs offers a professional <Link href="/services/job-application-automation">Job Application Service</Link> where our team actively researches and submits applications on your behalf daily, ensuring you never miss an opportunity.
           </p>
 
           <h2>Step 6: Master the Local Interview Process</h2>
@@ -179,7 +177,7 @@ export default function HowToGetJobPage() {
             Once your applications start converting, you will receive phone screening calls. Sourcing teams use these 10-15 minute conversations to confirm your working rights, salary benchmarks, and communication skills. Be ready to explain your background in a structured manner.
           </p>
           <p>
-            Australian hiring managers rely heavily on behavioral interviews. They want to hear real examples of how you resolved problems in past roles using the STAR method (Situation, Task, Action, Result). For mock interview practice, salary negotiation, and local communication coaching, check our [Interview Support Australia](/services/interview-coaching) program.
+            Australian hiring managers rely heavily on behavioral interviews. They want to hear real examples of how you resolved problems in past roles using the STAR method (Situation, Task, Action, Result). For mock interview practice, salary negotiation, and local communication coaching, check our <Link href="/services/interview-coaching">Interview Support Australia</Link> program.
           </p>
         </div>
       </section>
@@ -244,6 +242,8 @@ export default function HowToGetJobPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

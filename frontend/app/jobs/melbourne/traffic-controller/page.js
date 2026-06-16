@@ -1,14 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, ChevronDown, CheckCircle2, MapPin, Briefcase, FileText, ShieldAlert, ShieldCheck } from "lucide-react";
 import { CalendlyLink } from "../../../../components/CalendlyWidget";
+import { JsonLd, createBreadcrumbSchema, createSeoMetadata, getRouteSeo } from "../../../../data/seo";
 
-export const metadata = {
-  title: "Traffic Controller Jobs Melbourne | Local Sourcing & CV Help | 9Jobs",
-  description: "Looking for Traffic Controller roles in Melbourne? Get tickets parsed, resumes ATS-aligned, and secure high-paying VIC road construction roles.",
-  alternates: {
-    canonical: "https://9jobs.co/jobs/melbourne/traffic-controller",
-  },
-};
+const routeSeo = getRouteSeo("/jobs/melbourne/traffic-controller");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const tickets = [
   ["White Card (CPCCWHS1001)", "Mandatory certification required to work on any construction or road site in Victoria.", ShieldCheck],
@@ -84,6 +81,34 @@ export default function TrafficControllerJobsPage() {
       }
     }
   };
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Australian Jobs", path: "/jobs" },
+    { name: "Melbourne Jobs", path: "/jobs/melbourne" },
+    { name: "Traffic Controller Jobs Melbourne", path: "/jobs/melbourne/traffic-controller" },
+  ]);
+  const supportLinks = [
+    {
+      href: "/services/resume-writing",
+      title: "Resume Writing",
+      text: "List tickets, licences, PPE, availability, and site experience in an ATS-readable format.",
+    },
+    {
+      href: "/services/linkedin-optimization",
+      title: "LinkedIn Optimization",
+      text: "Make your civil construction and labour-hire experience easier for recruiters to verify.",
+    },
+    {
+      href: "/services/interview-coaching",
+      title: "Interview Coaching",
+      text: "Prepare for agency screens covering tickets, transport, availability, safety, and site readiness.",
+    },
+    {
+      href: "/jobs/melbourne/warehouse",
+      title: "Warehouse Jobs Melbourne",
+      text: "Compare related Melbourne labour-hire roles across warehouse, logistics, and operations.",
+    },
+  ];
 
   return (
     <main className="site-main fj-page">
@@ -95,6 +120,7 @@ export default function TrafficControllerJobsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jobSchema) }}
       />
+      <JsonLd schema={breadcrumbSchema} />
 
       <section className="fj-page-hero">
         <div className="fj-container">
@@ -191,6 +217,27 @@ export default function TrafficControllerJobsPage() {
                 <CheckCircle2 size={18} />
                 <span><strong>{title}</strong>: {desc}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section fj-section--muted">
+        <div className="fj-container">
+          <div className="fj-section-head">
+            <span className="fj-label">Application support</span>
+            <h2>Strengthen your Melbourne traffic control applications</h2>
+            <p>Connect this role page with the services and related job pages that help recruiters find and trust your profile.</p>
+          </div>
+          <div className="fj-card-grid fj-card-grid--four">
+            {supportLinks.map((link) => (
+              <article className="fj-feature-card" key={link.href}>
+                <h3>{link.title}</h3>
+                <p>{link.text}</p>
+                <Link href={link.href} className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }}>
+                  Explore <ArrowRight size={14} />
+                </Link>
+              </article>
             ))}
           </div>
         </div>

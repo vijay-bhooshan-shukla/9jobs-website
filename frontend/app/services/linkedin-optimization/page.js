@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ChevronDown, Search, UserCheck, ShieldCheck, Sparkles, Target, Star } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
+import { ServiceRelatedGuides } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
-export const metadata = {
-  title: "LinkedIn Optimization Australia | Profile Writing Services",
-  description: "Boost your recruiter search appearances by 140%. Professional LinkedIn profile optimization services tailored to the Australian market.",
-  alternates: {
-    canonical: "https://9jobs.co/services/linkedin-optimization",
-  },
-};
+const routeSeo = getRouteSeo("/services/linkedin-optimization");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const services = [
   ["Headline Optimization", "Write a search-optimized headline targeting specific roles and industries using high-demand keywords.", Search],
@@ -267,6 +265,8 @@ export default function LinkedinOptimizationPage() {
           </div>
         </div>
       </section>
+
+      <ServiceRelatedGuides topic="linkedin" />
 
       <section className="fj-section fj-section--muted" id="faqs">
         <div className="fj-container fj-faq-grid">

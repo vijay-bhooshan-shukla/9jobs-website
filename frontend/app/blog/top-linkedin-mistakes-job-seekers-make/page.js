@@ -1,9 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
+
+const routeSeo = getRouteSeo("/blog/top-linkedin-mistakes-job-seekers-make");
+
+export const metadata = createSeoMetadata(routeSeo);
+
 
 export default function BlogDetailPage() {
   const faqSchema = {
@@ -130,15 +135,15 @@ export default function BlogDetailPage() {
 
           
           <h2>1. The Generic Headline Mistake</h2>
-          <p>Your headline is the most important element of your LinkedIn profile. The search algorithm weighs keywords in your headline heavily. A common mistake is listing a generic title like 'Seeking new opportunities' or a simple job title like 'Software Developer.' If a recruiter is searching for a 'Senior React Engineer,' a profile with a generic headline will rank far down in the search results. Your headline must incorporate your target role title, core skills, and primary certifications. For example, instead of 'Software Developer,' write 'Senior Software Engineer | React, Node.js, AWS | TypeScript Developer.' For expert help in drafting a keyword-aligned profile, check out our [LinkedIn Optimization Australia](/services/linkedin-optimization) service.</p>
+          <p>Your headline is the most important element of your LinkedIn profile. The search algorithm weighs keywords in your headline heavily. A common mistake is listing a generic title like 'Seeking new opportunities' or a simple job title like 'Software Developer.' If a recruiter is searching for a 'Senior React Engineer,' a profile with a generic headline will rank far down in the search results. Your headline must incorporate your target role title, core skills, and primary certifications. For example, instead of 'Software Developer,' write 'Senior Software Engineer | React, Node.js, AWS | TypeScript Developer.' For expert help in drafting a keyword-aligned profile, check out our <Link href="/services/linkedin-optimization">LinkedIn Optimization Australia</Link> service.</p>
   
 
           <h2>2. The Empty or Passive 'About' Section</h2>
-          <p>The 'About' section is your professional summary and should serve as your elevator pitch. Many job seekers leave this section blank or write a passive, third-person narrative. Recruiters use this section to evaluate your communication skills, career focus, and cultural fit. Write a compelling, first-person summary of three to four paragraphs detailing your expertise, key achievements, and the value you bring to employers. Integrate relevant industry keywords naturally throughout this summary to improve your search visibility. You can also align this optimization with your SEEK profile using our [SEEK Profile Optimization](/services/seek-profile-optimization) service.</p>
+          <p>The 'About' section is your professional summary and should serve as your elevator pitch. Many job seekers leave this section blank or write a passive, third-person narrative. Recruiters use this section to evaluate your communication skills, career focus, and cultural fit. Write a compelling, first-person summary of three to four paragraphs detailing your expertise, key achievements, and the value you bring to employers. Integrate relevant industry keywords naturally throughout this summary to improve your search visibility. You can also align this optimization with your SEEK profile using our <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> service.</p>
   
 
           <h2>3. Discrepancies Between LinkedIn and Your Resume</h2>
-          <p>Recruiters will cross-check your LinkedIn profile against your resume before scheduling an interview. If they find discrepanciesâ€”such as different job titles, overlapping employment dates, or missing companiesâ€”it raises immediate red flags regarding your credibility. Ensure that your LinkedIn profile matches your CV exactly in terms of work history, education, and credentials. For professional resume development that aligns with your digital brand, check our [Resume Writing Services Australia](/services/resume-writing) page.</p>
+          <p>Recruiters will cross-check your LinkedIn profile against your resume before scheduling an interview. If they find discrepanciesâ€”such as different job titles, overlapping employment dates, or missing companiesâ€”it raises immediate red flags regarding your credibility. Ensure that your LinkedIn profile matches your CV exactly in terms of work history, education, and credentials. For professional resume development that aligns with your digital brand, check our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> page.</p>
   
 
           <h2>4. Ignoring Location and Privacy Settings</h2>
@@ -146,7 +151,7 @@ export default function BlogDetailPage() {
   
 
           <h2>5. Active Sourcing and Application Consistency</h2>
-          <p>While an optimized LinkedIn profile generates inbound inquiries, you must also maintain a consistent volume of active job applications. The Australian job market moves fast, and applying early gives you a significant advantage. 9Jobs offers a comprehensive [Job Application Service Australia](/services/job-application-automation) where our team manages your applications daily, tailoring cover letters and submitting resume packages to ensure you maintain a strong pipeline of opportunities.</p>
+          <p>While an optimized LinkedIn profile generates inbound inquiries, you must also maintain a consistent volume of active job applications. The Australian job market moves fast, and applying early gives you a significant advantage. 9Jobs offers a comprehensive <Link href="/services/job-application-automation">Job Application Service Australia</Link> where our team manages your applications daily, tailoring cover letters and submitting resume packages to ensure you maintain a strong pipeline of opportunities.</p>
   
         </div>
       </section>
@@ -211,6 +216,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

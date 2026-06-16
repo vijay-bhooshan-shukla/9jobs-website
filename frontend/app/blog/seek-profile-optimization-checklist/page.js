@@ -1,9 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
+
+const routeSeo = getRouteSeo("/blog/seek-profile-optimization-checklist");
+
+export const metadata = createSeoMetadata(routeSeo);
+
 
 export default function BlogDetailPage() {
   const faqSchema = {
@@ -130,7 +135,7 @@ export default function BlogDetailPage() {
 
           
           <h2>1. Configure Your Search Visibility Settings</h2>
-          <p>The most critical step in optimizing your SEEK profile is setting your visibility to 'Standard.' If your profile is set to 'Hidden' or 'Limited,' recruiters cannot discover you in search queries. Standard visibility allows verified recruiters to view your full profile, resume, and contact information, enabling them to message you directly with opportunities. Double-check your account settings to ensure standard visibility is enabled. For specialized assistance, you can leverage our [SEEK Profile Optimization](/services/seek-profile-optimization) service.</p>
+          <p>The most critical step in optimizing your SEEK profile is setting your visibility to 'Standard.' If your profile is set to 'Hidden' or 'Limited,' recruiters cannot discover you in search queries. Standard visibility allows verified recruiters to view your full profile, resume, and contact information, enabling them to message you directly with opportunities. Double-check your account settings to ensure standard visibility is enabled. For specialized assistance, you can leverage our <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> service.</p>
   
 
           <h2>2. Set Your Location and Commuter Preferences</h2>
@@ -138,15 +143,15 @@ export default function BlogDetailPage() {
   
 
           <h2>3. Write a Keyword-Rich Professional Summary</h2>
-          <p>SEEK's search algorithm matches candidates based on the keywords in their profile summary and work history. Write a concise, metrics-focused professional summary detailing your years of experience, core technical skills, and key achievements. Structure the text to contain the exact phrases used in job advertisements in your industry. Avoid generic buzzwords and focus on demonstrating your value. You can align this summary with your LinkedIn profile using our [LinkedIn Optimization Australia](/services/linkedin-optimization) service.</p>
+          <p>SEEK's search algorithm matches candidates based on the keywords in their profile summary and work history. Write a concise, metrics-focused professional summary detailing your years of experience, core technical skills, and key achievements. Structure the text to contain the exact phrases used in job advertisements in your industry. Avoid generic buzzwords and focus on demonstrating your value. You can align this summary with your LinkedIn profile using our <Link href="/services/linkedin-optimization">LinkedIn Optimization Australia</Link> service.</p>
   
 
           <h2>4. Upload an ATS-Friendly Resume</h2>
-          <p>When a recruiter views your SEEK profile, they will download your uploaded resume. If your resume uses a complex format, multiple columns, or graphics, it may parse poorly in the employer's internal databases. Ensure that your uploaded resume is a clean, single-column chronological Word document or text-searchable PDF. For expert drafting that complies with these standards, consult our [Resume Writing Services Australia](/services/resume-writing) team.</p>
+          <p>When a recruiter views your SEEK profile, they will download your uploaded resume. If your resume uses a complex format, multiple columns, or graphics, it may parse poorly in the employer's internal databases. Ensure that your uploaded resume is a clean, single-column chronological Word document or text-searchable PDF. For expert drafting that complies with these standards, consult our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> team.</p>
   
 
           <h2>5. Maintain Application Momentum and Volume</h2>
-          <p>An optimized SEEK profile increases inbound recruiter inquiries, but you must also actively apply to newly listed vacancies. Applying early is critical because recruitment cycles move quickly. Our professional [Job Application Service Australia](/services/job-application-automation) handles the daily search and submission process for you. We tailor your applications and submit them daily to ensure you maintain a consistent pipeline of opportunities.</p>
+          <p>An optimized SEEK profile increases inbound recruiter inquiries, but you must also actively apply to newly listed vacancies. Applying early is critical because recruitment cycles move quickly. Our professional <Link href="/services/job-application-automation">Job Application Service Australia</Link> handles the daily search and submission process for you. We tailor your applications and submit them daily to ensure you maintain a consistent pipeline of opportunities.</p>
   
         </div>
       </section>
@@ -211,6 +216,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

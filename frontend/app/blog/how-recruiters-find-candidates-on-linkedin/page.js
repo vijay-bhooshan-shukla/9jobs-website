@@ -1,9 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
+
+const routeSeo = getRouteSeo("/blog/how-recruiters-find-candidates-on-linkedin");
+
+export const metadata = createSeoMetadata(routeSeo);
+
 
 export default function BlogDetailPage() {
   const faqSchema = {
@@ -130,15 +135,15 @@ export default function BlogDetailPage() {
 
           
           <h2>1. Boolean Searches: How Keywords are Combined</h2>
-          <p>Recruiters build candidate lists by running boolean search queries in LinkedIn Recruiter. These queries combine job titles, technical skills, and certifications using operators like AND, OR, and NOT (e.g. 'Software Engineer' AND 'React' AND ('Node.js' OR 'TypeScript')). If your profile does not contain the exact combination of terms the recruiter is searching for, your name will not appear in the results. To improve your rankings, analyze target job descriptions in your industry and ensure those specific key terms are integrated throughout your headline, summary, and experience sections. For expert help in keyword alignment, check our [LinkedIn Optimization Australia](/services/linkedin-optimization) service.</p>
+          <p>Recruiters build candidate lists by running boolean search queries in LinkedIn Recruiter. These queries combine job titles, technical skills, and certifications using operators like AND, OR, and NOT (e.g. 'Software Engineer' AND 'React' AND ('Node.js' OR 'TypeScript')). If your profile does not contain the exact combination of terms the recruiter is searching for, your name will not appear in the results. To improve your rankings, analyze target job descriptions in your industry and ensure those specific key terms are integrated throughout your headline, summary, and experience sections. For expert help in keyword alignment, check our <Link href="/services/linkedin-optimization">LinkedIn Optimization Australia</Link> service.</p>
   
 
           <h2>2. The Location and Working Rights Filter</h2>
-          <p>Location is one of the most common filters applied by sourcing teams to narrow down candidate pools. If a role is based in Melbourne, the recruiter will filter search results to candidates located within a 50km radius. If your location is set incorrectly, you will be filtered out. Ensure that your location is set to your target city (e.g. 'Melbourne VIC' or 'Sydney NSW'). If you are relocating, update your settings and state your relocation timeline and work eligibility clearly in your summary. You can align these settings across platforms using our [SEEK Profile Optimization](/services/seek-profile-optimization) program.</p>
+          <p>Location is one of the most common filters applied by sourcing teams to narrow down candidate pools. If a role is based in Melbourne, the recruiter will filter search results to candidates located within a 50km radius. If your location is set incorrectly, you will be filtered out. Ensure that your location is set to your target city (e.g. 'Melbourne VIC' or 'Sydney NSW'). If you are relocating, update your settings and state your relocation timeline and work eligibility clearly in your summary. You can align these settings across platforms using our <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> program.</p>
   
 
           <h2>3. The Profile Completeness Score</h2>
-          <p>LinkedIn's algorithm ranks profiles with high completeness scores higher in search results. A complete profile requires a professional photo, an optimized headline, a detailed summary, work history with detailed bullet points, education history, and at least 5 relevant skills. Leaving sections blank signals to the algorithm that your profile is inactive, causing your ranking to drop. Ensure every section of your profile is complete, and align your work history details with your resume using our [Resume Writing Services Australia](/services/resume-writing) team.</p>
+          <p>LinkedIn's algorithm ranks profiles with high completeness scores higher in search results. A complete profile requires a professional photo, an optimized headline, a detailed summary, work history with detailed bullet points, education history, and at least 5 relevant skills. Leaving sections blank signals to the algorithm that your profile is inactive, causing your ranking to drop. Ensure every section of your profile is complete, and align your work history details with your resume using our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> team.</p>
   
 
           <h2>4. The 'Open to Work' Backend Flag</h2>
@@ -146,7 +151,7 @@ export default function BlogDetailPage() {
   
 
           <h2>5. Maintaining Sourcing and Application Momentum</h2>
-          <p>While optimization increases inbound headhunting inquiries, you must also maintain a consistent volume of active job applications. The Australian job market moves fast, and applying early gives you a significant advantage. 9Jobs offers a comprehensive [Job Application Service Australia](/services/job-application-automation) where our team manages your applications daily, tailoring cover letters and submitting resume packages to ensure you maintain a strong pipeline of opportunities.</p>
+          <p>While optimization increases inbound headhunting inquiries, you must also maintain a consistent volume of active job applications. The Australian job market moves fast, and applying early gives you a significant advantage. 9Jobs offers a comprehensive <Link href="/services/job-application-automation">Job Application Service Australia</Link> where our team manages your applications daily, tailoring cover letters and submitting resume packages to ensure you maintain a strong pipeline of opportunities.</p>
   
         </div>
       </section>
@@ -211,6 +216,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

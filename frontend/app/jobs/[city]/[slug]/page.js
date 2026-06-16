@@ -4,6 +4,7 @@ import { ArrowRight, ChevronDown, CheckCircle2, MapPin, Briefcase } from "lucide
 import { CalendlyLink } from "../../../../components/CalendlyWidget";
 import { cities, pagesConfig } from "../../../../data/australianJobsData";
 import { getContentForPage } from "../../../../data/contentGenerator";
+import { createSeoMetadata, getRouteSeo } from "../../../../data/seo";
 
 export async function generateStaticParams() {
   return pagesConfig
@@ -18,14 +19,13 @@ export async function generateMetadata({ params }) {
   const { city, slug } = await params;
   const config = pagesConfig.find(p => p.city === city && p.slug === slug);
   if (!config) return {};
+  const routeSeo = getRouteSeo(`/jobs/${city}/${slug}`);
 
-  return {
+  return createSeoMetadata(routeSeo || {
     title: config.title,
     description: config.metaDescription,
-    alternates: {
-      canonical: `https://9jobs.co/jobs/${city}/${slug}`
-    }
-  };
+    path: `/jobs/${city}/${slug}`,
+  });
 }
 
 export default async function ServiceSubPage({ params }) {

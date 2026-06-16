@@ -1,9 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
+
+const routeSeo = getRouteSeo("/blog/jobs-in-australia-for-new-migrants");
+
+export const metadata = createSeoMetadata(routeSeo);
+
 
 export default function BlogDetailPage() {
   const faqSchema = {
@@ -130,11 +135,11 @@ export default function BlogDetailPage() {
 
           
           <h2>1. Overcoming the 'Lack of Local Experience' Objection</h2>
-          <p>The most common objection new migrants face is a lack of local experience. Employers want to know that you understand Australian business culture, communication styles, and commercial dynamics. To overcome this, highlight the transferable nature of your international experience, focusing on global methodologies, project scales, and technical certifications. Additionally, frame your accomplishments using metrics that translate globally, such as budgets managed or percentage improvements. For professional resume editing that positions your global experience in a local context, check our [Resume Writing Services Australia](/services/resume-writing) team.</p>
+          <p>The most common objection new migrants face is a lack of local experience. Employers want to know that you understand Australian business culture, communication styles, and commercial dynamics. To overcome this, highlight the transferable nature of your international experience, focusing on global methodologies, project scales, and technical certifications. Additionally, frame your accomplishments using metrics that translate globally, such as budgets managed or percentage improvements. For professional resume editing that positions your global experience in a local context, check our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> team.</p>
   
 
           <h2>2. Transparency Regarding Visa and Working Rights</h2>
-          <p>Recruiters will check your work eligibility during initial phone screens. If your visa status is unclear, or if your location appears to be offshore, your application may be discarded. Be transparent about your visa subclass (e.g. Subclass 189, 190, 482, or 485) and state your working rights clearly in your professional summary. Having an Australian mobile number and listing your target city (e.g. Sydney NSW or Melbourne VIC) on your profile is essential to show recruiters you are ready to start. You can align these settings across platforms using our [LinkedIn Optimization Australia](/services/linkedin-optimization) and [SEEK Profile Optimization](/services/seek-profile-optimization) programs.</p>
+          <p>Recruiters will check your work eligibility during initial phone screens. If your visa status is unclear, or if your location appears to be offshore, your application may be discarded. Be transparent about your visa subclass (e.g. Subclass 189, 190, 482, or 485) and state your working rights clearly in your professional summary. Having an Australian mobile number and listing your target city (e.g. Sydney NSW or Melbourne VIC) on your profile is essential to show recruiters you are ready to start. You can align these settings across platforms using our <Link href="/services/linkedin-optimization">LinkedIn Optimization Australia</Link> and <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> programs.</p>
   
 
           <h2>3. Localizing Your Resume Format and Terminology</h2>
@@ -142,11 +147,11 @@ export default function BlogDetailPage() {
   
 
           <h2>4. Outsourcing the Job Application Process</h2>
-          <p>As a new migrant, building a pipeline of opportunities requires consistent effort. Sourcing relevant listings, customizing cover letters, and submitting applications daily takes hours of work. 9Jobs offers a professional [Job Application Service Australia](/services/job-application-automation) where our team manages the search and submission process for you. We tailor your applications and submit them daily to ensure you maintain a consistent pipeline of opportunities.</p>
+          <p>As a new migrant, building a pipeline of opportunities requires consistent effort. Sourcing relevant listings, customizing cover letters, and submitting applications daily takes hours of work. 9Jobs offers a professional <Link href="/services/job-application-automation">Job Application Service Australia</Link> where our team manages the search and submission process for you. We tailor your applications and submit them daily to ensure you maintain a consistent pipeline of opportunities.</p>
   
 
           <h2>5. Preparing for Australian Behavioral Interviews</h2>
-          <p>Australian employers rely on behavioral interviewing to assess candidates. Sourcing teams look for candidates who can describe how they handled professional challenges using the STAR method (Situation, Task, Action, Result). Practice structuring your answers to focus on your specific contributions and the measurable outcome. Our [Interview Support Australia](/services/interview-coaching) program offers coaching sessions and mock interviews with local experts to build your confidence and help you secure offers.</p>
+          <p>Australian employers rely on behavioral interviewing to assess candidates. Sourcing teams look for candidates who can describe how they handled professional challenges using the STAR method (Situation, Task, Action, Result). Practice structuring your answers to focus on your specific contributions and the measurable outcome. Our <Link href="/services/interview-coaching">Interview Support Australia</Link> program offers coaching sessions and mock interviews with local experts to build your confidence and help you secure offers.</p>
   
         </div>
       </section>
@@ -211,6 +216,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

@@ -1,21 +1,23 @@
 import ContactForm from "../../components/ContactForm";
 import { Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { JsonLd, createBreadcrumbSchema, createSeoMetadata, getRouteSeo } from "../../data/seo";
 
-export const metadata = {
-  title: "Contact 9Jobs | Resume & Job Search Support in Australia",
-  description: "Get in touch with the 9Jobs team for questions, demo requests, resume writing services, LinkedIn profile optimization, and daily job application support.",
-  alternates: {
-    canonical: "/contact",
-  },
-};
+const routeSeo = getRouteSeo("/contact");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 export default async function ContactPage({ searchParams }) {
   const params = await searchParams;
   const initialMessage =
     params?.intent === "demo" ? "I would like to schedule a 9Jobs demo." : "";
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Contact", path: "/contact" },
+  ]);
 
   return (
     <main className="site-main fj-page">
+      <JsonLd schema={breadcrumbSchema} />
       <section className="fj-page-hero fj-contact-hero">
         <div className="fj-container">
           <span className="fj-announcement"><span>Contact</span> We are ready to help</span>

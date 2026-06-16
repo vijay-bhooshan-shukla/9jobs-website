@@ -6,6 +6,12 @@
       "includeFiles": "server/views/**"
     }
   },
+  "crons": [
+    {
+      "path": "/api/cron/import-social-posts",
+      "schedule": "0 2 * * *"
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/create-checkout-session",
@@ -20,7 +26,7 @@
       "destination": "/frontend/api/contact"
     },
     {
-      "source": "/api/(.*)",
+      "source": "/api/:path((?!cron/import-social-posts).*)",
       "destination": "/api/index.js"
     }
   ]

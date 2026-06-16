@@ -1,9 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
+
+const routeSeo = getRouteSeo("/blog/how-to-get-more-interviews-in-sydney");
+
+export const metadata = createSeoMetadata(routeSeo);
+
 
 export default function BlogDetailPage() {
   const faqSchema = {
@@ -130,11 +135,11 @@ export default function BlogDetailPage() {
 
           
           <h2>1. Optimize Your Resume for Sydney's Corporate Standards</h2>
-          <p>Sydney employers expect professional resumes that focus on business outcomes and metric-driven achievements. A generic list of daily duties is insufficient. To secure interviews, your resume must clearly demonstrate how you generated value, saved costs, or led teams in past roles. Format your CV in a clean, chronological, and ATS-compliant layout, ensuring there are no multi-column formats or graphic elements that block ATS scanners. For professional resume editing tailored specifically to Sydney's commercial benchmarks, you can utilize our [Resume Writing Services Australia](/services/resume-writing) team.</p>
+          <p>Sydney employers expect professional resumes that focus on business outcomes and metric-driven achievements. A generic list of daily duties is insufficient. To secure interviews, your resume must clearly demonstrate how you generated value, saved costs, or led teams in past roles. Format your CV in a clean, chronological, and ATS-compliant layout, ensuring there are no multi-column formats or graphic elements that block ATS scanners. For professional resume editing tailored specifically to Sydney's commercial benchmarks, you can utilize our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> team.</p>
   
 
           <h2>2. Target Sydney's Geographic Sourcing Filters</h2>
-          <p>Because Sydney is geographically spread out, recruiters use location filters to find candidates who live within a reasonable commute of their offices. If your profile location is set to interstate or overseas, or if you fail to specify a Sydney region, you will be filtered out. Ensure that your location is set to 'Sydney NSW' on your resume, LinkedIn, and SEEK profiles. If you reside in surrounding areas but are targeting CBD roles, state your target location clearly in your summary. For specialized profile optimization, explore our [LinkedIn Optimization Australia](/services/linkedin-optimization) and [SEEK Profile Optimization](/services/seek-profile-optimization) options.</p>
+          <p>Because Sydney is geographically spread out, recruiters use location filters to find candidates who live within a reasonable commute of their offices. If your profile location is set to interstate or overseas, or if you fail to specify a Sydney region, you will be filtered out. Ensure that your location is set to 'Sydney NSW' on your resume, LinkedIn, and SEEK profiles. If you reside in surrounding areas but are targeting CBD roles, state your target location clearly in your summary. For specialized profile optimization, explore our <Link href="/services/linkedin-optimization">LinkedIn Optimization Australia</Link> and <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> options.</p>
   
 
           <h2>3. Leverage Recruitment Agencies and Sourcing Networks</h2>
@@ -142,11 +147,11 @@ export default function BlogDetailPage() {
   
 
           <h2>4. Outsource the Job Search Workflow</h2>
-          <p>Managing a job search in Sydney is a full-time commitment. Finding relevant listings, customizing cover letters, and submitting applications daily takes hours of manual work. Because roles are filled quickly, speed is critical. 9Jobs offers a professional [Job Application Service Australia](/services/job-application-automation) where our team monitors the job market in Sydney daily, identifies matching vacancies, and submits tailored applications on your behalf, allowing you to maintain a consistent application volume without the stress.</p>
+          <p>Managing a job search in Sydney is a full-time commitment. Finding relevant listings, customizing cover letters, and submitting applications daily takes hours of manual work. Because roles are filled quickly, speed is critical. 9Jobs offers a professional <Link href="/services/job-application-automation">Job Application Service Australia</Link> where our team monitors the job market in Sydney daily, identifies matching vacancies, and submits tailored applications on your behalf, allowing you to maintain a consistent application volume without the stress.</p>
   
 
           <h2>5. Master Sydney's STAR Behavioral Interviews</h2>
-          <p>Sydney hiring managers use structured behavioral interviews to evaluate candidates. Sourcing teams assess how you handle professional challenges by asking you to describe specific past situations using the STAR method (Situation, Task, Action, Result). Prepare detailed, metric-focused stories that highlight your stakeholder management, problem-solving, and leadership abilities. Our [Interview Support Australia](/services/interview-coaching) program offers coaching sessions and mock interviews with local experts to build your confidence and help you secure offers.</p>
+          <p>Sydney hiring managers use structured behavioral interviews to evaluate candidates. Sourcing teams assess how you handle professional challenges by asking you to describe specific past situations using the STAR method (Situation, Task, Action, Result). Prepare detailed, metric-focused stories that highlight your stakeholder management, problem-solving, and leadership abilities. Our <Link href="/services/interview-coaching">Interview Support Australia</Link> program offers coaching sessions and mock interviews with local experts to build your confidence and help you secure offers.</p>
   
         </div>
       </section>
@@ -211,6 +216,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

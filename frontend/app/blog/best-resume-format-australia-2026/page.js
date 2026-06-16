@@ -1,9 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
+
+const routeSeo = getRouteSeo("/blog/best-resume-format-australia-2026");
+
+export const metadata = createSeoMetadata(routeSeo);
+
 
 export default function BlogDetailPage() {
   const faqSchema = {
@@ -130,7 +135,7 @@ export default function BlogDetailPage() {
 
           
           <h2>1. The Core Structure of an Australian Resume</h2>
-          <p>Unlike some international formats that prefer a single-page document, the standard Australian resume format is typically two to three pages long. This length provides enough space to detail your achievements, project scale, and technical stack without cluttering the page. The layout must be clean, chronological, and written in reverse-chronological order, starting with your most recent position. Employers value consistency and structure. Avoid decorative graphics, multi-column designs, tables, or progress bars for skills. These design elements scramble the text when processed by ATS engines, leading to automatic rejection. Keep your formatting simple: use standard margins, bullet points, and highly readable fonts like Arial, Calibri, or Inter. For professional styling that complies with these standards, you can leverage our [Resume Writing Services Australia](/services/resume-writing) to build a high-performance CV.</p>
+          <p>Unlike some international formats that prefer a single-page document, the standard Australian resume format is typically two to three pages long. This length provides enough space to detail your achievements, project scale, and technical stack without cluttering the page. The layout must be clean, chronological, and written in reverse-chronological order, starting with your most recent position. Employers value consistency and structure. Avoid decorative graphics, multi-column designs, tables, or progress bars for skills. These design elements scramble the text when processed by ATS engines, leading to automatic rejection. Keep your formatting simple: use standard margins, bullet points, and highly readable fonts like Arial, Calibri, or Inter. For professional styling that complies with these standards, you can leverage our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> to build a high-performance CV.</p>
   
 
           <h2>2. Personal Details: What to Include and What to Exclude</h2>
@@ -146,11 +151,11 @@ export default function BlogDetailPage() {
   
 
           <h2>5. Aligning with Australian Keywords and Terminology</h2>
-          <p>To clear the automated screening phase, your resume must align with the terminology used in local job descriptions. This means translating international terms into their Australian equivalents. For example, use 'superannuation' instead of '401k' or 'pension,' and refer to 'SEEK' rather than international job boards. Additionally, analyze the target job advertisement for recurring skills and certifications, and integrate them naturally into your professional history and skills sections. If a job description asks for experience in stakeholder management, ensure that exact phrase appears in your resume. Outsourcing your resume development to a service like [9Jobs Resume Sourcing](/services/resume-writing) ensures your document uses the correct industry jargon and formatting rules to pass local ATS filters.</p>
+          <p>To clear the automated screening phase, your resume must align with the terminology used in local job descriptions. This means translating international terms into their Australian equivalents. For example, use 'superannuation' instead of '401k' or 'pension,' and refer to 'SEEK' rather than international job boards. Additionally, analyze the target job advertisement for recurring skills and certifications, and integrate them naturally into your professional history and skills sections. If a job description asks for experience in stakeholder management, ensure that exact phrase appears in your resume. Outsourcing your resume development to a service like <Link href="/services/resume-writing">9Jobs Resume Sourcing</Link> ensures your document uses the correct industry jargon and formatting rules to pass local ATS filters.</p>
   
 
           <h2>6. Optimizing Your Digital Footprint: SEEK and LinkedIn</h2>
-          <p>In 2026, a resume does not exist in isolation. Local recruiters use candidate databases to actively source talent. If your resume does not match your online profiles, you will lose credibility. Ensure your LinkedIn profile matches your CV exactly in terms of job titles, employment dates, and key projects. Furthermore, your SEEK profile must be fully populated and set to standard visibility. Use our [SEEK Profile Optimization](/services/seek-profile-optimization) and [LinkedIn Optimization Australia](/services/linkedin-optimization) services to align your profiles, adjust your privacy and search settings, and increase your inbound recruiter inquiries.</p>
+          <p>In 2026, a resume does not exist in isolation. Local recruiters use candidate databases to actively source talent. If your resume does not match your online profiles, you will lose credibility. Ensure your LinkedIn profile matches your CV exactly in terms of job titles, employment dates, and key projects. Furthermore, your SEEK profile must be fully populated and set to standard visibility. Use our <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> and <Link href="/services/linkedin-optimization">LinkedIn Optimization Australia</Link> services to align your profiles, adjust your privacy and search settings, and increase your inbound recruiter inquiries.</p>
   
         </div>
       </section>
@@ -215,6 +220,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

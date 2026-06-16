@@ -28,6 +28,19 @@ const footerGroups = [
     ],
   },
   {
+    title: "Explore 9Jobs",
+    href: "/jobs",
+    links: [
+      { href: "/jobs/sydney", label: "Jobs in Sydney" },
+      { href: "/jobs/melbourne", label: "Jobs in Melbourne" },
+      { href: "/jobs/brisbane", label: "Jobs in Brisbane" },
+      { href: "/services/resume-writing", label: "Resume Writing" },
+      { href: "/services/linkedin-optimization", label: "LinkedIn Optimization" },
+      { href: "/services/interview-coaching", label: "Interview Coaching" },
+      { href: "/blog/how-to-get-a-job-in-australia", label: "How to Get a Job in Australia" },
+    ],
+  },
+  {
     title: "Regional & Niche",
     href: "/jobs",
     links: [

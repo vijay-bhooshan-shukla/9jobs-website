@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CalendlyLink } from "../../components/CalendlyWidget";
+import { JsonLd, createBreadcrumbSchema, createSeoMetadata, getRouteSeo } from "../../data/seo";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -32,18 +33,19 @@ const supportAreas = [
   ["Follow-up support", "Messages, interview notes, and next steps stay organized so no opportunity gets lost.", ClipboardCheck],
 ];
 
-export const metadata = {
-  title: "About 9Jobs | Smart Job Application & Career Support Services",
-  description:
-    "Learn how 9Jobs helps IT and non-IT professionals navigate the Australian job market with ATS-ready resume writing, profile optimization, and job search automation.",
-  alternates: {
-    canonical: "/about",
-  },
-};
+const routeSeo = getRouteSeo("/about");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 export default function About() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+  ]);
+
   return (
     <main className="site-main fj-page">
+      <JsonLd schema={breadcrumbSchema} />
       <section className="fj-page-hero">
         <div className="fj-container">
           <span className="fj-announcement"><span>About</span> Built for candidates and hiring teams</span>
@@ -60,7 +62,7 @@ export default function About() {
             <p>9Jobs was created for candidates who know they can contribute, but need a sharper way to present skills, choose the right roles, and stay consistent through applications.</p>
           </div>
           <div className="fj-image-card">
-            <Image src="/framer/story-ops.jpg" alt="9Jobs team reviewing candidate opportunities" width={1200} height={800} priority />
+            <Image src="/framer/story-ops.jpg" alt="9Jobs team reviewing candidate opportunities" width={1200} height={800} />
           </div>
         </div>
       </section>

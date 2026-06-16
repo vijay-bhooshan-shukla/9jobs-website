@@ -1,17 +1,9 @@
 export default function robots() {
   return {
-    rules: [
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/admin/", "/api/"],
-      },
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/admin/", "/api/"],
-      },
-    ],
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
     sitemap: "https://9jobs.co/sitemap.xml",
   };
 }

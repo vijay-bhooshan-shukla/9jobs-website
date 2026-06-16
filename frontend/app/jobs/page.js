@@ -2,14 +2,11 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown, CheckCircle2, MapPin, Briefcase, FileText, SearchCheck, UserCheck, MessageCircle } from "lucide-react";
 import { CalendlyLink } from "../../components/CalendlyWidget";
 import { cities } from "../../data/australianJobsData";
+import { createSeoMetadata, getRouteSeo } from "../../data/seo";
 
-export const metadata = {
-  title: "Jobs in Australia | Sourcing, Application & Resume Services | 9Jobs",
-  description: "Explore job opportunities across major Australian cities. Get localized resume writing, profile optimization, and done-for-you job application support.",
-  alternates: {
-    canonical: "https://9jobs.co/jobs"
-  }
-};
+const routeSeo = getRouteSeo("/jobs");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const faqs = [
   [

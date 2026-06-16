@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ChevronDown, FileText, Search, UserCheck, ShieldCheck, Sparkles, Target, Star } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
+import { ServiceRelatedGuides } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
-export const metadata = {
-  title: "Resume Writing Australia | ATS-Optimized Professional CVs",
-  description: "Land 3x more interviews with professional resume writing services in Australia. ATS-friendly structures tailored for SEEK & local recruiters.",
-  alternates: {
-    canonical: "https://9jobs.co/services/resume-writing",
-  },
-};
+const routeSeo = getRouteSeo("/services/resume-writing");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const services = [
   ["ATS Compliance", "Optimized structure, fonts, and keywords to pass major Applicant Tracking Systems used by Australian employers.", FileText],
@@ -267,6 +265,8 @@ export default function ResumeServicesPage() {
           </div>
         </div>
       </section>
+
+      <ServiceRelatedGuides topic="resume" />
 
       <section className="fj-section fj-section--muted" id="faqs">
         <div className="fj-container fj-faq-grid">

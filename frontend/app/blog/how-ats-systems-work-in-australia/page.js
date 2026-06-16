@@ -1,9 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
+
+const routeSeo = getRouteSeo("/blog/how-ats-systems-work-in-australia");
+
+export const metadata = createSeoMetadata(routeSeo);
+
 
 export default function BlogDetailPage() {
   const faqSchema = {
@@ -138,15 +143,15 @@ export default function BlogDetailPage() {
   
 
           <h2>3. Location and Working Rights Filtering</h2>
-          <p>Recruiters frequently apply hard filters to narrow down candidate lists. The most common filters are location and work eligibility. If a role is based in Brisbane, the recruiter will filter search results to candidates located within a 50km radius. If your location is set to overseas or interstate, your resume may be automatically filtered out. Similarly, recruiters screen for working rights. Listing your visa status (e.g., Permanent Resident, Subclass 485) at the top of your resume ensures you clear these filters. For assistance in optimizing your profile location and visibility settings, check out our [LinkedIn Optimization Australia](/services/linkedin-optimization) and [SEEK Profile Optimization](/services/seek-profile-optimization) programs.</p>
+          <p>Recruiters frequently apply hard filters to narrow down candidate lists. The most common filters are location and work eligibility. If a role is based in Brisbane, the recruiter will filter search results to candidates located within a 50km radius. If your location is set to overseas or interstate, your resume may be automatically filtered out. Similarly, recruiters screen for working rights. Listing your visa status (e.g., Permanent Resident, Subclass 485) at the top of your resume ensures you clear these filters. For assistance in optimizing your profile location and visibility settings, check out our <Link href="/services/linkedin-optimization">LinkedIn Optimization Australia</Link> and <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> programs.</p>
   
 
           <h2>4. The Match Score and Ranking Algorithms</h2>
-          <p>Many ATS platforms calculate a match score for each applicant, ranking them from highest to lowest based on how well their resume matches the job description. Sourcing teams typically only review the top 10% to 20% of ranked candidates. To maximize your match score, your resume must align with the job description's structure, keyword density, and experience requirements. Avoid using keyword stuffing (listing keywords repeatedly in tiny fonts), as modern ATS algorithms detect and flag this behavior. Instead, write detail-oriented accomplishment statements that integrate keywords contextually. For expert help in building an ATS-ready document, you can consult our [Resume Writing Services Australia](/services/resume-writing) team.</p>
+          <p>Many ATS platforms calculate a match score for each applicant, ranking them from highest to lowest based on how well their resume matches the job description. Sourcing teams typically only review the top 10% to 20% of ranked candidates. To maximize your match score, your resume must align with the job description's structure, keyword density, and experience requirements. Avoid using keyword stuffing (listing keywords repeatedly in tiny fonts), as modern ATS algorithms detect and flag this behavior. Instead, write detail-oriented accomplishment statements that integrate keywords contextually. For expert help in building an ATS-ready document, you can consult our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> team.</p>
   
 
           <h2>5. Outsourcing the Application Funnel</h2>
-          <p>Navigating the technical requirements of ATS systems and maintaining a consistent volume of applications is time-consuming. Because recruiters fill roles quickly, applying early gives you a significant advantage. 9Jobs offers a comprehensive [Job Application Service Australia](/services/job-application-automation) where our team monitors local job boards, tailors your ATS-optimized resume for matching roles, and submits applications on your behalf daily, ensuring you never miss a sourcing window in Sydney, Melbourne, or other major cities.</p>
+          <p>Navigating the technical requirements of ATS systems and maintaining a consistent volume of applications is time-consuming. Because recruiters fill roles quickly, applying early gives you a significant advantage. 9Jobs offers a comprehensive <Link href="/services/job-application-automation">Job Application Service Australia</Link> where our team monitors local job boards, tailors your ATS-optimized resume for matching roles, and submits applications on your behalf daily, ensuring you never miss a sourcing window in Sydney, Melbourne, or other major cities.</p>
   
         </div>
       </section>
@@ -211,6 +216,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

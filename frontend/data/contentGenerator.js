@@ -59,7 +59,7 @@ export function getContentForPage(citySlug, pageSlug = null) {
   // Breadcrumb structure
   const breadcrumbs = [
     { name: "Home", url: "/" },
-    { name: "Australian Jobs", url: "/jobs/melbourne" }, // Fallback to first city
+    { name: "Australian Jobs", url: "/jobs" },
     { name: `${city.name} Jobs`, url: `/jobs/${citySlug}` }
   ];
   if (pageSlug) {

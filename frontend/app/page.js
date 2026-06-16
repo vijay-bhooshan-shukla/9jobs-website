@@ -260,7 +260,7 @@ export default function Home() {
           <h1>9Jobs – Job Search, Resume Writing & <span className="heading-mark">Career Support Australia</span></h1>
           <p>We optimize your resume, LinkedIn, SEEK and Jora profiles, apply for jobs on your behalf, and help you secure interviews and job offers.</p>
           <div className="fj-actions">
-            <Link className="fj-button fj-button--ghost" href="/pricing">1 day trial</Link>
+            <Link className="fj-button fj-button--ghost" href="/pricing">1 Day Trial</Link>
             <CalendlyLink className="fj-button fj-button--dark">Get a demo</CalendlyLink>
           </div>
         </div>
@@ -570,7 +570,7 @@ export default function Home() {
           <span>Automate with 9Jobs</span>
           <h2>Start for free <span className="heading-mark">today.</span></h2>
           <div className="fj-actions">
-            <Link className="fj-button fj-button--ghost" href="/pricing">1 day trial</Link>
+            <Link className="fj-button fj-button--ghost" href="/pricing">1 Day Trial</Link>
             <CalendlyLink className="fj-button fj-button--dark">Schedule a demo</CalendlyLink>
             <Link className="fj-button fj-button--ghost" href="/blog">Read our Blog</Link>
             <Link className="fj-button fj-button--ghost" href="/contact">Contact Us</Link>

@@ -2,14 +2,12 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
-export const metadata = {
-  title: "Best ATS Resume Format for Australian Recruiters | 9Jobs",
-  description: "Learn how to write and format an ATS-friendly resume for the Australian job market. Standard layouts, key sections, fonts, and keywords explained.",
-  alternates: {
-    canonical: "/blog/ats-resume-format-australia",
-  },
-};
+const routeSeo = getRouteSeo("/blog/ats-resume-format-australia");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const faqs = [
   [
@@ -235,6 +233,8 @@ export default function AtsResumeFormatPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

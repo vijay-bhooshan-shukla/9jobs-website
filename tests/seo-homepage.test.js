@@ -83,14 +83,18 @@ describe('homepage technical SEO contract', () => {
   test('keeps crawl discovery and canonical route consolidation configured', () => {
     const robots = read('frontend/app/robots.js');
     const sitemap = read('frontend/app/sitemap.js');
+    const seo = read('frontend/data/seo.js');
     const config = read('frontend/next.config.mjs');
 
-    expect(robots).toContain('userAgent: "Googlebot"');
+    expect(robots).toContain('userAgent: "*"');
+    expect(robots).toContain('allow: "/"');
+    expect(robots).not.toContain('disallow');
     expect(robots).toContain('sitemap: "https://9jobs.co/sitemap.xml"');
-    expect(sitemap).toContain('/jobs/melbourne');
-    expect(sitemap).toContain('/services/resume-writing');
-    expect(sitemap).not.toContain('/jobs-in-melbourne');
-    expect(sitemap).not.toContain('/resume-writing-services-australia');
+    expect(sitemap).toContain('siteRoutes.map');
+    expect(seo).toContain('path: "/jobs/melbourne"');
+    expect(seo).toContain('path: "/services/resume-writing"');
+    expect(seo).not.toContain('path: "/jobs-in-melbourne"');
+    expect(seo).not.toContain('path: "/resume-writing-services-australia"');
     expect(config).toContain('{ source: "/jobs-in-melbourne", destination: "/jobs/melbourne", statusCode: 301 }');
     expect(config).toContain('{ source: "/jobs-melbourne", destination: "/jobs/melbourne", statusCode: 301 }');
     expect(config).toContain('{ source: "/get-jobs-in-melbourne", destination: "/jobs/melbourne", statusCode: 301 }');

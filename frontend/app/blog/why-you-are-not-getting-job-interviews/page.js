@@ -2,14 +2,12 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
-export const metadata = {
-  title: "Not Getting Job Interviews in Australia? Here is Why & How to Fix | 9Jobs",
-  description: "Discover the most common reasons why your job applications are getting rejected in Australia and learn the actionable steps to fix them.",
-  alternates: {
-    canonical: "/blog/why-you-are-not-getting-job-interviews",
-  },
-};
+const routeSeo = getRouteSeo("/blog/why-you-are-not-getting-job-interviews");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const faqs = [
   [
@@ -131,7 +129,7 @@ export default function WhyNoInterviewsPage() {
             Over 75% of resumes submitted online are filtered out automatically by Applicant Tracking Systems (ATS). If your file uses design templates (with columns, text boxes, tables, or graphs), the parser will scramble the text.
           </p>
           <p>
-            To fix this, rebuild your resume using a clean, single-column format. Remove graphics, charts, and non-standard fonts. Read our [Resume Writing Services](/services/resume-writing) guide to learn how to structure an ATS-friendly layout.
+            To fix this, rebuild your resume using a clean, single-column format. Remove graphics, charts, and non-standard fonts. Read our <Link href="/services/resume-writing">Resume Writing Services</Link> guide to learn how to structure an ATS-friendly layout.
           </p>
 
           <h2>Reason 2: You Lack Relevant Sourcing Keywords</h2>
@@ -139,7 +137,7 @@ export default function WhyNoInterviewsPage() {
             Recruiters use search filters to query candidate databases on platforms like SEEK or LinkedIn. If your profile lacks target industry terms and skill tags, you will be excluded from search queries before you apply.
           </p>
           <p>
-            Review local job listings, identify repeating technical terms, tools, or certifications in your field, and add them to your resume and digital profiles. Read our [LinkedIn Optimization](/services/linkedin-optimization) and [SEEK Optimization](/services/seek-profile-optimization) guides to configure your keywords correctly.
+            Review local job listings, identify repeating technical terms, tools, or certifications in your field, and add them to your resume and digital profiles. Read our <Link href="/services/linkedin-optimization">LinkedIn Optimization</Link> and <Link href="/services/seek-profile-optimization">SEEK Optimization</Link> guides to configure your keywords correctly.
           </p>
 
           <div style={{ background: "var(--surface)", border: "1px solid var(--line)", padding: "24px", borderRadius: "8px", margin: "24px 0" }}>
@@ -163,7 +161,7 @@ export default function WhyNoInterviewsPage() {
             Job vacancies in Australia are filled quickly. Sourcing teams start contacting candidates within 48 hours of posting. If you only apply in batches on weekends, you miss out on high-priority roles.
           </p>
           <p>
-            Apply to roles daily as they are listed. 9Jobs offers a professional [Job Application Service](/services/job-application-automation) where our team researches and submits applications on your behalf daily, maintaining consistency.
+            Apply to roles daily as they are listed. 9Jobs offers a professional <Link href="/services/job-application-automation">Job Application Service</Link> where our team researches and submits applications on your behalf daily, maintaining consistency.
           </p>
 
           <h2>Reason 5: Weak Phone Screen Performance</h2>
@@ -171,7 +169,7 @@ export default function WhyNoInterviewsPage() {
             If you pass the initial screen, you will receive phone screening calls. Sourcing teams use these conversations to verify basic parameters. If you cannot explain your background, working rights, and salary expectations clearly, you will be filtered out.
           </p>
           <p>
-            Prepare for screening calls by structuring your achievements using the STAR method. For mock interview practice and communication coaching, check our [Interview Support](/services/interview-coaching) program.
+            Prepare for screening calls by structuring your achievements using the STAR method. For mock interview practice and communication coaching, check our <Link href="/services/interview-coaching">Interview Support</Link> program.
           </p>
         </div>
       </section>
@@ -236,6 +234,8 @@ export default function WhyNoInterviewsPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

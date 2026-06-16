@@ -1,9 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
+
+const routeSeo = getRouteSeo("/blog/how-to-get-more-interviews-in-melbourne");
+
+export const metadata = createSeoMetadata(routeSeo);
+
 
 export default function BlogDetailPage() {
   const faqSchema = {
@@ -130,11 +135,11 @@ export default function BlogDetailPage() {
 
           
           <h2>1. Optimize Your Location Settings for Melbourne Recruiters</h2>
-          <p>The first filter a Melbourne-based recruiter applies is location. If your profile is set to another state or country, you are automatically filtered out. Recruiters search for talent within specific geographic radiuses to ensure candidates are ready to start and can commute easily. Ensure that your location is explicitly set to Melbourne on your resume, LinkedIn, and SEEK profiles. If you are planning a relocation, list your target location as 'Melbourne VIC (Relocating)' and state your visa status clearly in your summary. For specialized help in configuring your online profiles for local searches, check our [LinkedIn Optimization Australia](/services/linkedin-optimization) and [SEEK Profile Optimization](/services/seek-profile-optimization) packages.</p>
+          <p>The first filter a Melbourne-based recruiter applies is location. If your profile is set to another state or country, you are automatically filtered out. Recruiters search for talent within specific geographic radiuses to ensure candidates are ready to start and can commute easily. Ensure that your location is explicitly set to Melbourne on your resume, LinkedIn, and SEEK profiles. If you are planning a relocation, list your target location as 'Melbourne VIC (Relocating)' and state your visa status clearly in your summary. For specialized help in configuring your online profiles for local searches, check our <Link href="/services/linkedin-optimization">LinkedIn Optimization Australia</Link> and <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> packages.</p>
   
 
           <h2>2. Build an ATS-Ready Resume Aligned with Local Standards</h2>
-          <p>Melbourne employers utilize ATS software to screen candidate pools. Resumes with complex layouts, multi-column designs, tables, or photo inserts are rejected automatically because the scanners cannot parse the text correctly. To pass these filters, format your resume in a clean, single-column chronological layout. Focus on demonstrating your impact using metrics and achievements rather than listing standard duties. For example, instead of 'managed project timelines,' write 'delivered 3 key commercial projects in Melbourne CBD ahead of schedule, saving 10% in resource costs.' For expert drafting, you can work with our [Resume Writing Services Australia](/services/resume-writing) team.</p>
+          <p>Melbourne employers utilize ATS software to screen candidate pools. Resumes with complex layouts, multi-column designs, tables, or photo inserts are rejected automatically because the scanners cannot parse the text correctly. To pass these filters, format your resume in a clean, single-column chronological layout. Focus on demonstrating your impact using metrics and achievements rather than listing standard duties. For example, instead of 'managed project timelines,' write 'delivered 3 key commercial projects in Melbourne CBD ahead of schedule, saving 10% in resource costs.' For expert drafting, you can work with our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> team.</p>
   
 
           <h2>3. Connect with Local Recruitment Agencies</h2>
@@ -142,11 +147,11 @@ export default function BlogDetailPage() {
   
 
           <h2>4. Outsource Your Daily Job Applications</h2>
-          <p>Securing a role in Melbourne is a numbers game that requires consistent daily effort. Monitoring job boards, tailoring cover letters, and submitting applications manually can take hours of your day. By the time you apply to a week-old listing, the recruiter has already compiled their interview list. 9Jobs offers a professional [Job Application Service Australia](/services/job-application-automation) where our local sourcing team actively identifies relevant opportunities in Melbourne daily, tailors your applications, and submits them on your behalf, ensuring you are always among the first applicants.</p>
+          <p>Securing a role in Melbourne is a numbers game that requires consistent daily effort. Monitoring job boards, tailoring cover letters, and submitting applications manually can take hours of your day. By the time you apply to a week-old listing, the recruiter has already compiled their interview list. 9Jobs offers a professional <Link href="/services/job-application-automation">Job Application Service Australia</Link> where our local sourcing team actively identifies relevant opportunities in Melbourne daily, tailors your applications, and submits them on your behalf, ensuring you are always among the first applicants.</p>
   
 
           <h2>5. Prepare for Melbourne's Structured Behavioral Interviews</h2>
-          <p>Once your applications convert, you must pass the interview stage. Melbourne employers rely heavily on behavioral interviewing to assess cultural fit and technical capability. Sourcing teams look for candidates who can articulate their experience clearly using the STAR method (Situation, Task, Action, Result). Practice answering common questions regarding conflict resolution, stakeholder management, and project execution. Our [Interview Support Australia](/services/interview-coaching) program offers one-on-one coaching and mock interviews to refine your communication and secure your job offer.</p>
+          <p>Once your applications convert, you must pass the interview stage. Melbourne employers rely heavily on behavioral interviewing to assess cultural fit and technical capability. Sourcing teams look for candidates who can articulate their experience clearly using the STAR method (Situation, Task, Action, Result). Practice answering common questions regarding conflict resolution, stakeholder management, and project execution. Our <Link href="/services/interview-coaching">Interview Support Australia</Link> program offers one-on-one coaching and mock interviews to refine your communication and secure your job offer.</p>
   
         </div>
       </section>
@@ -211,6 +216,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

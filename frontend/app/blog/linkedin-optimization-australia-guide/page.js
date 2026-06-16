@@ -2,14 +2,12 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
-export const metadata = {
-  title: "LinkedIn Optimization Guide for Job Seekers in Australia | 9Jobs",
-  description: "Unlock the power of LinkedIn Recruiter searches in Australia. Headline formulas, summary templates, and setting adjustments to attract local recruiters.",
-  alternates: {
-    canonical: "/blog/linkedin-optimization-australia-guide",
-  },
-};
+const routeSeo = getRouteSeo("/blog/linkedin-optimization-australia-guide");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const faqs = [
   [
@@ -238,6 +236,8 @@ export default function LinkedInGuidePage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

@@ -1,9 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
+
+const routeSeo = getRouteSeo("/blog/australian-resume-vs-international-resume");
+
+export const metadata = createSeoMetadata(routeSeo);
+
 
 export default function BlogDetailPage() {
   const faqSchema = {
@@ -130,11 +135,11 @@ export default function BlogDetailPage() {
 
           
           <h2>1. Page Length Rules: 1 Page vs 2-3 Pages</h2>
-          <p>The most notable difference is page length. In the US and parts of Europe, candidates are encouraged to condense their career history onto a single page. In Australia, a single-page resume is often considered incomplete for mid-to-senior professional roles. The standard Australian resume is two to three pages long. This length provides enough space to detail your career achievements, project scale, technical stack, and education history without cluttering the page. For professional layout drafting that complies with these length standards, you can leverage our [Resume Writing Services Australia](/services/resume-writing) team.</p>
+          <p>The most notable difference is page length. In the US and parts of Europe, candidates are encouraged to condense their career history onto a single page. In Australia, a single-page resume is often considered incomplete for mid-to-senior professional roles. The standard Australian resume is two to three pages long. This length provides enough space to detail your career achievements, project scale, technical stack, and education history without cluttering the page. For professional layout drafting that complies with these length standards, you can leverage our <Link href="/services/resume-writing">Resume Writing Services Australia</Link> team.</p>
   
 
           <h2>2. Personal Privacy: Excluding Photos and Personal Data</h2>
-          <p>In many Asian, European, and Middle Eastern markets, it is customary to include a photo, date of birth, marital status, gender, and sometimes even your health status or religion on your resume. In Australia, including this information is a major mistake. Due to strict anti-discrimination and privacy laws, employers avoid reviewing resumes containing personal details to prevent compliance risks. Restrict your contact section to your full name, professional email address, Australian mobile number (starting with +61), LinkedIn URL, and your target location (e.g. Sydney NSW or Melbourne VIC). If you are relocating, update these details across platforms using our [LinkedIn Optimization Australia](/services/linkedin-optimization) and [SEEK Profile Optimization](/services/seek-profile-optimization) programs.</p>
+          <p>In many Asian, European, and Middle Eastern markets, it is customary to include a photo, date of birth, marital status, gender, and sometimes even your health status or religion on your resume. In Australia, including this information is a major mistake. Due to strict anti-discrimination and privacy laws, employers avoid reviewing resumes containing personal details to prevent compliance risks. Restrict your contact section to your full name, professional email address, Australian mobile number (starting with +61), LinkedIn URL, and your target location (e.g. Sydney NSW or Melbourne VIC). If you are relocating, update these details across platforms using our <Link href="/services/linkedin-optimization">LinkedIn Optimization Australia</Link> and <Link href="/services/seek-profile-optimization">SEEK Profile Optimization</Link> programs.</p>
   
 
           <h2>3. Achievement Focus vs Duty Descriptions</h2>
@@ -142,11 +147,11 @@ export default function BlogDetailPage() {
   
 
           <h2>4. Outsourcing the Job Application Process</h2>
-          <p>Adapting your resume to local standards and maintaining a consistent application volume is time-consuming. Because recruiters fill roles quickly, applying early gives you a significant advantage. 9Jobs offers a professional [Job Application Service Australia](/services/job-application-automation) where our team monitors local job boards daily, tailors your applications, and submits them on your behalf, allowing you to maintain a consistent application volume without the stress.</p>
+          <p>Adapting your resume to local standards and maintaining a consistent application volume is time-consuming. Because recruiters fill roles quickly, applying early gives you a significant advantage. 9Jobs offers a professional <Link href="/services/job-application-automation">Job Application Service Australia</Link> where our team monitors local job boards daily, tailors your applications, and submits them on your behalf, allowing you to maintain a consistent application volume without the stress.</p>
   
 
           <h2>5. Preparing for local Structured Interviews</h2>
-          <p>Once your localized resume secures interviews, you must pass the interview stage. Australian hiring managers use structured behavioral interviews to assess cultural fit and technical capability. Sourcing teams look for candidates who can describe how they handled professional challenges using the STAR method. Our [Interview Support Australia](/services/interview-coaching) program offers coaching sessions and mock interviews with local experts to build your confidence and help you secure offers.</p>
+          <p>Once your localized resume secures interviews, you must pass the interview stage. Australian hiring managers use structured behavioral interviews to assess cultural fit and technical capability. Sourcing teams look for candidates who can describe how they handled professional challenges using the STAR method. Our <Link href="/services/interview-coaching">Interview Support Australia</Link> program offers coaching sessions and mock interviews with local experts to build your confidence and help you secure offers.</p>
   
         </div>
       </section>
@@ -211,6 +216,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

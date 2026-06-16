@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ChevronDown, ClipboardCheck, Search, UserCheck, ShieldCheck, Sparkles, Target, Star } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
+import { ServiceRelatedGuides } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
-export const metadata = {
-  title: "9Jobs | Done-For-You Job Search & Applications Australia",
-  description: "Outsource your Australian job search. 9Jobs builds your ATS resume, optimizes SEEK, and applies to matching corporate roles daily.",
-  alternates: {
-    canonical: "https://9jobs.co/services/job-application-automation",
-  },
-};
+const routeSeo = getRouteSeo("/services/job-application-automation");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const services = [
   ["Done-for-You Applications", "We research, identify, and submit high-quality job applications on your behalf, maintaining a daily pipeline.", ClipboardCheck],
@@ -268,6 +266,8 @@ export default function JobApplicationServicesPage() {
           </div>
         </div>
       </section>
+
+      <ServiceRelatedGuides topic="applications" />
 
       <section className="fj-section fj-section--muted" id="faqs">
         <div className="fj-container fj-faq-grid">

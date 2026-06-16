@@ -1,14 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, Briefcase, FileText, MessageCircle, SearchCheck, UserCheck } from "lucide-react";
 import { CalendlyLink } from "../../components/CalendlyWidget";
+import { JsonLd, createBreadcrumbSchema, createSeoMetadata, getRouteSeo } from "../../data/seo";
 
-export const metadata = {
-  title: "Career Services Australia | Resume, LinkedIn & Job Support | 9Jobs",
-  description: "Explore 9Jobs career services for Australian job seekers, including resume writing, LinkedIn optimization, SEEK profile optimization, interview coaching, and job application support.",
-  alternates: {
-    canonical: "https://9jobs.co/services",
-  },
-};
+const routeSeo = getRouteSeo("/services");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const services = [
   {
@@ -43,29 +40,29 @@ const services = [
   },
 ];
 
-function jsonLd(schema) {
-  return JSON.stringify(schema).replace(/</g, "\\u003c");
-}
+const resourceLinks = [
+  {
+    href: "/blog/how-to-get-a-job-in-australia",
+    title: "How to Get a Job in Australia",
+    text: "A complete search roadmap covering resumes, profiles, applications, and interviews.",
+  },
+  {
+    href: "/blog/ats-resume-format-australia",
+    title: "ATS Resume Format Australia",
+    text: "Formatting guidance for resumes that need to parse cleanly in recruiter systems.",
+  },
+  {
+    href: "/blog/linkedin-optimization-australia-guide",
+    title: "LinkedIn Optimization Guide",
+    text: "Practical profile changes that improve recruiter discovery in Australia.",
+  },
+];
 
 export default function ServicesPage() {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://9jobs.co/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Services",
-        "item": "https://9jobs.co/services"
-      }
-    ]
-  };
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+  ]);
 
   const itemListSchema = {
     "@context": "https://schema.org",
@@ -81,14 +78,8 @@ export default function ServicesPage() {
 
   return (
     <main className="site-main fj-page">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd(itemListSchema) }}
-      />
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={itemListSchema} />
 
       <section className="fj-page-hero">
         <div className="fj-container">
@@ -128,6 +119,27 @@ export default function ServicesPage() {
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section fj-section--muted">
+        <div className="fj-container">
+          <div className="fj-section-head">
+            <span className="fj-label">Recommended guides</span>
+            <h2>Learn how each service improves <span className="heading-mark">crawl-to-callback signals</span></h2>
+            <p>These guides explain the resume, profile, and application improvements behind the 9Jobs services.</p>
+          </div>
+          <div className="fj-card-grid fj-card-grid--three">
+            {resourceLinks.map((resource) => (
+              <article className="fj-feature-card" key={resource.href}>
+                <h3>{resource.title}</h3>
+                <p>{resource.text}</p>
+                <Link href={resource.href} className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }}>
+                  Read guide <ArrowRight size={14} />
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>

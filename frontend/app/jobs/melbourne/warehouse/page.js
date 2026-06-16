@@ -1,14 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, ChevronDown, CheckCircle2, MapPin, Briefcase, FileText, Truck, ShieldCheck } from "lucide-react";
 import { CalendlyLink } from "../../../../components/CalendlyWidget";
+import { JsonLd, createBreadcrumbSchema, createSeoMetadata, getRouteSeo } from "../../../../data/seo";
 
-export const metadata = {
-  title: "Warehouse Jobs Melbourne VIC | Sourcing & CV Optimization | 9Jobs",
-  description: "Secure warehouse, forklift, and logistics roles in Melbourne. Resume optimization for VIC supply chain networks and SEEK visibility.",
-  alternates: {
-    canonical: "https://9jobs.co/jobs/melbourne/warehouse",
-  },
-};
+const routeSeo = getRouteSeo("/jobs/melbourne/warehouse");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const certifications = [
   ["Forklift Licence (LF)", "Highly sought-after ticket allowing operation of counterbalanced forklift trucks in Victoria.", ShieldCheck],
@@ -84,6 +81,34 @@ export default function WarehouseJobsPage() {
       }
     }
   };
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Australian Jobs", path: "/jobs" },
+    { name: "Melbourne Jobs", path: "/jobs/melbourne" },
+    { name: "Warehouse Jobs Melbourne", path: "/jobs/melbourne/warehouse" },
+  ]);
+  const supportLinks = [
+    {
+      href: "/services/resume-writing",
+      title: "Resume Writing",
+      text: "Showcase LF/LO licences, pick rates, RF scanning, safety records, and warehouse systems clearly.",
+    },
+    {
+      href: "/services/linkedin-optimization",
+      title: "LinkedIn Optimization",
+      text: "Align your profile with logistics, warehouse, forklift, and supply chain recruiter searches.",
+    },
+    {
+      href: "/services/interview-coaching",
+      title: "Interview Coaching",
+      text: "Prepare for screens about availability, transport, safety, systems, and shift preferences.",
+    },
+    {
+      href: "/jobs/melbourne/traffic-controller",
+      title: "Traffic Controller Jobs Melbourne",
+      text: "Explore related Melbourne labour-hire roles in civil construction and infrastructure.",
+    },
+  ];
 
   return (
     <main className="site-main fj-page">
@@ -95,6 +120,7 @@ export default function WarehouseJobsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jobSchema) }}
       />
+      <JsonLd schema={breadcrumbSchema} />
 
       <section className="fj-page-hero">
         <div className="fj-container">
@@ -191,6 +217,27 @@ export default function WarehouseJobsPage() {
                 <CheckCircle2 size={18} />
                 <span><strong>{title}</strong>: {desc}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section fj-section--muted">
+        <div className="fj-container">
+          <div className="fj-section-head">
+            <span className="fj-label">Application support</span>
+            <h2>Strengthen your Melbourne warehouse applications</h2>
+            <p>Connect this role page with services and related local job pages that improve recruiter discovery.</p>
+          </div>
+          <div className="fj-card-grid fj-card-grid--four">
+            {supportLinks.map((link) => (
+              <article className="fj-feature-card" key={link.href}>
+                <h3>{link.title}</h3>
+                <p>{link.text}</p>
+                <Link href={link.href} className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }}>
+                  Explore <ArrowRight size={14} />
+                </Link>
+              </article>
             ))}
           </div>
         </div>

@@ -4,6 +4,7 @@ import { ArrowRight, ChevronDown, CheckCircle2, MapPin, Briefcase } from "lucide
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities, pagesConfig } from "../../../data/australianJobsData";
 import { getContentForPage } from "../../../data/contentGenerator";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
 export async function generateStaticParams() {
   return Object.keys(cities).map(city => ({
@@ -15,14 +16,13 @@ export async function generateMetadata({ params }) {
   const { city } = await params;
   const config = pagesConfig.find(p => p.city === city && p.slug === null);
   if (!config) return {};
+  const routeSeo = getRouteSeo(`/jobs/${city}`);
 
-  return {
+  return createSeoMetadata(routeSeo || {
     title: config.title,
     description: config.metaDescription,
-    alternates: {
-      canonical: `https://9jobs.co/jobs/${city}`
-    }
-  };
+    path: `/jobs/${city}`,
+  });
 }
 
 export default async function CityPage({ params }) {
@@ -31,6 +31,18 @@ export default async function CityPage({ params }) {
   if (!pageData) {
     notFound();
   }
+  const melbourneJobPages = city === "melbourne" ? [
+    {
+      href: "/jobs/melbourne/traffic-controller",
+      title: "Traffic Controller Jobs Melbourne",
+      text: "Road and infrastructure roles with ticket-ready resume and SEEK profile support.",
+    },
+    {
+      href: "/jobs/melbourne/warehouse",
+      title: "Warehouse Jobs Melbourne",
+      text: "Warehouse, logistics, pick-pack, forklift, and operations roles across Melbourne.",
+    },
+  ] : [];
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -231,6 +243,29 @@ export default async function CityPage({ params }) {
           </div>
         </div>
       </section>
+
+      {melbourneJobPages.length > 0 && (
+        <section className="fj-section fj-section--muted">
+          <div className="fj-container">
+            <div className="fj-section-head">
+              <span className="fj-label">Popular Melbourne job pages</span>
+              <h2>Explore high-intent job searches in <span className="heading-mark">Melbourne</span></h2>
+              <p>These targeted pages connect Melbourne job seekers to role-specific resume, SEEK, and application support.</p>
+            </div>
+            <div className="fj-card-grid fj-card-grid--two">
+              {melbourneJobPages.map((page) => (
+                <article className="fj-feature-card" key={page.href}>
+                  <h3>{page.title}</h3>
+                  <p>{page.text}</p>
+                  <Link href={page.href} className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }}>
+                    View page <ArrowRight size={14} />
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQs Section */}
       <section className="fj-section fj-section--muted" id="faqs">

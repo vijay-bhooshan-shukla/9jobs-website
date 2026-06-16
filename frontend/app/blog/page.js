@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, BookUser, Briefcase, FileText, Search } from "lucide-react";
+import connectMongoDB from "@/lib/mongodb";
+import SocialBlog from "@/models/SocialBlog";
 import { cities } from "../../data/australianJobsData";
+import { createSeoMetadata, getRouteSeo } from "../../data/seo";
+
+export const dynamic = "force-dynamic";
 
 const posts = [
   [
@@ -110,15 +115,58 @@ const posts = [
   ]
 ];
 
-export const metadata = {
-  title: "9Jobs Career Blog | ATS Resume & Job Sourcing Guides",
-  description: "Expert tips on writing ATS-friendly resumes, optimizing SEEK and LinkedIn profiles, and navigating the recruitment lifecycle in major Australian cities.",
-  alternates: {
-    canonical: "/blog",
-  },
-};
+const routeSeo = getRouteSeo("/blog");
 
-export default function BlogPage() {
+export const metadata = createSeoMetadata(routeSeo);
+
+function formatDate(date) {
+  return new Intl.DateTimeFormat("en-AU", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(date));
+}
+
+function createExcerpt(content) {
+  const text = String(content || "").replace(/\s+/g, " ").trim();
+  return text.length > 145 ? `${text.slice(0, 142).trim()}...` : text;
+}
+
+function formatUiLabel(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+async function getSocialBlogPosts() {
+  if (!process.env.MONGODB_URI) {
+    return [];
+  }
+
+  try {
+    await connectMongoDB();
+    const socialPosts = await SocialBlog.find({ status: "published" })
+      .sort({ publishedAt: -1 })
+      .limit(12)
+      .lean();
+
+    return socialPosts.map((post) => ({
+      id: post._id.toString(),
+      title: post.title,
+      slug: post.slug,
+      content: post.content || "",
+      imageUrl: post.imageUrl || "",
+      platform: post.platform,
+      publishedAt: post.publishedAt,
+    }));
+  } catch (error) {
+    console.error("Social blog list failed:", error);
+    return [];
+  }
+}
+
+export default async function BlogPage() {
+  const socialPosts = await getSocialBlogPosts();
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -137,6 +185,12 @@ export default function BlogPage() {
       }
     ]
   };
+  const serviceLinks = [
+    ["/services/resume-writing", "Resume Writing", "Turn resume advice into an ATS-friendly Australian CV."],
+    ["/services/linkedin-optimization", "LinkedIn Optimization", "Use profile guidance to improve recruiter discovery."],
+    ["/services/seek-profile-optimization", "SEEK Profile Optimization", "Make SEEK profile recommendations easier to apply."],
+    ["/services/interview-coaching", "Interview Coaching", "Convert interview tips into practiced STAR answers."],
+  ];
 
   return (
     <main className="site-main fj-page">
@@ -154,6 +208,22 @@ export default function BlogPage() {
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-card-grid fj-card-grid--three">
+          {socialPosts.map((post) => (
+            <article className="fj-blog-card fj-social-blog-card" key={post.id}>
+              {post.imageUrl ? (
+                <img className="fj-social-blog-image" src={post.imageUrl} alt="" loading="lazy" decoding="async" />
+              ) : (
+                <div className="fj-social-blog-image fj-social-blog-image--empty" aria-hidden="true" />
+              )}
+              <div className="fj-social-blog-meta">
+                <span className="fj-badge">{formatUiLabel(post.platform === "linkedin" ? "LinkedIn" : "Facebook")}</span>
+                <time dateTime={new Date(post.publishedAt).toISOString()}>{formatDate(post.publishedAt)}</time>
+              </div>
+              <h2>{post.title}</h2>
+              <p>{createExcerpt(post.content)}</p>
+              <Link href={`/blog/${post.slug}`}>Read More <ArrowRight size={16} /></Link>
+            </article>
+          ))}
           {posts.map(([title, text, tag, Icon, href]) => (
             <article className="fj-blog-card" key={title}>
               <div className="fj-icon-chip"><Icon size={22} /></div>
@@ -198,6 +268,27 @@ export default function BlogPage() {
                 </article>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="fj-section fj-section--muted">
+        <div className="fj-container">
+          <div className="fj-section-head">
+            <span className="fj-label">Turn advice into action</span>
+            <h2>Explore 9Jobs career services</h2>
+            <p>Use the blog guides with hands-on help for resumes, profiles, applications, and interviews.</p>
+          </div>
+          <div className="fj-card-grid fj-card-grid--four">
+            {serviceLinks.map(([href, title, text]) => (
+              <article className="fj-feature-card" key={href}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+                <Link href={href} className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }}>
+                  Explore <ArrowRight size={14} />
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>

@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ChevronDown, Bell, Search, UserCheck, ShieldCheck, Sparkles, Target, Star } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
+import { ServiceRelatedGuides } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
-export const metadata = {
-  title: "Interview Support Australia | Mock Prep & Placement Coaching",
-  description: "Secure more job offers. Get expert interview notifications, targeted STAR behavioral preparation, and placement coaching tailored for Australian employers.",
-  alternates: {
-    canonical: "https://9jobs.co/services/interview-coaching",
-  },
-};
+const routeSeo = getRouteSeo("/services/interview-coaching");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const services = [
   ["Interview Notifications", "Real-time logging and tracking of incoming interview requests, phone screens, and recruiter follow-ups.", Bell],
@@ -268,6 +266,8 @@ export default function InterviewSupportPage() {
           </div>
         </div>
       </section>
+
+      <ServiceRelatedGuides topic="interviews" />
 
       <section className="fj-section fj-section--muted" id="faqs">
         <div className="fj-container fj-faq-grid">

@@ -2,14 +2,12 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
 import { cities } from "../../../data/australianJobsData";
+import { BlogSupportLinks } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
-export const metadata = {
-  title: "SEEK Profile Optimization: Top Sourcing Tips for Australia | 9Jobs",
-  description: "Make your SEEK profile stand out to recruiters in Australia. Profile settings, summaries, alerts, and formatting tips to maximize callbacks.",
-  alternates: {
-    canonical: "/blog/seek-profile-optimization-tips",
-  },
-};
+const routeSeo = getRouteSeo("/blog/seek-profile-optimization-tips");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const faqs = [
   [
@@ -228,6 +226,8 @@ export default function SeekTipsPage() {
           </div>
         </div>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

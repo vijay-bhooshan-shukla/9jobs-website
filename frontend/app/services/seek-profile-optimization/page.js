@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ChevronDown, FileText, Search, UserCheck, ShieldCheck, Sparkles, Target, Star } from "lucide-react";
 import { CalendlyLink } from "../../../components/CalendlyWidget";
+import { ServiceRelatedGuides } from "../../../components/RelatedSeoLinks";
+import { createSeoMetadata, getRouteSeo } from "../../../data/seo";
 
-export const metadata = {
-  title: "SEEK Profile Optimization Service | Stand Out to Agencies",
-  description: "Get headhunted on SEEK. Optimize your SEEK candidate visibility settings, search terms, and summary for Australian recruiters.",
-  alternates: {
-    canonical: "https://9jobs.co/services/seek-profile-optimization",
-  },
-};
+const routeSeo = getRouteSeo("/services/seek-profile-optimization");
+
+export const metadata = createSeoMetadata(routeSeo);
 
 const services = [
   ["SEEK Profile Rewrite", "Craft a compelling, localized personal summary and fill key experience areas using local keywords.", FileText],
@@ -268,6 +266,8 @@ export default function SeekOptimizationPage() {
           </div>
         </div>
       </section>
+
+      <ServiceRelatedGuides topic="seek" />
 
       <section className="fj-section fj-section--muted" id="faqs">
         <div className="fj-container fj-faq-grid">

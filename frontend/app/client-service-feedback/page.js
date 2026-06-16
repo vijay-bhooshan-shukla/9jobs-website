@@ -143,7 +143,8 @@ export default function ClientServiceFeedback() {
             </div>
           )}
 
-          <div 
+          <div
+            className={submitted ? "feedback-success-shell" : undefined}
             style={submitted ? { 
               display: "flex", 
               flexDirection: "column", 
@@ -247,12 +248,13 @@ export default function ClientServiceFeedback() {
                   </a>
                   <a href="https://9jobs.co/client-service-feedback" className="success-btn-secondary" style={{ flex: 1, minWidth: "140px", padding: "12px 16px", fontSize: "0.88rem", borderRadius: "12px" }}>
                     <Star size={16} aria-hidden="true" />
-                    Leave Review
+                    Leave Another Review
                   </a>
                 </div>
 
                 {/* Social Media Links Section */}
                 <div style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "16px", marginTop: "12px", textAlign: "center" }}>
+                  <h2 style={{ fontSize: "1rem", margin: "0 0 8px", color: "var(--fj-ink)" }}>Stay Connected with 9Jobs</h2>
                   <p style={{ fontSize: "0.85rem", color: "var(--fj-muted)", fontWeight: 700, margin: "0 0 12px" }}>
                     Follow 9Jobs for latest career updates:
                   </p>
@@ -281,6 +283,16 @@ export default function ClientServiceFeedback() {
                       </a>
                     ))}
                   </div>
+                </div>
+
+                <div style={{ borderTop: "1px solid var(--fj-line)", paddingTop: "16px", textAlign: "center" }}>
+                  <h2 style={{ fontSize: "1rem", margin: "0 0 8px", color: "var(--fj-ink)" }}>Explore More with 9Jobs</h2>
+                  <p style={{ fontSize: "0.85rem", color: "var(--fj-muted)", lineHeight: 1.55, margin: "0 0 12px" }}>
+                    {websitePromoText}
+                  </p>
+                  <a href="https://9jobs.co" className="success-btn-secondary" style={{ padding: "12px 16px", fontSize: "0.88rem", borderRadius: "12px" }}>
+                    Visit 9Jobs Website <ExternalLink size={16} aria-hidden="true" />
+                  </a>
                 </div>
               </div>
             ) : (
