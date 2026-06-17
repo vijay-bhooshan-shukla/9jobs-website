@@ -79,13 +79,6 @@ export default function RootLayout({ children }) {
       "postalCode": "3000",
       "addressCountry": "AU"
     },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+61-422-552-002",
-      "contactType": "customer service",
-      "areaServed": "AU",
-      "availableLanguage": "en"
-    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "9Jobs Career Support Services",

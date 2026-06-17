@@ -1,5 +1,5 @@
 import ContactForm from "../../components/ContactForm";
-import { Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { Mail, MapPin, Sparkles } from "lucide-react";
 import { JsonLd, createBreadcrumbSchema, createSeoMetadata, getRouteSeo } from "../../data/seo";
 
 const routeSeo = getRouteSeo("/contact");
@@ -35,8 +35,6 @@ export default async function ContactPage({ searchParams }) {
             <p>Share the outcome you want and the 9Jobs team will respond with the most useful path forward.</p>
 
             <div className="fj-contact-list">
-              <a href="tel:+61422552002"><Phone size={20} /> +61 422 552 002</a>
-              <a href="tel:+61422279428"><Phone size={20} /> Business: +61 422 279 428</a>
               <a href="mailto:9jobsapplicationservice@gmail.com"><Mail size={20} /> 9jobsapplicationservice@gmail.com</a>
               <span><MapPin size={20} /> Melbourne, Australia</span>
             </div>
