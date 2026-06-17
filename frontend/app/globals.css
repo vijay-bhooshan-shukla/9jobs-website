@@ -3611,8 +3611,22 @@ section.hero.hero-split,
 .fj-contact-panel {
   display: grid;
   align-content: start;
-  gap: 22px;
-  padding: 36px;
+  gap: 18px;
+  padding: 28px;
+}
+
+.fj-contact-visual {
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--fj-soft);
+}
+
+.fj-contact-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
 }
 
 .fj-contact-panel h2 {
@@ -3655,11 +3669,11 @@ section.hero.hero-split,
 }
 
 .fj-contact-form-slot .fj-clean-form {
-  height: 100%;
+  height: auto;
   width: 100%;
   max-width: 100%;
-  gap: 18px;
-  padding: 16px;
+  gap: 16px;
+  padding: 14px;
   overflow: hidden;
   border-color: rgba(210, 218, 218, 0.9);
   border-radius: 32px;
@@ -3667,24 +3681,11 @@ section.hero.hero-split,
   box-shadow: var(--fj-soft-shadow);
 }
 
-.fj-clean-form .fj-form-media {
-  min-height: 220px;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 24px;
-  background:
-    linear-gradient(90deg, rgba(3, 31, 42, 0.18), rgba(3, 31, 42, 0.02) 62%),
-    url("/framer/story-ops.jpg");
-  background-color: var(--fj-soft);
-  background-position: center 48%;
-  background-size: cover;
-}
-
 .fj-clean-form .fj-form-intro {
   display: grid;
   gap: 8px;
   min-width: 0;
-  padding: 10px 8px 0;
+  padding: 6px 8px 0;
 }
 
 .fj-clean-form .fj-form-intro span {
@@ -3733,7 +3734,7 @@ section.hero.hero-split,
 
 .fj-clean-form .field input,
 .fj-clean-form .field textarea {
-  min-height: 56px;
+  min-height: 52px;
   border-color: rgba(218, 224, 224, 0.95);
   border-radius: 18px;
   background: #f8fafa;
@@ -3750,7 +3751,7 @@ section.hero.hero-split,
 }
 
 .fj-clean-form .field textarea {
-  min-height: 132px;
+  min-height: 118px;
   resize: vertical;
 }
 

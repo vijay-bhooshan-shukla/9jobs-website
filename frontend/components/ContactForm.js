@@ -63,8 +63,6 @@ export default function ContactForm({ initialMessage = "" }) {
 
   return (
     <Stagger as="form" className="form-card card fj-clean-form" onSubmit={handleSubmit} aria-busy={loading}>
-      <div className="fj-form-media" aria-hidden="true" />
-
       <div className="fj-form-intro">
         <span>Quick response</span>
         <h2>Tell us what you need.</h2>

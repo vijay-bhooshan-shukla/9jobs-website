@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ContactForm from "../../components/ContactForm";
 import { Mail, MapPin, Sparkles } from "lucide-react";
 import { JsonLd, createBreadcrumbSchema, createSeoMetadata, getRouteSeo } from "../../data/seo";
@@ -31,6 +32,14 @@ export default async function ContactPage({ searchParams }) {
           <aside className="fj-contact-panel">
             <div className="fj-icon-chip"><Sparkles size={22} /></div>
             <span className="fj-label">Contact information</span>
+            <div className="fj-contact-visual">
+              <Image
+                src="/framer/contact-panel-team.png"
+                alt="9Jobs team collaborating over applications and outreach"
+                width={1000}
+                height={800}
+              />
+            </div>
             <h2>Fast answers, clear next <span className="heading-mark">steps.</span></h2>
             <p>Share the outcome you want and the 9Jobs team will respond with the most useful path forward.</p>
 
