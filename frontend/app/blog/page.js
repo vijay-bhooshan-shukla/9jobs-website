@@ -2,7 +2,9 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, BookUser, Briefcase, FileText, Play, Search } from "lucide-react";
 import connectMongoDB from "@/lib/mongodb";
 import SocialBlog from "@/models/SocialBlog";
+import SocialMediaPoster from "@/components/SocialMediaPoster";
 import socialMedia from "@/lib/blog/socialMedia";
+import serializeSocialBlogPostModule from "@/lib/blog/serializeSocialBlogPost";
 import { cities } from "../../data/australianJobsData";
 import { createSeoMetadata, getRouteSeo } from "../../data/seo";
 
@@ -117,7 +119,8 @@ const posts = [
 ];
 
 const routeSeo = getRouteSeo("/blog");
-const { getPlayableMediaHref, shouldOpenMediaExternally } = socialMedia;
+const { getPreferredSocialImage, shouldUseGeneratedPoster } = socialMedia;
+const { serializeSocialBlogPost } = serializeSocialBlogPostModule;
 
 export const metadata = createSeoMetadata(routeSeo);
 
@@ -135,7 +138,7 @@ function createExcerpt(content) {
 }
 
 function getSocialCardImage(post) {
-  return post.thumbnailUrl || post.imageUrl || "";
+  return getPreferredSocialImage(post);
 }
 
 function formatUiLabel(value) {
@@ -158,15 +161,7 @@ async function getSocialBlogPosts() {
 
     return socialPosts.map((post) => ({
       id: post._id.toString(),
-      title: post.title,
-      slug: post.slug,
-      content: post.content || "",
-      mediaType: post.mediaType || "post",
-      imageUrl: post.imageUrl || "",
-      thumbnailUrl: post.thumbnailUrl || "",
-      videoUrl: post.videoUrl || "",
-      platform: post.platform,
-      publishedAt: post.publishedAt,
+      ...serializeSocialBlogPost(post),
     }));
   } catch (error) {
     console.error("Social blog list failed:", error);
@@ -228,20 +223,18 @@ export default async function BlogPage() {
             {socialPosts.map((post) => {
               const cardImage = getSocialCardImage(post);
               const isVideo = post.mediaType === "video";
-              const mediaHref = getPlayableMediaHref(post) || `/blog/${post.slug}`;
-              const mediaExternal = shouldOpenMediaExternally(post);
+              const usesGeneratedPoster = shouldUseGeneratedPoster(post);
               return (
                 <article className="fj-blog-card fj-social-blog-card" key={post.id}>
                   <Link
-                    href={mediaHref}
+                    href={`/blog/${post.slug}`}
                     className="fj-social-card-media"
                     aria-label={isVideo ? `Play ${post.title}` : `Open ${post.title}`}
-                    target={mediaExternal ? "_blank" : undefined}
-                    rel={mediaExternal ? "noopener noreferrer" : undefined}
-                    prefetch={mediaExternal ? false : undefined}
                   >
                     {cardImage ? (
                       <img className="fj-social-blog-image" src={cardImage} alt="" loading="lazy" decoding="async" />
+                    ) : usesGeneratedPoster ? (
+                      <SocialMediaPoster post={post} compact />
                     ) : (
                       <div className="fj-social-blog-image fj-social-blog-image--empty" aria-hidden="true">
                         <span>{isVideo ? "Video" : "Post"}</span>

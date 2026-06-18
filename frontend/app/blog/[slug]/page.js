@@ -3,12 +3,22 @@ import { ArrowLeft, ArrowRight, ExternalLink, Play } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import connectMongoDB from '@/lib/mongodb';
 import SocialBlog from '@/models/SocialBlog';
+import SocialMediaPoster from '@/components/SocialMediaPoster';
 import socialMedia from '@/lib/blog/socialMedia';
+import serializeSocialBlogPostModule from '@/lib/blog/serializeSocialBlogPost';
 import { BlogSupportLinks } from '../../../components/RelatedSeoLinks';
 import { JsonLd, createArticleSchema, createBreadcrumbSchema, createSeoMetadata } from '../../../data/seo';
 
 export const dynamic = 'force-dynamic';
-const { getPlayableMediaHref, shouldOpenMediaExternally } = socialMedia;
+const {
+  getFacebookEmbedUrl,
+  getPlayableMediaHref,
+  getPreferredSocialImage,
+  shouldOpenMediaExternally,
+  shouldShowOriginalMediaLink,
+  shouldUseGeneratedPoster,
+} = socialMedia;
+const { serializeSocialBlogPost } = serializeSocialBlogPostModule;
 
 function formatDate(date) {
   return new Intl.DateTimeFormat('en-AU', {
@@ -24,21 +34,6 @@ function formatUiLabel(value) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-function serializePost(post) {
-  return {
-    title: post.title,
-    slug: post.slug,
-    content: post.content || '',
-    mediaType: post.mediaType || 'post',
-    imageUrl: post.imageUrl || '',
-    thumbnailUrl: post.thumbnailUrl || '',
-    videoUrl: post.videoUrl || '',
-    sourceUrl: post.sourceUrl || '',
-    platform: post.platform,
-    publishedAt: post.publishedAt,
-  };
-}
-
 async function getSocialBlogPost(slug) {
   if (!process.env.MONGODB_URI) {
     return null;
@@ -47,7 +42,7 @@ async function getSocialBlogPost(slug) {
   try {
     await connectMongoDB();
     const post = await SocialBlog.findOne({ slug, status: 'published' }).lean();
-    return post ? serializePost(post) : null;
+    return post ? serializeSocialBlogPost(post) : null;
   } catch (error) {
     console.error('Social blog lookup failed:', error);
     return null;
@@ -87,9 +82,12 @@ export default async function SocialBlogDetailPage({ params }) {
   const paragraphs = post.content.split(/\n{2,}/).map((paragraph) => paragraph.trim()).filter(Boolean);
   const platformLabel = formatUiLabel(post.platform === 'linkedin' ? 'LinkedIn' : 'Facebook');
   const mediaLabel = post.mediaType === 'video' ? 'Reel' : 'Post';
-  const mediaImage = post.thumbnailUrl || post.imageUrl || '';
+  const mediaImage = getPreferredSocialImage(post);
+  const embedUrl = getFacebookEmbedUrl(post);
+  const usesGeneratedPoster = shouldUseGeneratedPoster(post);
   const playableHref = getPlayableMediaHref(post);
   const openMediaExternally = shouldOpenMediaExternally(post);
+  const showOriginalMediaLink = shouldShowOriginalMediaLink(post);
   const description = post.content.slice(0, 155);
   const articleSchema = createArticleSchema({
     title: post.title,
@@ -132,6 +130,17 @@ export default async function SocialBlogDetailPage({ params }) {
               poster={mediaImage || undefined}
               src={post.videoUrl}
             />
+          ) : post.mediaType === 'video' && embedUrl ? (
+            <div className="fj-social-embed-shell">
+              <iframe
+                className="fj-social-embed-frame"
+                src={embedUrl}
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allowFullScreen
+                scrolling="no"
+                title={post.title}
+              />
+            </div>
           ) : mediaImage ? (
             playableHref ? (
               <a
@@ -158,6 +167,8 @@ export default async function SocialBlogDetailPage({ params }) {
                 )}
               </div>
             )
+          ) : usesGeneratedPoster ? (
+            <SocialMediaPoster post={post} />
           ) : post.mediaType === 'video' ? (
             <div className="fj-social-detail-media fj-social-detail-media--empty" aria-hidden="true">
               <span className="fj-social-play-badge fj-social-play-badge--detail">
@@ -178,7 +189,7 @@ export default async function SocialBlogDetailPage({ params }) {
             ))}
           </div>
 
-          {playableHref && (
+          {showOriginalMediaLink && (
             <a
               className="fj-button fj-button--dark"
               href={playableHref}
