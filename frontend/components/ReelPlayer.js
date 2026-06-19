@@ -115,7 +115,6 @@ export default function ReelPlayer({ src, poster, title = 'Video Reel' }) {
         className="w-full h-full object-contain"
         muted={isMuted}
         playsInline
-        onClick={handlePlayPause}
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleVideoEnded}
         style={{
@@ -123,6 +122,7 @@ export default function ReelPlayer({ src, poster, title = 'Video Reel' }) {
           height: '100%',
           objectFit: 'contain',
           display: 'block',
+          pointerEvents: 'none',
         }}
         aria-label={title}
       />
