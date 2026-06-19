@@ -9,6 +9,14 @@ function getGeneratedPreviewVideoUrl(post = {}) {
 
   const candidate = post.imageUrl || post.thumbnailUrl || '';
   if (!isLowResImportedImage(candidate) || !candidate.endsWith('.jpg')) {
+    if (post.publishedAt) {
+      try {
+        const dateStr = new Date(post.publishedAt).toISOString().split('T')[0];
+        return `/social-imports/${dateStr}-reel.mp4`;
+      } catch (e) {
+        return '';
+      }
+    }
     return '';
   }
 

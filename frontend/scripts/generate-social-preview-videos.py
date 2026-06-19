@@ -10,7 +10,7 @@ MEDIA_DIR = ROOT / "public" / "social-imports"
 FPS = 24
 DURATION_SECONDS = 6
 FRAME_COUNT = FPS * DURATION_SECONDS
-SIZE = (1280, 720)
+SIZE = (720, 1280)
 
 
 def ease(t: float) -> float:

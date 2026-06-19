@@ -55,10 +55,26 @@ function createSlug(text) {
   return slug || 'social-update';
 }
 
+
+
+function stripEmojis(text) {
+  if (typeof text !== 'string') return text;
+  return text
+    .replace(/\p{Extended_Pictographic}/gu, '')
+    .split('\n')
+    .map(line => line.replace(/[ \t]+/g, ' ').trim())
+    .join('\n');
+}
+
 function normalizeSocialPostToBlog(post) {
-  const title = createTitleFromCaption(post.caption);
+  const rawTitle = createTitleFromCaption(post.caption);
+  const title = stripEmojis(rawTitle);
   const slug = createSlug(`${title}-${post.platform}-${post.socialPostId}`);
-  const content = `${cleanCaption(post.caption)}\n\n${CTA}`;
+  
+  // Maintain line breaks, carriage returns, spacing, but strip all emojis in content.
+  const captionBody = post.caption ? String(post.caption).trim() : '';
+  const rawContent = captionBody ? `${captionBody}\n\n${CTA}` : CTA;
+  const content = stripEmojis(rawContent);
 
   return {
     platform: post.platform,

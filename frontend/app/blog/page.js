@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, BookUser, Briefcase, FileText, Play, Search } fro
 import connectMongoDB from "@/lib/mongodb";
 import SocialBlog from "@/models/SocialBlog";
 import SocialMediaPoster from "@/components/SocialMediaPoster";
+import SyncFeedButton from "@/components/SyncFeedButton";
 import socialMedia from "@/lib/blog/socialMedia";
 import serializeSocialBlogPostModule from "@/lib/blog/serializeSocialBlogPost";
 import { cities } from "../../data/australianJobsData";
@@ -212,31 +213,39 @@ export default async function BlogPage() {
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container">
-          {socialPosts.length > 0 && (
-            <div className="fj-section-head fj-section-head--social">
-              <span className="fj-label">Latest from 9Jobs Social</span>
-              <h2>Recent Facebook posts and reels</h2>
-              <p>Open the latest 9Jobs social updates, including reels and posts, directly from the website.</p>
-            </div>
-          )}
+          <div className="fj-section-head fj-section-head--social">
+            <span className="fj-label">Latest from 9Jobs Social</span>
+            <h2>Recent Facebook posts and reels</h2>
+            <p>Open the latest 9Jobs social updates, including reels and posts, directly from the website.</p>
+            <SyncFeedButton />
+          </div>
           <div className="fj-card-grid fj-card-grid--three">
             {socialPosts.map((post) => {
               const cardImage = getSocialCardImage(post);
               const isVideo = post.mediaType === "video";
               const usesGeneratedPoster = shouldUseGeneratedPoster(post);
               return (
-                <article className="fj-blog-card fj-social-blog-card" key={post.id}>
+                <article 
+                  className={`fj-blog-card fj-social-blog-card ${isVideo ? 'fj-social-blog-card--reel' : ''}`} 
+                  key={post.id}
+                >
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="fj-social-card-media"
+                    className={`fj-social-card-media ${isVideo ? 'fj-social-card-media--reel' : ''}`}
                     aria-label={isVideo ? `Play ${post.title}` : `Open ${post.title}`}
                   >
                     {cardImage ? (
-                      <img className="fj-social-blog-image" src={cardImage} alt="" loading="lazy" decoding="async" />
+                      <img 
+                        className={`fj-social-blog-image ${isVideo ? 'fj-social-blog-image--reel' : ''}`} 
+                        src={cardImage} 
+                        alt="" 
+                        loading="lazy" 
+                        decoding="async" 
+                      />
                     ) : usesGeneratedPoster ? (
                       <SocialMediaPoster post={post} compact />
                     ) : (
-                      <div className="fj-social-blog-image fj-social-blog-image--empty" aria-hidden="true">
+                      <div className={`fj-social-blog-image fj-social-blog-image--empty ${isVideo ? 'fj-social-blog-image--reel' : ''}`} aria-hidden="true">
                         <span>{isVideo ? "Video" : "Post"}</span>
                       </div>
                     )}

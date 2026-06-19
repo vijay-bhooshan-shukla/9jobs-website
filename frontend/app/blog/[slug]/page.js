@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import connectMongoDB from '@/lib/mongodb';
 import SocialBlog from '@/models/SocialBlog';
 import SocialMediaPoster from '@/components/SocialMediaPoster';
+import ReelPlayer from '@/components/ReelPlayer';
+import SocialCaption from '@/components/SocialCaption';
 import socialMedia from '@/lib/blog/socialMedia';
 import serializeSocialBlogPostModule from '@/lib/blog/serializeSocialBlogPost';
 import { BlogSupportLinks } from '../../../components/RelatedSeoLinks';
@@ -119,19 +121,10 @@ export default async function SocialBlogDetailPage({ params }) {
         </div>
       </section>
 
-      <BlogSupportLinks />
-
       <section className="fj-section fj-section--tight">
-        <article className="fj-container fj-social-detail">
+        <article className={`fj-container fj-social-detail ${post.mediaType === 'video' ? 'fj-social-detail--reel' : ''}`}>
           {post.mediaType === 'video' && inlineVideoSrc ? (
-            <video
-              className="fj-social-detail-video"
-              controls
-              playsInline
-              preload="metadata"
-              poster={mediaImage || undefined}
-              src={inlineVideoSrc}
-            />
+            <ReelPlayer src={inlineVideoSrc} poster={mediaImage} title={post.title} />
           ) : post.mediaType === 'video' && embedUrl ? (
             <div className="fj-social-embed-shell">
               <iframe
@@ -179,30 +172,37 @@ export default async function SocialBlogDetailPage({ params }) {
             </div>
           ) : null}
 
-          <div className="fj-social-detail-meta">
-            <span className="fj-badge">{platformLabel}</span>
-            <span className="fj-badge fj-badge--ghost">{mediaLabel}</span>
-            <span>{formatDate(post.publishedAt)}</span>
-          </div>
-
-          <div className="fj-social-detail-content">
-            {paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          {/* SocialCaption handles metadata, main text formatting, read more, and CTA callout */}
+          <SocialCaption 
+            content={post.content} 
+            publishedAt={post.publishedAt} 
+            platform={post.platform} 
+          />
 
           {showOriginalMediaLink && (
             <a
-              className="fj-button fj-button--dark"
+              className="fj-button fj-button--dark w-full text-center flex justify-center items-center gap-2 mt-4"
               href={playableHref}
               target={openMediaExternally ? '_blank' : undefined}
               rel={openMediaExternally ? 'noopener noreferrer' : undefined}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                width: '100%',
+                padding: '12px',
+                borderRadius: '12px',
+                marginTop: '16px'
+              }}
             >
               {post.mediaType === 'video' && !post.videoUrl ? 'Play on Facebook' : `Open original ${mediaLabel.toLowerCase()}`} <ExternalLink size={16} />
             </a>
           )}
         </article>
       </section>
+
+      <BlogSupportLinks />
 
       <section className="fj-section fj-section--tight">
         <div className="fj-container fj-final-cta">

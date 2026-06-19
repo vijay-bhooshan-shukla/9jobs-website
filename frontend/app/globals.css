@@ -3659,6 +3659,42 @@ section.hero.hero-split,
   white-space: pre-wrap;
 }
 
+/* Premium vertical Facebook Reels & Post Overrides */
+.fj-social-blog-card--reel {
+  display: flex;
+  flex-direction: column;
+}
+
+.fj-social-card-media--reel {
+  aspect-ratio: 4 / 5 !important;
+  overflow: hidden;
+  border-radius: 18px;
+  max-height: 320px !important;
+}
+
+.fj-social-blog-image--reel {
+  aspect-ratio: 4 / 5 !important;
+  width: 100% !important;
+  min-height: 320px !important;
+  max-height: 320px !important;
+  object-fit: cover !important;
+}
+
+.fj-social-detail--reel {
+  max-width: 500px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.fj-reel-container {
+  max-width: 280px !important;
+  width: 100% !important;
+  height: 497px !important;
+  max-height: 497px !important;
+  aspect-ratio: 9 / 16 !important;
+  margin: 0 auto;
+}
+
 .fj-final-cta {
   display: grid;
   justify-items: center;
@@ -4808,6 +4844,18 @@ section.hero.hero-split,
   background: rgba(255, 255, 255, 0.94);
   border-left: 1px solid var(--fj-line);
   border-top: 1px solid var(--fj-line);
+}
+
+/* Invisible hover bridge to prevent dropdown from closing when moving mouse to menu */
+.nav-dropdown-menu::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  height: 35px;
+  background: transparent;
+  z-index: -1;
 }
 
 .dropdown-link-item {

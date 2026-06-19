@@ -30,7 +30,7 @@ const socialLinks = [
   {
     name: "Facebook",
     text: "Follow us on Facebook",
-    href: "https://www.facebook.com/profile.php?id=61589408708559",
+    href: "https://www.facebook.com/9jobs.co",
     icon: "facebook",
     className: "is-facebook",
   },
