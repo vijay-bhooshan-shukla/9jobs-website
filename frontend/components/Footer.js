@@ -183,9 +183,8 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom fj-footer-bottom" style={{ display: "flex", flexDirection: "column", gap: "10px", borderTop: "1px solid var(--line)", paddingTop: "20px", marginTop: "40px", fontSize: "0.8rem", color: "var(--muted)" }}>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "15px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "15px" }}>
             <span>&copy; 2026 9Jobs. All rights reserved. Registered Australian Business.</span>
-            <span>ABN: 48 652 092 127 | Melbourne Office: Level 12, 120 Collins Street, Melbourne, VIC 3000</span>
           </div>
           <p style={{ margin: 0, fontSize: "0.75rem", lineHeight: "1.4" }}>
             Disclaimer: 9Jobs is a private career support, resume optimization, and job search facilitation provider. We are not associated with or endorsed by SEEK Limited, Jora, or LinkedIn Corporation. All product and service names, logos, and brands are property of their respective owners.
