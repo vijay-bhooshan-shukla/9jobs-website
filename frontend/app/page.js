@@ -27,9 +27,9 @@ import {
 } from "lucide-react";
 
 const trustedBrands = ["bluebird", "Galaxy", "berry", "Chameleon", "SHIP4450"];
-const homepageTitle = "9 Jobs Australia | 9jobs Resume Writing & Job Application Services";
+const homepageTitle = "9jobs | 9 Jobs Australia - Resume Writing & Job Application Services";
 const homepageDescription =
-  "9jobs, also known as 9 Jobs, helps Australian professionals with Resume Writing Australia, LinkedIn Optimization, ATS Resume support, and Job Application Services.";
+  "9jobs (also known as 9 Jobs) helps Australian professionals with Resume Writing Australia, LinkedIn Optimization, ATS Resume support, and Job Application Services.";
 const homepageUrl = "https://9jobs.co/";
 
 export const metadata = {
@@ -54,13 +54,13 @@ export const metadata = {
     title: homepageTitle,
     description: homepageDescription,
     url: homepageUrl,
-    siteName: "9jobs",
+    siteName: "9 Jobs (9jobs)",
     images: [
       {
         url: "/dashboard.png",
         width: 1200,
         height: 630,
-        alt: "9jobs career support dashboard for Australian job seekers",
+        alt: "9 Jobs (9jobs) career support dashboard for Australian job seekers",
       },
     ],
     locale: "en_AU",

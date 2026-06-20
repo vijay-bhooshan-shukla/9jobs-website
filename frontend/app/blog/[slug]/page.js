@@ -58,13 +58,13 @@ export async function generateMetadata({ params }) {
 
   if (!post) {
     return {
-      title: 'Blog Post | 9Jobs',
+      title: 'Blog Post | 9 Jobs (9jobs)',
     };
   }
 
   return {
     ...createSeoMetadata({
-      title: `${post.title} | 9Jobs`,
+      title: `${post.title} | 9 Jobs (9jobs)`,
       description: post.content.slice(0, 155),
       path: `/blog/${post.slug}`,
       type: 'article',

@@ -1,8 +1,8 @@
 import AuthPanel from "../../components/AuthPanel";
 
 export const metadata = {
-  title: "Forgot Password | 9Jobs",
-  description: "Reset access to a 9Jobs account placeholder.",
+  title: "Forgot Password | 9 Jobs (9jobs)",
+  description: "Reset access to your 9 Jobs (9jobs) account.",
   alternates: {
     canonical: "/forgot-password",
   },

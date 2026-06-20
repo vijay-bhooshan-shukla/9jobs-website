@@ -1,8 +1,8 @@
 import AuthPanel from "../../components/AuthPanel";
 
 export const metadata = {
-  title: "Register | 9Jobs",
-  description: "Create a 9Jobs account placeholder.",
+  title: "Register | 9 Jobs (9jobs)",
+  description: "Create a 9 Jobs (9jobs) account to manage your professional applications and resume services.",
   alternates: {
     canonical: "/register",
   },

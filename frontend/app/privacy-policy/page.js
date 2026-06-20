@@ -3,8 +3,8 @@ import { Mail, Globe, ShieldCheck, Eye, Lock, FileCheck2, UserCheck } from "luci
 import styles from "./page.module.css";
 
 export const metadata = {
-  title: "Privacy Policy | 9Jobs",
-  description: "Learn about how 9Jobs Application Services collects, uses, and protects your information.",
+  title: "Privacy Policy | 9 Jobs (9jobs)",
+  description: "Learn about how 9 Jobs (9jobs) Application Services collects, uses, and protects your information.",
   alternates: {
     canonical: "/privacy-policy",
   },

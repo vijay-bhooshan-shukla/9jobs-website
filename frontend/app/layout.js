@@ -6,20 +6,32 @@ import { CalendlyLoader } from "../components/CalendlyWidget";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const homepageTitle = "9 Jobs Australia | 9jobs Resume Writing & Job Application Services";
-const homepageDescription = "9jobs, also known as 9 Jobs, helps Australian professionals with Resume Writing Australia, LinkedIn Optimization, ATS Resume support, and Job Application Services.";
+const homepageTitle = "9jobs | 9 Jobs Australia - Resume Writing & Job Application Services";
+const homepageDescription = "9jobs (also known as 9 Jobs) helps Australian professionals with Resume Writing Australia, LinkedIn Optimization, ATS Resume support, and Job Application Services.";
 const siteUrl = "https://9jobs.co/";
 const socialImage = {
   url: "/dashboard.png",
   width: 1200,
   height: 630,
-  alt: "9Jobs career support dashboard for Australian job seekers",
+  alt: "9 Jobs (9jobs) career support dashboard for Australian job seekers",
 };
 
 export const metadata = {
   metadataBase: new URL("https://9jobs.co"),
   title: homepageTitle,
   description: homepageDescription,
+  keywords: [
+    "9jobs",
+    "9 Jobs",
+    "9Jobs",
+    "9jobs.co",
+    "9 jobs australia",
+    "Resume Writing Australia",
+    "LinkedIn Optimization",
+    "Job Application Services",
+    "ATS Resume",
+    "Australia Jobs",
+  ],
   verification: {
     google: "S2M3LuBuz0NYvUAtbFqLd6ey52Ld9NgkvVAD04kfySY",
   },
@@ -27,7 +39,7 @@ export const metadata = {
     title: homepageTitle,
     description: homepageDescription,
     url: siteUrl,
-    siteName: "9jobs",
+    siteName: "9 Jobs (9jobs)",
     images: [socialImage],
     locale: "en_AU",
     type: "website",
@@ -49,14 +61,16 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": "https://9jobs.co/#organization",
-    "name": "9jobs",
+    "name": "9 Jobs (9jobs)",
     "alternateName": [
       "9 Jobs",
-      "9jobs.co"
+      "9jobs",
+      "9jobs.co",
+      "9 Jobs Australia"
     ],
     "url": siteUrl,
     "logo": "https://9jobs.co/framer/app-icon.svg",
-    "description": "9jobs, also known as 9 Jobs, is an Australian career support brand helping professionals with resumes, LinkedIn optimization, ATS resume strategy, and job application services.",
+    "description": "9 Jobs (9jobs), also known as 9 Jobs Australia, is an Australian career support brand helping professionals with resumes, LinkedIn optimization, ATS resume strategy, and job application services.",
     "areaServed": {
       "@type": "Country",
       "name": "Australia"
@@ -73,9 +87,14 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": "https://9jobs.co/#website",
-    "name": "9jobs",
+    "name": "9 Jobs (9jobs)",
     "url": siteUrl,
-    "alternateName": "9 Jobs",
+    "alternateName": [
+      "9 Jobs",
+      "9jobs",
+      "9jobs.co",
+      "9 Jobs Australia"
+    ],
     "publisher": {
       "@id": "https://9jobs.co/#organization"
     },
