@@ -263,7 +263,7 @@ function DashboardPreview() {
   return (
     <div className="fj-dashboard">
       <div className="fj-dashboard-sidebar">
-        <span className="fj-brand-mark fj-brand-mark--small" aria-hidden="true">
+        <span className="fj-brand-mark fj-brand-mark--small" role="presentation">
           <span />
           <span />
         </span>
@@ -443,7 +443,9 @@ export default function Home() {
                   <div className="fj-card-eyebrow"><Icon size={19} /> {item.eyebrow}</div>
                   <h3>{item.title} {item.badge && <span>{item.badge}</span>}</h3>
                   <p>{item.text}</p>
-                  <Link href="/features" aria-label={`Learn more about ${item.title}`} prefetch={false}>Learn more <ArrowRight size={16} /></Link>
+                  <Link href="/features" aria-label={`Explore details for ${item.title}`} prefetch={false}>
+                    Explore {item.title} <ArrowRight size={16} />
+                  </Link>
                 </article>
               );
             })}
@@ -455,7 +457,7 @@ export default function Home() {
         <div className="fj-container fj-split">
           <div className="fj-activity-card">
             <div className="fj-activity-top">
-              <span className="fj-brand-mark fj-brand-mark--small" aria-hidden="true"><span /><span /></span>
+              <span className="fj-brand-mark fj-brand-mark--small" role="presentation"><span /><span /></span>
               <CalendlyLink className="fj-button fj-button--dark">Generate report</CalendlyLink>
             </div>
             {[
@@ -572,7 +574,9 @@ export default function Home() {
               <article className="fj-plan-card" key={name}>
                 <h3>{name}</h3>
                 <p>{text}</p>
-                <Link href="/pricing" aria-label={`Learn more about ${name} plan`}>Learn more <ArrowRight size={16} /></Link>
+                <Link href="/pricing" aria-label={`View pricing details for the ${name} plan`} prefetch={false}>
+                  View {name} plan <ArrowRight size={16} />
+                </Link>
               </article>
             ))}
           </div>

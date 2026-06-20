@@ -2,7 +2,6 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollAnimations from "../components/ScrollAnimations";
-import { CalendlyLoader } from "../components/CalendlyWidget";
 import WhatsAppButton from "../components/WhatsAppButton";
 import DeferredAnalytics from "../components/DeferredAnalytics";
 
@@ -102,7 +101,6 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <ScrollAnimations />
-        <CalendlyLoader />
         <WhatsAppButton />
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <DeferredAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />

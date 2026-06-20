@@ -145,7 +145,7 @@ export default function JobsHubPage() {
                   <h3>{service.name}</h3>
                   <p style={{ fontSize: "0.9rem", color: "var(--fj-muted)", margin: "10px 0 20px" }}>{service.desc}</p>
                   <Link href={service.href} className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }} prefetch={false}>
-                    Learn more <ArrowRight size={14} />
+                    Explore {service.name} <ArrowRight size={14} />
                   </Link>
                 </article>
               );

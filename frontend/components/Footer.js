@@ -78,7 +78,7 @@ export default function Footer() {
         <div className="fj-footer-grid">
           <div className="fj-footer-brand">
             <Link className="brand fj-brand" href="/" aria-label="9Jobs home page" prefetch={false}>
-              <span className="fj-brand-mark" aria-hidden="true">
+              <span className="fj-brand-mark" role="presentation">
                 <span />
                 <span />
               </span>

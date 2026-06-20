@@ -57,7 +57,7 @@ export default function Features() {
               whileHover={{ x: 10 }}
               style={{ fontWeight: '800', fontSize: '0.9rem', color: '#000', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
             >
-              Learn more <span style={{ color: 'var(--primary)', fontSize: '1.2rem' }}>→</span>
+              Explore feature details <span style={{ color: 'var(--primary)', fontSize: '1.2rem' }}>→</span>
             </motion.button>
           </motion.div>
         ))}

@@ -176,7 +176,7 @@ export default async function CityPage({ params }) {
               <h3>Resume Writing</h3>
               <p>Get a localized, single-column CV built to pass Australian Applicant Tracking Systems.</p>
               <Link href="/services/resume-writing" className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }}>
-                Learn more <ArrowRight size={14} />
+                Explore resume writing <ArrowRight size={14} />
               </Link>
             </article>
 
@@ -185,7 +185,7 @@ export default async function CityPage({ params }) {
               <h3>LinkedIn Optimization</h3>
               <p>Boost your profile settings and keyword alignment to trigger calls from local recruiters.</p>
               <Link href="/services/linkedin-optimization" className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }}>
-                Learn more <ArrowRight size={14} />
+                Explore LinkedIn optimization <ArrowRight size={14} />
               </Link>
             </article>
 
@@ -194,7 +194,7 @@ export default async function CityPage({ params }) {
               <h3>SEEK Profile Optimization</h3>
               <p>Configure your SEEK preferences and search visibility to match Australian agency searches.</p>
               <Link href="/services/seek-profile-optimization" className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }}>
-                Learn more <ArrowRight size={14} />
+                Explore SEEK optimization <ArrowRight size={14} />
               </Link>
             </article>
 
@@ -203,7 +203,7 @@ export default async function CityPage({ params }) {
               <h3>Job Application Services</h3>
               <p>Outsource the job search workflow. We apply to matching roles daily on your behalf.</p>
               <Link href="/services/job-application-automation" className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }}>
-                Learn more <ArrowRight size={14} />
+                Explore application automation <ArrowRight size={14} />
               </Link>
             </article>
 
@@ -212,7 +212,7 @@ export default async function CityPage({ params }) {
               <h3>Interview Support</h3>
               <p>Prepare for Australian structured behavioral queries with tailored mock prep sessions.</p>
               <Link href="/services/interview-coaching" className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }}>
-                Learn more <ArrowRight size={14} />
+                Explore interview coaching <ArrowRight size={14} />
               </Link>
             </article>
           </div>

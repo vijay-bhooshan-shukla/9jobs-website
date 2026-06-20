@@ -111,7 +111,7 @@ export default function NineJobsLandingPage() {
                   <h3>{card.title}</h3>
                   <p>{card.text}</p>
                   <Link href={card.href} className="fj-button fj-button--ghost">
-                    Learn more <ArrowRight size={14} />
+                    Explore {card.title} <ArrowRight size={14} />
                   </Link>
                 </article>
               );

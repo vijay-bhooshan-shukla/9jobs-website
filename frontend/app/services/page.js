@@ -114,7 +114,7 @@ export default function ServicesPage() {
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
                   <Link href={service.href} className="fj-button fj-button--ghost" style={{ marginTop: "auto", minHeight: "40px", fontSize: "0.82rem" }} prefetch={false}>
-                    Learn more <ArrowRight size={14} />
+                    Explore {service.title} <ArrowRight size={14} />
                   </Link>
                 </article>
               );
